@@ -1,0 +1,21 @@
+{
+    "num_instances": 499,
+    "distribution": {
+        "other": 424,
+        "sci.space": 25,
+        "comp.windows.x": 25,
+        "alt.atheism": 25
+    },
+    "distribution_percentage": {
+        "other": 84.96993987975952,
+        "sci.space": 5.01002004008016,
+        "comp.windows.x": 5.01002004008016,
+        "alt.atheism": 5.01002004008016
+    },
+    "classes": [
+        "other",
+        "alt.atheism",
+        "comp.windows.x",
+        "sci.space"
+    ]
+}

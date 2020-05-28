@@ -1,0 +1,15 @@
+{
+    "num_instances": 499,
+    "distribution": {
+        "other": 474,
+        "comp.windows.x": 25
+    },
+    "distribution_percentage": {
+        "other": 94.98997995991984,
+        "comp.windows.x": 5.01002004008016
+    },
+    "classes": [
+        "comp.windows.x",
+        "other"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "num_instances": 485,
+    "distribution": {
+        "other": 305,
+        "course": 55,
+        "student": 50,
+        "faculty": 50,
+        "project": 25
+    },
+    "distribution_percentage": {
+        "other": 62,
+        "course": 11,
+        "student": 10,
+        "faculty": 10,
+        "project": 5
+    },
+    "classes": [
+        "faculty",
+        "project",
+        "course",
+        "student",
+        "other"
+    ]
+}

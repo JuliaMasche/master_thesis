@@ -1,0 +1,15 @@
+{
+    "num_instances": 277,
+    "distribution": {
+        "neg": 250,
+        "pos": 27
+    },
+    "distribution_percentage": {
+        "neg": 90.25270758122743,
+        "pos": 9.747292418772563
+    },
+    "classes": [
+        "pos",
+        "neg"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "num_instances": 499,
+    "distribution": {
+        "other": 399,
+        "alt.atheism": 25,
+        "comp.windows.x": 25,
+        "talk.politics.mideast": 25,
+        "sci.space": 25
+    },
+    "distribution_percentage": {
+        "other": 79.95991983967936,
+        "alt.atheism": 5.01002004008016,
+        "comp.windows.x": 5.01002004008016,
+        "talk.politics.mideast": 5.01002004008016,
+        "sci.space": 5.01002004008016
+    },
+    "classes": [
+        "talk.politics.mideast",
+        "comp.windows.x",
+        "sci.space",
+        "alt.atheism",
+        "other"
+    ]
+}
