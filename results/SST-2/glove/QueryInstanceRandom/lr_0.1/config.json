@@ -1,0 +1,39 @@
+{
+        "query_strategy": "QueryInstanceRandom",
+        "word_embedding": "glove",
+        "neural network": "rnn",
+        "dataset": "../data/SST-2/tsv",
+        "learning_rate": 0.1,
+        "max epoch": 100,
+        "mini batch size": 32,
+        "stopping_criterion": 0.81
+}{
+     "0": {
+          "precision": 0.8,
+          "recall": 0.8317757009345794,
+          "f1-score": 0.8155784650630011,
+          "support": 428
+     },
+     "1": {
+          "precision": 0.8313817330210773,
+          "recall": 0.7995495495495496,
+          "f1-score": 0.815154994259472,
+          "support": 444
+     },
+     "accuracy": 0.8153669724770642,
+     "macro avg": {
+          "precision": 0.8156908665105387,
+          "recall": 0.8156626252420645,
+          "f1-score": 0.8153667296612366,
+          "support": 872
+     },
+     "weighted avg": {
+          "precision": 0.8159787723180716,
+          "recall": 0.8153669724770642,
+          "f1-score": 0.8153628446079931,
+          "support": 872
+     }
+}{
+  "6735": 0.805045871559633,
+  "6755": 0.8153669724770642
+}
