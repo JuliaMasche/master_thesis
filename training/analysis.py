@@ -31,6 +31,12 @@ def f1(y_true, y_pred, average, minority):
     else:
         return f1_score(y_true, y_pred, average=average, labels=minority)
 
+def performance_measure(y_true, y_pred, average, measure:str, minority):
+    if measure == "f1":
+        return f1(y_true, y_pred, average, minority)
+    elif measure == "accuracy":
+        return accuracy(y_true, y_pred)
+
 
 def plot_num_instances_performance(instances, performance, out_dir, label):
     for i in range(len(instances)):
@@ -45,7 +51,7 @@ def plot_num_instances_performance(instances, performance, out_dir, label):
     plt.legend()
     plt.savefig(os.path.join(out_dir, 'num_instance_performance.png'))
 
-
+"""
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--paths', nargs='+', help='<Required> Set flag')
 parser.add_argument('-st','--strategy', nargs='+', help='<Required> Set flag')
@@ -57,4 +63,4 @@ for p in args.paths:
     num_instances.append(df['num_instances'].tolist())
     performance.append(df['performance'].tolist())
 plot_num_instances_performance(num_instances, performance, "/home/julia/projects/master_thesis_al/results/SST-2/perc_90_10/flair", args.strategy)
- 
+ """

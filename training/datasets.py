@@ -1,6 +1,14 @@
 
 def get_dataset_info(name:str):
 
+    if name == "SST-2_original":
+        dataset_path_original = "../data/SST-2/tsv/original"
+        out_dir = '../results/SST-2/original'
+        classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
+        sep = "\t"
+
     if name == "SST-2_50":
         dataset_path_original = "../data/SST-2/tsv/perc_50_50"
         out_dir = '../results/SST-2/perc_50_50'

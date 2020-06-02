@@ -16,11 +16,11 @@ import pandas as pd
 import numpy as np
 import json
 import timeit
-from analysis import accuracy, prec_rec_f1, conf_mat, f1
+from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
 
 
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", choices=sets, default = "SST-2_50", type = str)
@@ -29,6 +29,7 @@ parser.add_argument("-lr", "--learning_rate", default = 0.01, type = float)
 parser.add_argument("-mini_b", "--mini_batch_size", default = 32, type = int)
 parser.add_argument("-ep", "--max_epoch", default = 100, type = int)
 parser.add_argument("--seed", default = 5, type = int)
+parser.add_argument("-pm", "--perf_measure", default = "accuracy", type = str)
 args = parser.parse_args()
 dataset = args.dataset
 dataset_path_original, out_dir, classes, sep, minority, average = get_dataset_info(dataset)
@@ -101,12 +102,12 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     test_pred = predict_testset(test_text, classifier)
 
     #acc = accuracy(test_labels, test_pred)
-    f1_score = f1(test_labels, test_pred, average, minority)
+    score = performance_measure(test_labels, test_pred, average, args.measure, minority)
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     run_dict = {"runtime" :timeit.default_timer() - starttime}
     write_json(run_dict, path_results, len(run_dict), "a")
-    return f1_score
+    return score
 
 
 def main():
@@ -119,6 +120,7 @@ def main():
         "max epoch": max_epoch,
         "mini batch size": mini_batch_size,
         "seed" : args.seed,
+        "performance_measure": args.measure
         }
 
     write_json(config, path_results, len(config), "w")

@@ -6,7 +6,7 @@ from flair.visual.training_curves import Plotter
 from flair.datasets import CSVClassificationCorpus, SentenceDataset
 from word_embeddings import select_word_embedding
 from datasets import get_dataset_info
-from analysis import accuracy, prec_rec_f1, conf_mat, f1
+from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
 from seed_set import select_random
 from query_strategy import select_query_strategy, select_next_batch
 import csv
@@ -24,7 +24,7 @@ from sklearn import preprocessing
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceBMDR", "QueryInstanceSPAL", "QueryInstanceQBC"]
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
 column_name_map = {0: 'text', 1: 'label'}
 
 
@@ -38,6 +38,7 @@ parser.add_argument("-mini_b", "--mini_batch_size", default = 32, type = int)
 parser.add_argument("-ep", "--max_epoch", default = 100, type = int)
 parser.add_argument("--seed", default = 5, type = int)
 parser.add_argument("-bs", "--batch_size", default = 20, type = int)
+parser.add_argument("-pm", "--perf_measure", default = "accuracy", type = str)
 args = parser.parse_args()
 dataset = args.dataset
 seed = args.seed
@@ -167,9 +168,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
     test_pred = predict_testset(test_text, classifier)
 
-    f1_score = f1(test_labels, test_pred, average, minority)
+    score = performance_measure(test_labels, test_pred, average, args.measure, minority)
     num_instances.append(len(label_ind))
-    performance.append(f1_score)
+    performance.append(score)
 
 
     while num_queries < stopping_crit:
@@ -204,9 +205,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
         #choose better performance metric later for class imbalance
         #acc = accuracy(test_labels, test_pred)
-        f1_score = f1(test_labels, test_pred, average, minority)
+        score = performance_measure(test_labels, test_pred, average, args.measure, minority)
         num_instances.append(len(label_ind))
-        performance.append(f1_score)
+        performance.append(score)
 
 
     run_dict = {"runtime" :timeit.default_timer() - starttime}
@@ -234,6 +235,7 @@ def main_func():
         "stopping_criterion" : stopping_crit,
         "seed" : args.seed,
         "query batch size" : args.batch_size
+        "performance_measure": args.measure
         }
 
     write_json(config, path_results, len(config), "w")
@@ -304,7 +306,6 @@ def main_func():
             else:
                 overall_perf[key] = performance[i]
            
-    print(len(kfold_label_idx))
     #final analysis
     for i in overall_perf:
         overall_perf[i] = overall_perf[i]/5
