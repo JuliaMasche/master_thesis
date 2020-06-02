@@ -1,0 +1,497 @@
+{
+          "query_strategy": "QueryInstanceGraphDensity",
+          "word_embedding": "glove",
+          "neural network": "rnn",
+          "dataset": "../data/news/tsv/keep_classes_4",
+          "learning_rate": 0.1,
+          "max epoch": 100,
+          "mini batch size": 16,
+          "stopping_criterion": 15,
+          "seed": 5,
+          "query batch size": 15
+}{
+  "train_length": 399,
+  "test_length": 100
+}{
+                              "6": "other",
+                              "14": "other",
+                              "26": "other",
+                              "52": "other",
+                              "57": "other",
+                              "80": "other",
+                              "93": "other",
+                              "110": "other",
+                              "126": "other",
+                              "127": "other",
+                              "130": "other",
+                              "143": "other",
+                              "183": "other",
+                              "190": "other",
+                              "194": "other",
+                              "208": "other",
+                              "238": "other",
+                              "240": "other",
+                              "271": "other",
+                              "278": "other",
+                              "293": "comp.windows.x",
+                              "318": "other",
+                              "332": "other",
+                              "333": "other",
+                              "353": "alt.atheism",
+                              "374": "other",
+                              "378": "other",
+                              "379": "sci.space",
+                              "392": "sci.space",
+                              "397": "sci.space"
+}{
+ "runtime": 1414.4420600412413
+}{
+        "other": {
+                "precision": 0.8210526315789474,
+                "recall": 0.975,
+                "f1-score": 0.8914285714285713,
+                "support": 80
+        },
+        "comp.windows.x": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5
+        },
+        "alt.atheism": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5
+        },
+        "sci.space": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5
+        },
+        "talk.politics.mideast": {
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1-score": 0.6666666666666665,
+                "support": 5
+        },
+        "accuracy": 0.81,
+        "macro avg": {
+                "precision": 0.31421052631578944,
+                "recall": 0.315,
+                "f1-score": 0.3116190476190476,
+                "support": 100
+        },
+        "weighted avg": {
+                "precision": 0.694342105263158,
+                "recall": 0.81,
+                "f1-score": 0.7464761904761903,
+                "support": 100
+        }
+}{
+                "30": 0.0,
+                "45": 0.0,
+                "60": 0.0,
+                "75": 0.14285714285714288,
+                "90": 0.125,
+                "105": 0.125,
+                "120": 0.14285714285714288,
+                "135": 0.0,
+                "150": 0.11111111111111112,
+                "165": 0.11111111111111112,
+                "180": 0.22142857142857145,
+                "195": 0.0,
+                "210": 0.11111111111111112,
+                "225": 0.15,
+                "240": 0.125,
+                "255": 0.16666666666666663
+}{
+  "train_length": 399,
+  "test_length": 100
+}{
+                              "0": "other",
+                              "11": "other",
+                              "18": "other",
+                              "41": "other",
+                              "48": "other",
+                              "74": "other",
+                              "98": "other",
+                              "101": "other",
+                              "133": "other",
+                              "139": "other",
+                              "163": "other",
+                              "191": "other",
+                              "211": "other",
+                              "240": "other",
+                              "248": "talk.politics.mideast",
+                              "250": "talk.politics.mideast",
+                              "275": "other",
+                              "276": "other",
+                              "283": "other",
+                              "288": "other",
+                              "293": "comp.windows.x",
+                              "300": "comp.windows.x",
+                              "339": "alt.atheism",
+                              "349": "alt.atheism",
+                              "358": "other",
+                              "373": "other",
+                              "376": "other",
+                              "388": "sci.space",
+                              "390": "sci.space",
+                              "394": "sci.space"
+}{
+ "runtime": 1212.5900219976902
+}{
+        "other": {
+                "precision": 0.8505747126436781,
+                "recall": 0.925,
+                "f1-score": 0.8862275449101797,
+                "support": 80
+        },
+        "comp.windows.x": {
+                "precision": 0.5,
+                "recall": 0.4,
+                "f1-score": 0.4444444444444445,
+                "support": 5
+        },
+        "alt.atheism": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5
+        },
+        "sci.space": {
+                "precision": 0.4,
+                "recall": 0.4,
+                "f1-score": 0.4000000000000001,
+                "support": 5
+        },
+        "talk.politics.mideast": {
+                "precision": 1.0,
+                "recall": 0.4,
+                "f1-score": 0.5714285714285715,
+                "support": 5
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+                "precision": 0.5501149425287356,
+                "recall": 0.425,
+                "f1-score": 0.46042011215663914,
+                "support": 100
+        },
+        "weighted avg": {
+                "precision": 0.7754597701149425,
+                "recall": 0.8,
+                "f1-score": 0.7797756867217948,
+                "support": 100
+        }
+}{
+                "30": 0.39705882352941174,
+                "45": 0.45241228070175443,
+                "60": 0.3902777777777778,
+                "75": 0.375,
+                "90": 0.5624999999999999,
+                "105": 0.3825757575757575,
+                "120": 0.2911255411255411,
+                "135": 0.3928571428571429,
+                "150": 0.25,
+                "165": 0.4089285714285714,
+                "180": 0.21428571428571433,
+                "195": 0.12142857142857144,
+                "210": 0.19642857142857145,
+                "225": 0.32539682539682546,
+                "240": 0.4428571428571429,
+                "255": 0.35396825396825404
+}{
+  "train_length": 399,
+  "test_length": 100
+}{
+                              "19": "other",
+                              "24": "other",
+                              "29": "other",
+                              "30": "other",
+                              "31": "other",
+                              "35": "other",
+                              "37": "other",
+                              "44": "other",
+                              "46": "other",
+                              "48": "other",
+                              "63": "other",
+                              "77": "other",
+                              "109": "other",
+                              "114": "other",
+                              "123": "other",
+                              "165": "other",
+                              "187": "other",
+                              "202": "other",
+                              "214": "other",
+                              "217": "other",
+                              "222": "other",
+                              "259": "talk.politics.mideast",
+                              "274": "other",
+                              "282": "other",
+                              "289": "comp.windows.x",
+                              "295": "comp.windows.x",
+                              "298": "comp.windows.x",
+                              "321": "other",
+                              "322": "other",
+                              "333": "other"
+}{
+ "runtime": 1298.3121446855366
+}{
+        "other": {
+                "precision": 0.8494623655913979,
+                "recall": 0.9875,
+                "f1-score": 0.9132947976878614,
+                "support": 80
+        },
+        "comp.windows.x": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5
+        },
+        "alt.atheism": {
+                "precision": 1.0,
+                "recall": 0.2,
+                "f1-score": 0.33333333333333337,
+                "support": 5
+        },
+        "sci.space": {
+                "precision": 0.6666666666666666,
+                "recall": 0.4,
+                "f1-score": 0.5,
+                "support": 5
+        },
+        "talk.politics.mideast": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.7499999999999999,
+                "support": 5
+        },
+        "accuracy": 0.85,
+        "macro avg": {
+                "precision": 0.7032258064516129,
+                "recall": 0.4375,
+                "f1-score": 0.4993256262042389,
+                "support": 100
+        },
+        "weighted avg": {
+                "precision": 0.8129032258064516,
+                "recall": 0.85,
+                "f1-score": 0.8098025048169558,
+                "support": 100
+        }
+}{
+                "30": 0.2678571428571429,
+                "45": 0.303030303030303,
+                "60": 0.3125,
+                "75": 0.48571428571428577,
+                "90": 0.5018315018315019,
+                "105": 0.5357142857142858,
+                "120": 0.5928571428571429,
+                "135": 0.4833333333333334,
+                "150": 0.5151515151515151,
+                "165": 0.5955086580086582,
+                "180": 0.6201298701298701,
+                "195": 0.513888888888889,
+                "210": 0.5793650793650794,
+                "225": 0.5690476190476191,
+                "240": 0.5248015873015873,
+                "255": 0.3958333333333333
+}{
+  "train_length": 399,
+  "test_length": 100
+}{
+                              "10": "other",
+                              "15": "other",
+                              "22": "other",
+                              "43": "other",
+                              "45": "other",
+                              "64": "other",
+                              "70": "other",
+                              "98": "other",
+                              "107": "other",
+                              "116": "other",
+                              "119": "other",
+                              "126": "other",
+                              "136": "other",
+                              "189": "other",
+                              "192": "other",
+                              "199": "other",
+                              "205": "other",
+                              "206": "other",
+                              "232": "other",
+                              "235": "other",
+                              "248": "talk.politics.mideast",
+                              "249": "talk.politics.mideast",
+                              "253": "talk.politics.mideast",
+                              "259": "talk.politics.mideast",
+                              "266": "other",
+                              "293": "comp.windows.x",
+                              "328": "other",
+                              "358": "other",
+                              "360": "other",
+                              "388": "sci.space"
+}{
+ "runtime": 1519.7523331250995
+}{
+        "other": {
+                "precision": 0.9176470588235294,
+                "recall": 0.975,
+                "f1-score": 0.9454545454545454,
+                "support": 80
+        },
+        "comp.windows.x": {
+                "precision": 0.6666666666666666,
+                "recall": 0.4,
+                "f1-score": 0.5,
+                "support": 5
+        },
+        "alt.atheism": {
+                "precision": 0.6666666666666666,
+                "recall": 0.8,
+                "f1-score": 0.7272727272727272,
+                "support": 5
+        },
+        "sci.space": {
+                "precision": 1.0,
+                "recall": 0.2,
+                "f1-score": 0.33333333333333337,
+                "support": 5
+        },
+        "talk.politics.mideast": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5
+        },
+        "accuracy": 0.9,
+        "macro avg": {
+                "precision": 0.8501960784313726,
+                "recall": 0.675,
+                "f1-score": 0.7012121212121212,
+                "support": 100
+        },
+        "weighted avg": {
+                "precision": 0.9007843137254901,
+                "recall": 0.9,
+                "f1-score": 0.8843939393939395,
+                "support": 100
+        }
+}{
+                "30": 0.3636363636363636,
+                "45": 0.4345238095238095,
+                "60": 0.38977272727272727,
+                "75": 0.7430555555555556,
+                "90": 0.7589285714285714,
+                "105": 0.798611111111111,
+                "120": 0.826388888888889,
+                "135": 0.7707070707070707,
+                "150": 0.7888888888888889,
+                "165": 0.8166666666666668,
+                "180": 0.7287157287157287,
+                "195": 0.7972222222222223,
+                "210": 0.5928571428571429,
+                "225": 0.7472222222222222,
+                "240": 0.8333333333333333,
+                "255": 0.6401515151515151
+}{
+  "train_length": 400,
+  "test_length": 99
+}{
+                              "3": "other",
+                              "20": "other",
+                              "26": "other",
+                              "41": "other",
+                              "56": "other",
+                              "67": "other",
+                              "70": "other",
+                              "80": "other",
+                              "86": "other",
+                              "95": "other",
+                              "121": "other",
+                              "136": "other",
+                              "171": "other",
+                              "173": "other",
+                              "191": "other",
+                              "194": "other",
+                              "216": "other",
+                              "231": "other",
+                              "237": "other",
+                              "257": "other",
+                              "259": "other",
+                              "283": "other",
+                              "309": "other",
+                              "313": "other",
+                              "315": "other",
+                              "346": "comp.windows.x",
+                              "358": "comp.windows.x",
+                              "360": "alt.atheism",
+                              "371": "alt.atheism",
+                              "372": "alt.atheism"
+}{
+ "runtime": 1606.5304988529533
+}{
+        "other": {
+                "precision": 0.975,
+                "recall": 0.9873417721518988,
+                "f1-score": 0.9811320754716981,
+                "support": 79
+        },
+        "comp.windows.x": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.7499999999999999,
+                "support": 5
+        },
+        "alt.atheism": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5
+        },
+        "sci.space": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+        },
+        "talk.politics.mideast": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5
+        },
+        "accuracy": 0.9696969696969697,
+        "macro avg": {
+                "precision": 0.9616666666666667,
+                "recall": 0.9174683544303797,
+                "f1-score": 0.9280445969125214,
+                "support": 99
+        },
+        "weighted avg": {
+                "precision": 0.9716329966329966,
+                "recall": 0.9696969696969697,
+                "f1-score": 0.9677261465426131,
+                "support": 99
+        }
+}{
+                "30": 0.29166666666666663,
+                "45": 0.25625,
+                "60": 0.5851648351648352,
+                "75": 0.6201298701298701,
+                "90": 0.9375,
+                "105": 0.9166666666666666,
+                "120": 0.9375,
+                "135": 0.9375,
+                "150": 0.9375,
+                "165": 0.9375,
+                "180": 0.9147727272727273,
+                "195": 0.9147727272727273,
+                "210": 0.9147727272727273,
+                "225": 0.9147727272727273,
+                "240": 0.9147727272727273,
+                "255": 0.9147727272727273
+}
