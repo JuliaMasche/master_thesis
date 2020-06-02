@@ -19,11 +19,12 @@ import numpy as np
 import argparse
 import timeit
 from sklearn.model_selection import KFold, StratifiedKFold
+from sklearn import preprocessing
 
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceBMDR", "QueryInstanceSPAL", "QueryInstanceQBC"]
-we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo']
-sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news", "webkb", "movie"]
+we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
+sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
 column_name_map = {0: 'text', 1: 'label'}
 
 
@@ -39,7 +40,8 @@ parser.add_argument("--seed", default = 5, type = int)
 parser.add_argument("-bs", "--batch_size", default = 20, type = int)
 args = parser.parse_args()
 dataset = args.dataset
-dataset_path_original, out_dir, classes, sep = get_dataset_info(dataset)
+seed = args.seed
+dataset_path_original, out_dir, classes, sep, minority, average = get_dataset_info(dataset)
 stopping_crit = args.stopping_criterion
 query_str = args.query_str
 word_embedding = args.word_embedding
@@ -149,7 +151,6 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     num_instances = []
     performance = []
     num_queries = 0
-    acc = 0  
 
     starttime = timeit.default_timer()
 
@@ -166,7 +167,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
     test_pred = predict_testset(test_text, classifier)
 
-    f1_score = f1(test_labels, test_pred, '0')
+    f1_score = f1(test_labels, test_pred, average, minority)
     num_instances.append(len(label_ind))
     performance.append(f1_score)
 
@@ -203,7 +204,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
         #choose better performance metric later for class imbalance
         #acc = accuracy(test_labels, test_pred)
-        f1_score = f1(test_labels, test_pred, '0')
+        f1_score = f1(test_labels, test_pred, average, minority)
         num_instances.append(len(label_ind))
         performance.append(f1_score)
 
@@ -249,6 +250,8 @@ def main_func():
     #create text, label lists and sentence datapoints
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
+    le = preprocessing.LabelEncoder()
+    le.fit(classes)
     #y = [float(i) for i in train_labels]
     #datapoints_all = create_sentence_dataset(train_text, train_labels)
 
@@ -265,11 +268,13 @@ def main_func():
     cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=False)
     kfold_label_idx = []
     overall_perf = {}
+    seed_label = 5
     for train_index, test_index in cv.split(train_text, train_labels):
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
         datapoints = create_sentence_dataset(X_train, y_train)
-        y = [float(i) for i in y_train]
+        #y = [float(i) for i in y_train]
+        y = le.transform(y_train)
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))
 
@@ -279,9 +284,11 @@ def main_func():
         #initialize Active Learning
         alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
        
-        label_ind, unlab_ind = select_random(args.seed, idx, 30)
+        label_ind, unlab_ind = select_random(seed_label, idx, 30)
+        seed_label = seed_label + 1
 
-        dict_seedset = {"seed set": label_ind}
+        seed_set_labels = list(y_train[label_ind])
+        dict_seedset = dict(zip(label_ind, seed_set_labels))
         write_json(dict_seedset, path_results, len(dict_seedset), "a")
 
         al_strategy = select_query_strategy(alibox, query_str, idx)

@@ -5,55 +5,96 @@ def get_dataset_info(name:str):
         dataset_path_original = "../data/SST-2/tsv/perc_50_50"
         out_dir = '../results/SST-2/perc_50_50'
         classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
         sep = "\t"
 
     elif name == "SST-2_60":
         dataset_path_original = "../data/SST-2/tsv/perc_60_40"
         out_dir = '../results/SST-2/perc_60_40'
         classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
         sep = "\t"
 
     elif name == "SST-2_70":
         dataset_path_original = "../data/SST-2/tsv/perc_70_30"
         out_dir = '../results/SST-2/perc_70_30'
         classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
         sep = "\t"
     
     elif name == "SST-2_80":
         dataset_path_original = "../data/SST-2/tsv/perc_80_20"
         out_dir = '../results/SST-2/perc_80_20'
         classes = ['0', '1']
+        minority = '0'
         sep = "\t"
 
     elif name == "SST-2_90":
         dataset_path_original = "../data/SST-2/tsv/perc_90_10"
         out_dir = '../results/SST-2/perc_90_10'
         classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
         sep = "\t"
 
-    elif name == "news":
-        dataset_path_original = "../data/news/tsv"
-        out_dir = '../results/news'
-        classes = ['rec.sport.hockey', 'comp.os.ms-windows.misc', 'rec.motorcycles', 'sci.electronics', 'soc.religion.christian', 'comp.graphics', 'sci.med', 'rec.sport.baseball', 'comp.sys.ibm.pc.hardware', 'comp.sys.mac.hardware', 'talk.politics.mideast', 'talk.religion.misc', 'talk.politics.guns', 'comp.windows.x', 'alt.atheism', 'sci.crypt', 'sci.space', 'talk.politics.misc', 'rec.autos', 'misc.forsale']
+    elif name == "news_1":
+        dataset_path_original = "../data/news/tsv/keep_classes_1"
+        out_dir = '../results/news/keep_classes_1'
+        classes = ['other', 'comp.windows.x']
+        minority = 'comp.windows.x'
+        average = 'binary'
+        sep = "\t"
+
+    elif name == "news_2":
+        dataset_path_original = "../data/news/tsv/keep_classes_2"
+        out_dir = '../results/news/keep_classes_2'
+        classes = ['other', 'comp.windows.x', 'alt.atheism']
+        minority = ['comp.windows.x', 'alt.atheism']
+        average = 'weighted'
+        sep = "\t"
+
+    elif name == "news_3":
+        dataset_path_original = "../data/news/tsv/keep_classes_3"
+        out_dir = '../results/news/keep_classes_3'
+        classes = ['other', 'comp.windows.x', 'alt.atheism', 'sci.space']
+        minority = ['comp.windows.x', 'alt.atheism', 'sci.space']
+        average = 'weighted'
+        sep = "\t"
+
+    elif name == "news_4":
+        dataset_path_original = "../data/news/tsv/keep_classes_4"
+        out_dir = '../results/news/keep_classes_4'
+        classes = ['other', 'comp.windows.x', 'alt.atheism', 'sci.space', 'talk.politics.mideast']
+        minority = ['comp.windows.x', 'alt.atheism', 'sci.space', 'talk.politics.mideast']
+        average = 'weighted'
         sep = "\t"
 
     elif name == "webkb":
         dataset_path_original = "../data/webkb/tsv"
         out_dir = '../results/webkb'
-        classes = ['other', 'project', 'department', 'course', 'staff', 'faculty', 'student']
+        classes = ['other', 'project', 'course', 'faculty', 'student']
+        minority = ['project', 'course', 'faculty', 'student']
+        average = 'weighted'
         sep = "\t"
 
-    elif name == "movie":
-        dataset_path_original = "../data/movie/tsv"
-        out_dir = '../results/movie'
+    elif name == "movie_60":
+        dataset_path_original = "../data/movie/tsv/perc_60_40"
+        out_dir = '../results/movie/perc_60_40'
         classes = ['neg', 'pos']
+        minority = ["pos"]
+        average = 'binary'
         sep = "\t"
 
-    #if name == "yelp":
-        #dataset_path_original = "../data/yelp/tsv"
-        #dataset_path_al = '../data/yelp/al'
-        #out_dir = '../results/yelp'
-        #classes = ['0', '1']
-        #sep = ","
-    
-    return dataset_path_original, out_dir, classes, sep
+    elif name == "movie_80":
+        dataset_path_original = "../data/movie/tsv/perc_80_20"
+        out_dir = '../results/movie/perc_80_20'
+        classes = ['neg', 'pos']
+        minority = ["pos"]
+        average = 'binary'
+        sep = "\t"
+
+
+    return dataset_path_original, out_dir, classes, sep, minority, average

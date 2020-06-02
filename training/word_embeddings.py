@@ -1,4 +1,4 @@
-from flair.embeddings import WordEmbeddings, FlairEmbeddings, BertEmbeddings, ELMoEmbeddings, FastTextEmbeddings
+from flair.embeddings import WordEmbeddings, FlairEmbeddings, TransformerWordEmbeddings, ELMoEmbeddings, FastTextEmbeddings, StackedEmbeddings
 
 
 
@@ -8,16 +8,24 @@ def select_word_embedding(we_name:str):
         word_embeddings = WordEmbeddings('glove')
     
     elif we_name == "flair":
-        word_embeddings = FlairEmbeddings('news-forward')
-
+        word_embeddings = StackedEmbeddings([
+                                        FlairEmbeddings('news-forward'),
+                                        FlairEmbeddings('news-backward'),
+                                       ])
     elif we_name == "bert":
-        word_embeddings = BertEmbeddings()
-
+        word_embeddings = TransformerWordEmbeddings('bert-base-uncased')
+        
     elif we_name == "fasttext":
         word_embeddings = FastTextEmbeddings('/path/to/local/custom_fasttext_embeddings.bin')
     
-    else:
-        word_embeddings = ELMoEmbeddings()
+    elif we_name == "elmo_small":
+        word_embeddings = ELMoEmbeddings('small')
+
+    elif we_name == "elmo_medium":
+        word_embeddings = ELMoEmbeddings('medium')
+
+    elif we_name == "elmo_original":
+        word_embeddings = ELMoEmbeddings('orignal')
     
     return word_embeddings
 

@@ -1,0 +1,157 @@
+{
+       "word_embedding": "glove",
+       "neural network": "rnn",
+       "dataset": "../data/SST-2/tsv/perc_90_10",
+       "learning_rate": 0.1,
+       "max epoch": 100,
+       "mini batch size": 16,
+       "seed": 5
+}{
+     "0": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6
+     },
+     "1": {
+          "precision": 0.9016393442622951,
+          "recall": 0.9821428571428571,
+          "f1-score": 0.9401709401709402,
+          "support": 56
+     },
+     "accuracy": 0.8870967741935484,
+     "macro avg": {
+          "precision": 0.45081967213114754,
+          "recall": 0.49107142857142855,
+          "f1-score": 0.4700854700854701,
+          "support": 62
+     },
+     "weighted avg": {
+          "precision": 0.8143839238498148,
+          "recall": 0.8870967741935484,
+          "f1-score": 0.8491866556382685,
+          "support": 62
+     }
+}{
+ "runtime": 27.032520284876227
+}{
+     "0": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6
+     },
+     "1": {
+          "precision": 0.9,
+          "recall": 0.9642857142857143,
+          "f1-score": 0.9310344827586207,
+          "support": 56
+     },
+     "accuracy": 0.8709677419354839,
+     "macro avg": {
+          "precision": 0.45,
+          "recall": 0.48214285714285715,
+          "f1-score": 0.46551724137931033,
+          "support": 62
+     },
+     "weighted avg": {
+          "precision": 0.8129032258064516,
+          "recall": 0.8709677419354839,
+          "f1-score": 0.8409343715239154,
+          "support": 62
+     }
+}{
+ "runtime": 18.32025263737887
+}{
+     "0": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6
+     },
+     "1": {
+          "precision": 0.9032258064516129,
+          "recall": 1.0,
+          "f1-score": 0.9491525423728813,
+          "support": 56
+     },
+     "accuracy": 0.9032258064516129,
+     "macro avg": {
+          "precision": 0.45161290322580644,
+          "recall": 0.5,
+          "f1-score": 0.47457627118644063,
+          "support": 62
+     },
+     "weighted avg": {
+          "precision": 0.8158168574401664,
+          "recall": 0.9032258064516129,
+          "f1-score": 0.8572990705303444,
+          "support": 62
+     }
+}{
+ "runtime": 14.740739015862346
+}{
+     "0": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.2857142857142857,
+          "support": 6
+     },
+     "1": {
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1-score": 0.9565217391304348,
+          "support": 55
+     },
+     "accuracy": 0.9180327868852459,
+     "macro avg": {
+          "precision": 0.9583333333333333,
+          "recall": 0.5833333333333334,
+          "f1-score": 0.6211180124223603,
+          "support": 61
+     },
+     "weighted avg": {
+          "precision": 0.924863387978142,
+          "recall": 0.9180327868852459,
+          "f1-score": 0.8905406781386824,
+          "support": 61
+     }
+}{
+ "runtime": 15.02502153813839
+}{
+     "0": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 6
+     },
+     "1": {
+          "precision": 0.9482758620689655,
+          "recall": 1.0,
+          "f1-score": 0.9734513274336283,
+          "support": 55
+     },
+     "accuracy": 0.9508196721311475,
+     "macro avg": {
+          "precision": 0.9741379310344828,
+          "recall": 0.75,
+          "f1-score": 0.8200589970501475,
+          "support": 61
+     },
+     "weighted avg": {
+          "precision": 0.9533634821933296,
+          "recall": 0.9508196721311475,
+          "f1-score": 0.9432757870303206,
+          "support": 61
+     }
+}{
+ "runtime": 14.717145269736648
+}{
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.2857142857142857,
+     "5": 0.6666666666666666
+}{
+ "overall_perf": 0.19047619047619047
+}

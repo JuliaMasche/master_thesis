@@ -19,8 +19,8 @@ import timeit
 from analysis import accuracy, prec_rec_f1, conf_mat, f1
 
 
-we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec']
-sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "newsgroup"]
+we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
+sets = ["SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", choices=sets, default = "SST-2_50", type = str)
@@ -31,7 +31,7 @@ parser.add_argument("-ep", "--max_epoch", default = 100, type = int)
 parser.add_argument("--seed", default = 5, type = int)
 args = parser.parse_args()
 dataset = args.dataset
-dataset_path_original, out_dir, classes, sep = get_dataset_info(dataset)
+dataset_path_original, out_dir, classes, sep, minority, average = get_dataset_info(dataset)
 word_embedding = args.word_embedding
 learning_rate = args.learning_rate
 mini_batch_size = args.mini_batch_size
@@ -101,7 +101,7 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     test_pred = predict_testset(test_text, classifier)
 
     #acc = accuracy(test_labels, test_pred)
-    f1_score = f1(test_labels, test_pred, '0')
+    f1_score = f1(test_labels, test_pred, average, minority)
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     run_dict = {"runtime" :timeit.default_timer() - starttime}
