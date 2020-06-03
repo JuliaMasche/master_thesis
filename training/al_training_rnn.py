@@ -168,7 +168,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
     test_pred = predict_testset(test_text, classifier)
 
-    score = performance_measure(test_labels, test_pred, average, args.measure, minority)
+    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
     num_instances.append(len(label_ind))
     performance.append(score)
 
@@ -205,7 +205,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
         #choose better performance metric later for class imbalance
         #acc = accuracy(test_labels, test_pred)
-        score = performance_measure(test_labels, test_pred, average, args.measure, minority)
+        score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
         num_instances.append(len(label_ind))
         performance.append(score)
 
@@ -234,8 +234,8 @@ def main_func():
         "mini batch size": mini_batch_size,
         "stopping_criterion" : stopping_crit,
         "seed" : args.seed,
-        "query batch size" : args.batch_size
-        "performance_measure": args.measure
+        "query batch size" : args.batch_size,
+        "performance_measure": args.perf_measure
         }
 
     write_json(config, path_results, len(config), "w")

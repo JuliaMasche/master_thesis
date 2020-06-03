@@ -102,7 +102,7 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     test_pred = predict_testset(test_text, classifier)
 
     #acc = accuracy(test_labels, test_pred)
-    score = performance_measure(test_labels, test_pred, average, args.measure, minority)
+    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     run_dict = {"runtime" :timeit.default_timer() - starttime}
@@ -120,7 +120,7 @@ def main():
         "max epoch": max_epoch,
         "mini batch size": mini_batch_size,
         "seed" : args.seed,
-        "performance_measure": args.measure
+        "performance_measure": args.perf_measure
         }
 
     write_json(config, path_results, len(config), "w")
