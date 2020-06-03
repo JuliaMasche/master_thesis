@@ -21,6 +21,7 @@ def multi_class(df, keep_list):
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type = str)
 parser.add_argument("--path", type = str)
+parser.add_argument("--out", type = str)
 parser.add_argument('-p', "--percentage", default = 60, type = int)
 parser.add_argument('-keep','--keep_classes', nargs='+', help='<Required> Set flag')
 args = parser.parse_args()
@@ -32,13 +33,14 @@ df = pd.read_csv(os.path.join(args.path, "train.tsv"), sep = '\t')
 if args.dataset == "SST-2":
     index_label_1 = df[df['label'] == 1].index.tolist()
     index_label_0 = df[df['label'] == 0].index.tolist()
-    df_length = len(df)
-    length_1 = len(index_label_1)
-    length_0 = len(index_label_0)
-    min_class = int(binary_class(df_length, length_1, args.percentage))
-    index_label_0_drop = index_label_0[min_class:]
+
+    index_1_len = int((500*args.percentage)/100)
+    index_0_len = 500 - index_1_len
+    index_label_1_drop = index_label_1[index_1_len:]
+    df = df.drop(index = index_label_1_drop)
+    index_label_0_drop = index_label_0[index_0_len:]
     df = df.drop(index = index_label_0_drop)
-    new_path = args.path + '/perc_' + str(args.percentage) + '_' + str(100-args.percentage)
+    new_path = args.out + '/500_' + str(args.percentage) + '_' + str(100-args.percentage)
     os.makedirs(new_path, exist_ok = True)
     df.to_csv(os.path.join(new_path, 'train.tsv'), sep ='\t', index = False)
     length, dist, dist_percent, classes = preprocess_datasets.get_info(new_path)
@@ -46,13 +48,13 @@ if args.dataset == "SST-2":
 if args.dataset == "movie":
     index_label_neg = df[df['label'] == 'neg'].index.tolist()
     index_label_pos = df[df['label'] == 'pos'].index.tolist()
-    df_length = len(df)
-    length_neg = len(index_label_neg)
-    length_pos = len(index_label_pos)
-    min_class = int(binary_class(df_length, length_neg, args.percentage))
-    index_label_pos_drop = index_label_pos[min_class:]
-    df = df.drop(index = index_label_pos_drop)
-    new_path = args.path + '/perc_' + str(args.percentage) + '_' + str(100-args.percentage)
+    index_1_len = int((500*args.percentage)/100)
+    index_0_len = 500 - index_1_len
+    index_label_1_drop = index_label_neg[index_1_len:]
+    df = df.drop(index = index_label_1_drop)
+    index_label_0_drop = index_label_pos[index_0_len:]
+    df = df.drop(index = index_label_0_drop)
+    new_path = args.out + '/500_' + str(args.percentage) + '_' + str(100-args.percentage)
     os.makedirs(new_path, exist_ok = True)
     df.to_csv(os.path.join(new_path, 'train.tsv'), sep ='\t', index = False)
     length, dist, dist_percent, classes = preprocess_datasets.get_info(new_path)
