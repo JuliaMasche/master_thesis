@@ -9,40 +9,24 @@ def get_dataset_info(name:str):
         average = 'binary'
         sep = "\t"
 
-    if name == "SST-2_50":
-        dataset_path_original = "../data/SST-2/tsv/perc_50_50"
-        out_dir = '../results/SST-2/perc_50_50'
-        classes = ['0', '1']
-        minority = '0'
-        average = 'binary'
-        sep = "\t"
-
-    elif name == "SST-2_60":
-        dataset_path_original = "../data/SST-2/tsv/perc_60_40"
-        out_dir = '../results/SST-2/perc_60_40'
-        classes = ['0', '1']
-        minority = '0'
-        average = 'binary'
-        sep = "\t"
-
     elif name == "SST-2_70":
-        dataset_path_original = "../data/SST-2/tsv/perc_70_30"
-        out_dir = '../results/SST-2/perc_70_30'
+        dataset_path_original = "../data/SST-2/tsv/500_70_30"
+        out_dir = '../results/SST-2/500_70_30'
         classes = ['0', '1']
         minority = '0'
         average = 'binary'
         sep = "\t"
     
     elif name == "SST-2_80":
-        dataset_path_original = "../data/SST-2/tsv/perc_80_20"
-        out_dir = '../results/SST-2/perc_80_20'
+        dataset_path_original = "../data/SST-2/tsv/500_80_20"
+        out_dir = '../results/SST-2/500_80_20'
         classes = ['0', '1']
         minority = '0'
         sep = "\t"
 
     elif name == "SST-2_90":
-        dataset_path_original = "../data/SST-2/tsv/perc_90_10"
-        out_dir = '../results/SST-2/perc_90_10'
+        dataset_path_original = "../data/SST-2/tsv/500_90_10"
+        out_dir = '../results/SST-2/500_90_10'
         classes = ['0', '1']
         minority = '0'
         average = 'binary'
@@ -89,7 +73,7 @@ def get_dataset_info(name:str):
         sep = "\t"
 
     elif name == "movie_60":
-        dataset_path_original = "../data/movie/tsv/perc_60_40"
+        dataset_path_original = "../data/movie/tsv/500_60_40"
         out_dir = '../results/movie/perc_60_40'
         classes = ['neg', 'pos']
         minority = ["pos"]
@@ -97,7 +81,7 @@ def get_dataset_info(name:str):
         sep = "\t"
 
     elif name == "movie_80":
-        dataset_path_original = "../data/movie/tsv/perc_80_20"
+        dataset_path_original = "../data/movie/tsv/500_80_20"
         out_dir = '../results/movie/perc_80_20'
         classes = ['neg', 'pos']
         minority = ["pos"]
