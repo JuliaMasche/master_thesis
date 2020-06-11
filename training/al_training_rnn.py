@@ -20,6 +20,7 @@ import argparse
 import timeit
 from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn import preprocessing
+import shutil
 
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceBMDR", "QueryInstanceSPAL", "QueryInstanceQBC"]
@@ -148,7 +149,7 @@ def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
 
 
 def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_labels, test_text, test_labels, datapoints, label_ind, unlab_ind):
-    
+    shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
     num_instances = []
     performance = []
     num_queries = 0
@@ -173,21 +174,27 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     performance.append(score)
 
 
-    while num_queries < stopping_crit:
+    while len(unlab_ind) != 0:
+    #while num_queries <= stopping_crit:
         num_queries += 1
 
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
             learning_rate = args.learning_rate + 0.05
-            train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/training/QBC')
-            classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/training/QBC/final-model.pt'))
+            train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
+            classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier_two, train_text))
-        
+            shutil.rmtree(os.path.join(path_results, 'resources/QBC/training'), ignore_errors=True)
         else:
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
 
-        select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, args.batch_size, pred_mat)
+        shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
+
+        if len(unlab_ind) < args.batch_size:
+            select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
+        else:
+            select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, args.batch_size, pred_mat)
         label_ind.extend(select_ind)
         unlab_ind = [n for n in unlab_ind if n not in select_ind]
 
@@ -203,8 +210,6 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         
         test_pred = predict_testset(test_text, classifier)
 
-        #choose better performance metric later for class imbalance
-        #acc = accuracy(test_labels, test_pred)
         score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
         num_instances.append(len(label_ind))
         performance.append(score)
@@ -267,11 +272,13 @@ def main_func():
 
     
     
-    cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=False)
+    cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=True)
     kfold_label_idx = []
+    test_idx_list = []
     overall_perf = {}
     seed_label = 5
     for train_index, test_index in cv.split(train_text, train_labels):
+        test_idx_list.append(test_index)
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
         datapoints = create_sentence_dataset(X_train, y_train)
@@ -287,7 +294,7 @@ def main_func():
         alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
        
         label_ind, unlab_ind = select_random(seed_label, idx, 30)
-        seed_label = seed_label + 1
+        #seed_label = seed_label + 1
 
         seed_set_labels = list(y_train[label_ind])
         dict_seedset = dict(zip(label_ind, seed_set_labels))
@@ -319,6 +326,13 @@ def main_func():
         label_dict[name] = list(kfold_label_idx[i])
     df_label_idx = pd.DataFrame(label_dict)
     df_label_idx.to_csv(os.path.join(path_results, "df_label_idx_per_kfold.tsv"), sep = '\t')
+
+    test_dict = {}
+    for i in range(len(test_idx_list)):
+        name = "kfold" + str(i+1)
+        test_dict[name] = list(test_idx_list[i])
+    df_test_idx = pd.DataFrame(test_dict)
+    df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
 
 main_func()
         

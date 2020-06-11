@@ -17,6 +17,7 @@ import numpy as np
 import json
 import timeit
 from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
+import shutil
 
 
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
@@ -96,6 +97,7 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
                 anneal_factor=0.5,
                 patience=5,
                 max_epochs=max_epoch,
+                train_with_dev = True,
                 embeddings_storage_mode ="gpu")
 
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
@@ -107,6 +109,7 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     write_json(report, path_results, len(report), "a")
     run_dict = {"runtime" :timeit.default_timer() - starttime}
     write_json(run_dict, path_results, len(run_dict), "a")
+    shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
     return score
 
 
@@ -138,9 +141,11 @@ def main():
 
     performance = []
     overall_perf = 0
+    test_idx_list = []
     fold = list(range(1,11))
     cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=True)
     for train_index, test_index in cv.split(train_text, train_labels):
+        test_idx_list.append(test_index)
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
         datapoints = create_sentence_dataset(X_train, y_train)
@@ -155,6 +160,13 @@ def main():
 
     dict_all_perf = {"overall_perf" : overall_perf/5}
     write_json(dict_all_perf, path_results, len(dict_all_perf), "a")
+
+    test_dict = {}
+    for i in range(len(test_idx_list)):
+        name = "kfold" + str(i+1)
+        test_dict[name] = list(test_idx_list[i])
+    df_test_idx = pd.DataFrame(test_dict)
+    df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
 
 
 main()
