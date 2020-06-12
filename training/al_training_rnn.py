@@ -1,5 +1,5 @@
 from flair.data import Corpus, Sentence
-from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentRNNEmbeddings
+from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentRNNEmbeddings, DocumentPoolEmbeddings
 from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
 from flair.visual.training_curves import Plotter
@@ -166,7 +166,6 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     label_dict = corpus.make_label_dictionary()
     train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
-    pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
     test_pred = predict_testset(test_text, classifier)
 
     score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
@@ -181,6 +180,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
+            word_embeddings = select_word_embedding(word_embedding)
+            #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
+            document_embeddings = DocumentPoolEmbeddings([word_embeddings])
             learning_rate = args.learning_rate + 0.05
             train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
@@ -190,6 +192,10 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
 
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
+
+        word_embeddings = select_word_embedding(word_embedding)
+        #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
+        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
 
         if len(unlab_ind) < args.batch_size:
             select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
@@ -220,6 +226,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     #conf_mat(test_labels, test_pred, classes, path_results)
+    print(performance)
     dict_perf = dict(zip(num_instances, performance))
     write_json(dict_perf, path_results, len(dict_perf), "a")
 
@@ -259,19 +266,7 @@ def main_func():
     train_text, train_labels = create_text_label_list(train_file)
     le = preprocessing.LabelEncoder()
     le.fit(classes)
-    #y = [float(i) for i in train_labels]
-    #datapoints_all = create_sentence_dataset(train_text, train_labels)
 
-    #load word embeddings, create document embeddings and construct feature matrix
-    word_embeddings = [select_word_embedding(word_embedding)]
-    document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
-    #feat_mat = create_feat_mat(train_text, document_embeddings)
-
-    #initialize Active Learning
-    #alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
-
-    
-    
     cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=True)
     kfold_label_idx = []
     test_idx_list = []
@@ -284,8 +279,14 @@ def main_func():
         datapoints = create_sentence_dataset(X_train, y_train)
         #y = [float(i) for i in y_train]
         y = le.transform(y_train)
+
+        word_embeddings = select_word_embedding(word_embedding)
+        #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
+        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))
+
 
         dict_instances = {"train_length": len(X_train), "test_length": len(X_test)}
         write_json(dict_instances, path_results, len(dict_instances), "a")
@@ -294,7 +295,7 @@ def main_func():
         alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
        
         label_ind, unlab_ind = select_random(seed_label, idx, 30)
-        #seed_label = seed_label + 1
+        seed_label = seed_label + 1
 
         seed_set_labels = list(y_train[label_ind])
         dict_seedset = dict(zip(label_ind, seed_set_labels))

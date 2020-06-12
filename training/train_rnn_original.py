@@ -1,6 +1,6 @@
 from flair.data import Corpus
 from flair.datasets import TREC_6
-from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentRNNEmbeddings
+from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentRNNEmbeddings, DocumentPoolEmbeddings
 from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
 from flair.data import Sentence
@@ -131,14 +131,6 @@ def main():
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
 
-    word_embeddings = [select_word_embedding(word_embedding)]
-
-    document_embeddings = DocumentRNNEmbeddings(word_embeddings,
-                                                                        hidden_size=512,
-                                                                        reproject_words=True,
-                                                                        reproject_words_dimension=256,
-                                                                        )
-
     performance = []
     overall_perf = 0
     test_idx_list = []
@@ -149,6 +141,16 @@ def main():
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
         datapoints = create_sentence_dataset(X_train, y_train)
+
+        word_embeddings = select_word_embedding(word_embedding)
+        """
+        document_embeddings = DocumentRNNEmbeddings(word_embeddings,
+                                                                        hidden_size=512,
+                                                                        reproject_words=True,
+                                                                        reproject_words_dimension=256,
+                                                                        )
+                                                                        """
+        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
 
         performance.append(main_train(datapoints, X_test, y_test, document_embeddings))
     
