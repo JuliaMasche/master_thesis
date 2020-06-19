@@ -23,7 +23,7 @@ from sklearn import preprocessing
 import shutil
 
 
-query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceBMDR", "QueryInstanceSPAL", "QueryInstanceQBC"]
+query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL"]
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
 sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
 column_name_map = {0: 'text', 1: 'label'}
@@ -180,9 +180,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
-            word_embeddings = select_word_embedding(word_embedding)
-            #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
-            document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+            #word_embeddings = select_word_embedding(word_embedding)
+            #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+            #document_embeddings = DocumentRNNEmbeddings([word_embeddings])
             learning_rate = args.learning_rate + 0.05
             train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
@@ -193,9 +193,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
-        word_embeddings = select_word_embedding(word_embedding)
-        #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
-        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        #word_embeddings = select_word_embedding(word_embedding)
+        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        #document_embeddings = DocumentRNNEmbeddings([word_embeddings])
 
         if len(unlab_ind) < args.batch_size:
             select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
@@ -226,7 +226,6 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     #conf_mat(test_labels, test_pred, classes, path_results)
-    print(performance)
     dict_perf = dict(zip(num_instances, performance))
     write_json(dict_perf, path_results, len(dict_perf), "a")
 
@@ -281,8 +280,8 @@ def main_func():
         y = le.transform(y_train)
 
         word_embeddings = select_word_embedding(word_embedding)
-        #document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256,)
-        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
 
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))

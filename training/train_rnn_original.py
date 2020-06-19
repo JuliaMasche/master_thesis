@@ -143,14 +143,8 @@ def main():
         datapoints = create_sentence_dataset(X_train, y_train)
 
         word_embeddings = select_word_embedding(word_embedding)
-        """
-        document_embeddings = DocumentRNNEmbeddings(word_embeddings,
-                                                                        hidden_size=512,
-                                                                        reproject_words=True,
-                                                                        reproject_words_dimension=256,
-                                                                        )
-                                                                        """
-        document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
+        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
 
         performance.append(main_train(datapoints, X_test, y_test, document_embeddings))
     
