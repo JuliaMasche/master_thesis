@@ -9,6 +9,14 @@ def get_dataset_info(name:str):
         average = 'binary'
         sep = "\t"
 
+    elif name == "SST-2_50":
+        dataset_path_original = "../data/SST-2/tsv/500_50_50"
+        out_dir = '../results/SST-2/500_50_50'
+        classes = ['0', '1']
+        minority = '0'
+        average = 'binary'
+        sep = "\t"
+
     elif name == "SST-2_70":
         dataset_path_original = "../data/SST-2/tsv/500_70_30"
         out_dir = '../results/SST-2/500_70_30'
@@ -74,7 +82,7 @@ def get_dataset_info(name:str):
 
     elif name == "movie_60":
         dataset_path_original = "../data/movie/tsv/500_60_40"
-        out_dir = '../results/movie/perc_60_40'
+        out_dir = '../results/movie/500_60_40'
         classes = ['neg', 'pos']
         minority = ["pos"]
         average = 'binary'
@@ -82,7 +90,7 @@ def get_dataset_info(name:str):
 
     elif name == "movie_80":
         dataset_path_original = "../data/movie/tsv/500_80_20"
-        out_dir = '../results/movie/perc_80_20'
+        out_dir = '../results/movie/500_80_20'
         classes = ['neg', 'pos']
         minority = ["pos"]
         average = 'binary'
