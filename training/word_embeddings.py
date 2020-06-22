@@ -16,7 +16,7 @@ def select_word_embedding(we_name:str):
         word_embeddings = TransformerWordEmbeddings('bert-base-uncased')
         
     elif we_name == "fasttext":
-        word_embeddings = FastTextEmbeddings('/path/to/local/custom_fasttext_embeddings.bin')
+        word_embeddings = FastTextEmbeddings('wiki.en.bin')
     
     elif we_name == "elmo_small":
         word_embeddings = ELMoEmbeddings('small')

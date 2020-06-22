@@ -1,3 +1,5 @@
+import repackage
+repackage.up()
 from alipy import ToolBox
 import random
 
