@@ -104,7 +104,7 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     test_pred = predict_testset(test_text, classifier)
 
     #acc = accuracy(test_labels, test_pred)
-    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
+    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     run_dict = {"runtime" :timeit.default_timer() - starttime}

@@ -1,4 +1,5 @@
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, f1_score
+from imblearn.metrics import geometric_mean_score
 import seaborn as sn
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -31,36 +32,39 @@ def f1(y_true, y_pred, average, minority):
     else:
         return f1_score(y_true, y_pred, average=average, labels=minority)
 
-def performance_measure(y_true, y_pred, average, measure:str, minority):
+def performance_measure(y_true, y_pred, average, measure:str, minority, classes):
     if measure == "f1":
         return f1(y_true, y_pred, average, minority)
     elif measure == "accuracy":
         return accuracy(y_true, y_pred)
+    elif measure == "g-mean":
+        return geometric_mean_score(y_true, y_pred, average='weighted', labels = classes)
 
 
-def plot_num_instances_performance(instances, performance, out_dir, label):
+def plot_num_instances_performance(instances, performance, out_dir, label, name):
     for i in range(len(instances)):
         plt.plot(instances[i], performance[i], label = label[i])
-    plt.axhline(y= 0.6031746031746031, color='r', linestyle='--', label="no active learning")
+    plt.axhline(y= 0.1751876080908339, color='r', linestyle='--', label="no active learning")
     plt.xlabel("Number of instances")
-    plt.ylabel("Performance: F1_Score")
-    plt.xlim(left =instances[0][0], right = 15*12)
+    plt.ylabel("Performance: F1")
+    plt.xlim(left =instances[0][0], right = instances[0][-1])
     plt.ylim(bottom=0.0, top = 1.0)
     #plt.xticks(ticks=instances[0])
-    plt.title('SST-2_90: Flair')
+    plt.title(name)
     plt.legend()
     plt.savefig(os.path.join(out_dir, 'num_instance_performance.png'))
-
 """
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--paths', nargs='+', help='<Required> Set flag')
+parser.add_argument('-o','--out', type = str, help='<Required> Set flag')
 parser.add_argument('-st','--strategy', nargs='+', help='<Required> Set flag')
+parser.add_argument('-n','--name', help='<Required> Set flag', type = str)
 args = parser.parse_args()
 num_instances = []
 performance = []
 for p in args.paths:
-    df = pd.read_csv(p, sep = '\t')
+    df = pd.read_csv(os.path.join(p, 'df_perform.tsv'), sep = '\t')
     num_instances.append(df['num_instances'].tolist())
     performance.append(df['performance'].tolist())
-plot_num_instances_performance(num_instances, performance, "/home/julia/projects/master_thesis_al/results/SST-2/perc_90_10/flair", args.strategy)
- """
+plot_num_instances_performance(num_instances, performance, args.out, args.strategy, args.name)
+"""

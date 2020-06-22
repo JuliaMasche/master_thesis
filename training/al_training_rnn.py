@@ -13,6 +13,8 @@ import csv
 import copy
 import os
 import json
+import repackage
+repackage.up()
 from alipy import ToolBox
 import pandas as pd
 import numpy as np
@@ -168,7 +170,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
-    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
+    score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
     num_instances.append(len(label_ind))
     performance.append(score)
 
@@ -180,9 +182,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
-            #word_embeddings = select_word_embedding(word_embedding)
+            word_embeddings = select_word_embedding(word_embedding)
             #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-            #document_embeddings = DocumentRNNEmbeddings([word_embeddings])
+            document_embeddings = DocumentRNNEmbeddings([word_embeddings])
             learning_rate = args.learning_rate + 0.05
             train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
@@ -193,9 +195,9 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
-        #word_embeddings = select_word_embedding(word_embedding)
+        word_embeddings = select_word_embedding(word_embedding)
         #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-        #document_embeddings = DocumentRNNEmbeddings([word_embeddings])
+        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
 
         if len(unlab_ind) < args.batch_size:
             select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
@@ -216,7 +218,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         
         test_pred = predict_testset(test_text, classifier)
 
-        score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority)
+        score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
         num_instances.append(len(label_ind))
         performance.append(score)
 
@@ -276,9 +278,8 @@ def main_func():
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
         datapoints = create_sentence_dataset(X_train, y_train)
-        #y = [float(i) for i in y_train]
         y = le.transform(y_train)
-
+        
         word_embeddings = select_word_embedding(word_embedding)
         #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
         document_embeddings = DocumentRNNEmbeddings([word_embeddings])
@@ -295,6 +296,8 @@ def main_func():
        
         label_ind, unlab_ind = select_random(seed_label, idx, 30)
         seed_label = seed_label + 1
+        print(y_train[unlab_ind])
+
 
         seed_set_labels = list(y_train[label_ind])
         dict_seedset = dict(zip(label_ind, seed_set_labels))
