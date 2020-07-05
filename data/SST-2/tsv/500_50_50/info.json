@@ -1,0 +1,15 @@
+{
+    "num_instances": 500,
+    "distribution": {
+        "1": 250,
+        "0": 250
+    },
+    "distribution_percentage": {
+        "1": 50.0,
+        "0": 50.0
+    },
+    "classes": [
+        0,
+        1
+    ]
+}
