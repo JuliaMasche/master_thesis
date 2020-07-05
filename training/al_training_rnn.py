@@ -23,11 +23,11 @@ import timeit
 from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn import preprocessing
 import shutil
-
+import torch
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL"]
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_3", "news__1000_4", "news__2000_4", "webkb_1000", "webkb_2000", "movie_70", "movie_80"]
 column_name_map = {0: 'text', 1: 'label'}
 
 
@@ -86,10 +86,21 @@ def create_pred_mat(unlab_ind, classifier, train_text):
         sentence = Sentence(train_text[idx])
         classifier.predict(sentence)
         result = sentence.labels
+        #result_2 = classifier.predict(sentence, multi_class_prob=True)
         if result[0].value is 1:
             pred_ma.append([result[0].score, (1-result[0].score)])
         else:
             pred_ma.append([(1-result[0].score), result[0].score])
+    return pred_ma
+
+
+def create_pred_mat_one(unlab_ind, classifier, train_text):
+    pred_ma = []
+    for idx in unlab_ind:
+        sentence = Sentence(train_text[idx])
+        classifier.predict(sentence)
+        result = sentence.labels
+        pred_ma.append(result[0].score)
     return pred_ma
 
 
@@ -147,6 +158,7 @@ def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
                 anneal_factor=0.5,
                 patience=5,
                 max_epochs=max_epoch,
+                train_with_dev = True,
                 embeddings_storage_mode= "gpu")
 
 
@@ -170,6 +182,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
+
     score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
     num_instances.append(len(label_ind))
     performance.append(score)
@@ -190,8 +203,13 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier_two, train_text))
             shutil.rmtree(os.path.join(path_results, 'resources/QBC/training'), ignore_errors=True)
+        elif query_str == "QueryInstanceRandom":
+            pred_mat = []
         else:
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
+
+        del classifier
+        torch.cuda.empty_cache()
 
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
@@ -222,8 +240,8 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         num_instances.append(len(label_ind))
         performance.append(score)
 
-
-    run_dict = {"runtime" :timeit.default_timer() - starttime}
+    runtime = timeit.default_timer() - starttime
+    run_dict = {"runtime" :runtime}
     write_json(run_dict, path_results, len(run_dict), "a")
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
@@ -231,7 +249,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     dict_perf = dict(zip(num_instances, performance))
     write_json(dict_perf, path_results, len(dict_perf), "a")
 
-    return num_instances, performance, label_ind
+    return num_instances, performance, label_ind, runtime
     
 
 def main_func():
@@ -272,6 +290,7 @@ def main_func():
     kfold_label_idx = []
     test_idx_list = []
     overall_perf = {}
+    overall_run = []
     seed_label = 5
     for train_index, test_index in cv.split(train_text, train_labels):
         test_idx_list.append(test_index)
@@ -287,6 +306,7 @@ def main_func():
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))
 
+        dict_train_to_train_idx = dict(zip(idx, train_index))
 
         dict_instances = {"train_length": len(X_train), "test_length": len(X_test)}
         write_json(dict_instances, path_results, len(dict_instances), "a")
@@ -294,9 +314,8 @@ def main_func():
         #initialize Active Learning
         alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
        
-        label_ind, unlab_ind = select_random(seed_label, idx, 30)
+        label_ind, unlab_ind = select_random(seed_label, idx, 100)
         seed_label = seed_label + 1
-        print(y_train[unlab_ind])
 
 
         seed_set_labels = list(y_train[label_ind])
@@ -305,8 +324,12 @@ def main_func():
 
         al_strategy = select_query_strategy(alibox, query_str, idx)
 
-        num_instances, performance, label_ind_new = al_main_loop(alibox, al_strategy, document_embeddings, X_train, y_train, X_test, y_test, datapoints, label_ind, unlab_ind)
-        kfold_label_idx.append(label_ind_new)
+        num_instances, performance, label_ind_new, runtime = al_main_loop(alibox, al_strategy, document_embeddings, X_train, y_train, X_test, y_test, datapoints, label_ind, unlab_ind)
+        overall_run.append(runtime)
+        original_kfold_idx = []
+        for i in range(len(label_ind_new)):
+            original_kfold_idx.append(dict_train_to_train_idx[label_ind_new[i]])
+        kfold_label_idx.append(original_kfold_idx)
         
 
         for i in range(len(num_instances)):
@@ -315,14 +338,18 @@ def main_func():
                 overall_perf[key] = overall_perf[key] + performance[i]
             else:
                 overall_perf[key] = performance[i]
-           
+
+
     #final analysis
     for i in overall_perf:
         overall_perf[i] = overall_perf[i]/5
     df_perform = pd.DataFrame(overall_perf.items(), columns=['num_instances','performance'])
     df_perform.to_csv(os.path.join(path_results, "df_perform.tsv"), sep = '\t')
 
-    
+    sum_run = sum(overall_run)
+    dict_all_runtimes = {"overall_runtime": sum_run/5}
+    write_json(dict_all_runtimes, path_results, len(dict_all_runtimes), "a")
+
     label_dict = {}
     for i in range(len(kfold_label_idx)):
         name = "kfold" + str(i+1)

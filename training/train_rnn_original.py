@@ -18,10 +18,11 @@ import json
 import timeit
 from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
 import shutil
+import psutil 
 
 
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_1", "news_2", "news_3", "news_4", "webkb", "movie_60", "movie_80"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_3", "news_1000_4", "news_2000_4", "webkb_1000", "webkb_2000", "movie_70", "movie_80"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", choices=sets, default = "SST-2_50", type = str)
@@ -91,6 +92,12 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
 
     trainer = ModelTrainer(classifier, corpus)
 
+    """
+    gpu = torch.cuda.device_count()
+    print(gpu)
+    num_workers = gpu - 1
+    """
+
     trainer.train(os.path.join(path_results,'resources/training'),
                 learning_rate= learning_rate,
                 mini_batch_size=mini_batch_size,
@@ -98,7 +105,10 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
                 patience=5,
                 max_epochs=max_epoch,
                 train_with_dev = True,
+                num_workers = 6,
                 embeddings_storage_mode ="gpu")
+
+    
 
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
@@ -107,10 +117,11 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
-    run_dict = {"runtime" :timeit.default_timer() - starttime}
+    runtime = timeit.default_timer() - starttime
+    run_dict = {"runtime" : runtime}
     write_json(run_dict, path_results, len(run_dict), "a")
     shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
-    return score
+    return score, runtime
 
 
 def main():
@@ -132,7 +143,9 @@ def main():
     train_text, train_labels = create_text_label_list(train_file)
 
     performance = []
+    runtimes = []
     overall_perf = 0
+    overall_run = 0
     test_idx_list = []
     fold = list(range(1,11))
     cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=True)
@@ -145,17 +158,22 @@ def main():
         word_embeddings = select_word_embedding(word_embedding)
         document_embeddings = DocumentRNNEmbeddings([word_embeddings])
         #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-
-        performance.append(main_train(datapoints, X_test, y_test, document_embeddings))
+        
+        score, runtime = main_train(datapoints, X_test, y_test, document_embeddings)
+        performance.append(score)
+        runtimes.append(runtime)
     
     dict_perf = dict(zip(fold, performance))
     write_json(dict_perf, path_results, len(dict_perf), "a")
 
     for i in range(len(performance)):
         overall_perf = overall_perf + performance[i]
+        overall_run = overall_run + runtimes[i]
 
     dict_all_perf = {"overall_perf" : overall_perf/5}
+    dict_all_runtimes = {"overall_runtime": overall_run/5}
     write_json(dict_all_perf, path_results, len(dict_all_perf), "a")
+    write_json(dict_all_runtimes, path_results, len(dict_all_runtimes), "a")
 
     test_dict = {}
     for i in range(len(test_idx_list)):

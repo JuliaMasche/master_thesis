@@ -9,6 +9,7 @@ def select_word_embedding(we_name:str):
     
     elif we_name == "flair":
         word_embeddings = StackedEmbeddings([
+                                        WordEmbeddings('glove'),
                                         FlairEmbeddings('news-forward'),
                                         FlairEmbeddings('news-backward'),
                                        ])
@@ -16,7 +17,7 @@ def select_word_embedding(we_name:str):
         word_embeddings = TransformerWordEmbeddings('bert-base-uncased')
         
     elif we_name == "fasttext":
-        word_embeddings = FastTextEmbeddings('wiki.en.bin')
+        word_embeddings = WordEmbeddings('en')
     
     elif we_name == "elmo_small":
         word_embeddings = ELMoEmbeddings('small')
