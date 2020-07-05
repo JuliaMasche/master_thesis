@@ -1,0 +1,158 @@
+{
+        "word_embedding": "glove",
+        "neural network": "rnn",
+        "dataset": "../data/movie/tsv/500_60_40",
+        "learning_rate": 0.1,
+        "max epoch": 100,
+        "mini batch size": 16,
+        "seed": 5,
+        "performance_measure": "accuracy"
+}{
+     "neg": {
+          "precision": 0.6714285714285714,
+          "recall": 0.7833333333333333,
+          "f1-score": 0.7230769230769231,
+          "support": 60
+     },
+     "pos": {
+          "precision": 0.5666666666666667,
+          "recall": 0.425,
+          "f1-score": 0.48571428571428565,
+          "support": 40
+     },
+     "accuracy": 0.64,
+     "macro avg": {
+          "precision": 0.6190476190476191,
+          "recall": 0.6041666666666666,
+          "f1-score": 0.6043956043956044,
+          "support": 100
+     },
+     "weighted avg": {
+          "precision": 0.6295238095238095,
+          "recall": 0.64,
+          "f1-score": 0.6281318681318682,
+          "support": 100
+     }
+}{
+ "runtime": 156.92965095769614
+}{
+     "neg": {
+          "precision": 0.7121212121212122,
+          "recall": 0.7833333333333333,
+          "f1-score": 0.746031746031746,
+          "support": 60
+     },
+     "pos": {
+          "precision": 0.6176470588235294,
+          "recall": 0.525,
+          "f1-score": 0.5675675675675677,
+          "support": 40
+     },
+     "accuracy": 0.68,
+     "macro avg": {
+          "precision": 0.6648841354723708,
+          "recall": 0.6541666666666667,
+          "f1-score": 0.6567996567996568,
+          "support": 100
+     },
+     "weighted avg": {
+          "precision": 0.674331550802139,
+          "recall": 0.68,
+          "f1-score": 0.6746460746460747,
+          "support": 100
+     }
+}{
+ "runtime": 144.3522833334282
+}{
+     "neg": {
+          "precision": 0.8913043478260869,
+          "recall": 0.6833333333333333,
+          "f1-score": 0.7735849056603774,
+          "support": 60
+     },
+     "pos": {
+          "precision": 0.6481481481481481,
+          "recall": 0.875,
+          "f1-score": 0.7446808510638299,
+          "support": 40
+     },
+     "accuracy": 0.76,
+     "macro avg": {
+          "precision": 0.7697262479871175,
+          "recall": 0.7791666666666667,
+          "f1-score": 0.7591328783621036,
+          "support": 100
+     },
+     "weighted avg": {
+          "precision": 0.7940418679549114,
+          "recall": 0.76,
+          "f1-score": 0.7620232838217583,
+          "support": 100
+     }
+}{
+ "runtime": 143.35030822921544
+}{
+     "neg": {
+          "precision": 0.7924528301886793,
+          "recall": 0.7,
+          "f1-score": 0.743362831858407,
+          "support": 60
+     },
+     "pos": {
+          "precision": 0.6170212765957447,
+          "recall": 0.725,
+          "f1-score": 0.6666666666666666,
+          "support": 40
+     },
+     "accuracy": 0.71,
+     "macro avg": {
+          "precision": 0.7047370533922119,
+          "recall": 0.7124999999999999,
+          "f1-score": 0.7050147492625368,
+          "support": 100
+     },
+     "weighted avg": {
+          "precision": 0.7222802087515054,
+          "recall": 0.71,
+          "f1-score": 0.7126843657817108,
+          "support": 100
+     }
+}{
+ "runtime": 173.4084017863497
+}{
+     "neg": {
+          "precision": 0.9152542372881356,
+          "recall": 0.9,
+          "f1-score": 0.9075630252100839,
+          "support": 60
+     },
+     "pos": {
+          "precision": 0.8536585365853658,
+          "recall": 0.875,
+          "f1-score": 0.8641975308641976,
+          "support": 40
+     },
+     "accuracy": 0.89,
+     "macro avg": {
+          "precision": 0.8844563869367508,
+          "recall": 0.8875,
+          "f1-score": 0.8858802780371408,
+          "support": 100
+     },
+     "weighted avg": {
+          "precision": 0.8906159570070278,
+          "recall": 0.89,
+          "f1-score": 0.8902168274717295,
+          "support": 100
+     }
+}{
+ "runtime": 169.0811358736828
+}{
+     "1": 0.64,
+     "2": 0.68,
+     "3": 0.76,
+     "4": 0.71,
+     "5": 0.89
+}{
+ "overall_perf": 0.736
+}

@@ -1,0 +1,308 @@
+{
+        "word_embedding": "glove",
+        "neural network": "rnn",
+        "dataset": "../data/webkb/tsv/dataset_1000",
+        "learning_rate": 0.1,
+        "max epoch": 100,
+        "mini batch size": 16,
+        "seed": 5,
+        "performance_measure": "g-mean"
+}{
+          "other": {
+                    "precision": 0.8153846153846154,
+                    "recall": 0.8688524590163934,
+                    "f1-score": 0.8412698412698412,
+                    "support": 122
+          },
+          "project": {
+                    "precision": 0.11764705882352941,
+                    "recall": 0.2,
+                    "f1-score": 0.14814814814814817,
+                    "support": 10
+          },
+          "course": {
+                    "precision": 0.9,
+                    "recall": 0.782608695652174,
+                    "f1-score": 0.8372093023255814,
+                    "support": 23
+          },
+          "faculty": {
+                    "precision": 0.5294117647058824,
+                    "recall": 0.45,
+                    "f1-score": 0.48648648648648646,
+                    "support": 20
+          },
+          "student": {
+                    "precision": 0.5625,
+                    "recall": 0.4090909090909091,
+                    "f1-score": 0.47368421052631576,
+                    "support": 22
+          },
+          "staff": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 2
+          },
+          "department": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 1
+          },
+          "accuracy": 0.72,
+          "macro avg": {
+                    "precision": 0.4178490627020039,
+                    "recall": 0.38722172339421096,
+                    "f1-score": 0.3981139983937676,
+                    "support": 200
+          },
+          "weighted avg": {
+                    "precision": 0.7215831447963801,
+                    "recall": 0.72,
+                    "f1-score": 0.7176149921559959,
+                    "support": 200
+          }
+}{
+ "runtime": 370.70980408228934
+}{
+          "other": {
+                    "precision": 0.8412698412698413,
+                    "recall": 0.8688524590163934,
+                    "f1-score": 0.8548387096774194,
+                    "support": 122
+          },
+          "project": {
+                    "precision": 0.36363636363636365,
+                    "recall": 0.4,
+                    "f1-score": 0.380952380952381,
+                    "support": 10
+          },
+          "course": {
+                    "precision": 0.7368421052631579,
+                    "recall": 0.6363636363636364,
+                    "f1-score": 0.6829268292682926,
+                    "support": 22
+          },
+          "faculty": {
+                    "precision": 0.5263157894736842,
+                    "recall": 0.47619047619047616,
+                    "f1-score": 0.5,
+                    "support": 21
+          },
+          "student": {
+                    "precision": 0.5652173913043478,
+                    "recall": 0.5909090909090909,
+                    "f1-score": 0.5777777777777778,
+                    "support": 22
+          },
+          "staff": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 1
+          },
+          "department": {
+                    "precision": 0.5,
+                    "recall": 0.5,
+                    "f1-score": 0.5,
+                    "support": 2
+          },
+          "accuracy": 0.74,
+          "macro avg": {
+                    "precision": 0.5047544987067706,
+                    "recall": 0.49604509463994245,
+                    "f1-score": 0.49949938538226724,
+                    "support": 200
+          },
+          "weighted avg": {
+                    "precision": 0.7348461238735838,
+                    "recall": 0.74,
+                    "f1-score": 0.7366767387259127,
+                    "support": 200
+          }
+}{
+ "runtime": 334.13829671777785
+}{
+          "other": {
+                    "precision": 0.8548387096774194,
+                    "recall": 0.8688524590163934,
+                    "f1-score": 0.8617886178861789,
+                    "support": 122
+          },
+          "project": {
+                    "precision": 0.3,
+                    "recall": 0.3,
+                    "f1-score": 0.3,
+                    "support": 10
+          },
+          "course": {
+                    "precision": 0.75,
+                    "recall": 0.8181818181818182,
+                    "f1-score": 0.7826086956521738,
+                    "support": 22
+          },
+          "faculty": {
+                    "precision": 0.8181818181818182,
+                    "recall": 0.8571428571428571,
+                    "f1-score": 0.8372093023255814,
+                    "support": 21
+          },
+          "student": {
+                    "precision": 0.75,
+                    "recall": 0.7142857142857143,
+                    "f1-score": 0.7317073170731706,
+                    "support": 21
+          },
+          "staff": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 2
+          },
+          "department": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 2
+          },
+          "accuracy": 0.8,
+          "macro avg": {
+                    "precision": 0.49614578969417683,
+                    "recall": 0.5083518355181119,
+                    "f1-score": 0.5019019904195864,
+                    "support": 200
+          },
+          "weighted avg": {
+                    "precision": 0.7836107038123167,
+                    "recall": 0.8,
+                    "f1-score": 0.7915142584691773,
+                    "support": 200
+          }
+}{
+ "runtime": 321.00405835546553
+}{
+          "other": {
+                    "precision": 0.7954545454545454,
+                    "recall": 0.8536585365853658,
+                    "f1-score": 0.8235294117647058,
+                    "support": 123
+          },
+          "project": {
+                    "precision": 0.14285714285714285,
+                    "recall": 0.09090909090909091,
+                    "f1-score": 0.1111111111111111,
+                    "support": 11
+          },
+          "course": {
+                    "precision": 0.5555555555555556,
+                    "recall": 0.9090909090909091,
+                    "f1-score": 0.6896551724137931,
+                    "support": 22
+          },
+          "faculty": {
+                    "precision": 0.7857142857142857,
+                    "recall": 0.55,
+                    "f1-score": 0.6470588235294117,
+                    "support": 20
+          },
+          "student": {
+                    "precision": 0.7272727272727273,
+                    "recall": 0.38095238095238093,
+                    "f1-score": 0.5,
+                    "support": 21
+          },
+          "staff": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 2
+          },
+          "department": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 1
+          },
+          "accuracy": 0.725,
+          "macro avg": {
+                    "precision": 0.42955060812203666,
+                    "recall": 0.3978015596482495,
+                    "f1-score": 0.39590778840271745,
+                    "support": 200
+          },
+          "weighted avg": {
+                    "precision": 0.7131078643578642,
+                    "recall": 0.725,
+                    "f1-score": 0.7056496506648636,
+                    "support": 200
+          }
+}{
+ "runtime": 335.4160742443055
+}{
+          "other": {
+                    "precision": 0.738562091503268,
+                    "recall": 0.9186991869918699,
+                    "f1-score": 0.8188405797101449,
+                    "support": 123
+          },
+          "project": {
+                    "precision": 0.16666666666666666,
+                    "recall": 0.09090909090909091,
+                    "f1-score": 0.11764705882352942,
+                    "support": 11
+          },
+          "course": {
+                    "precision": 0.8666666666666667,
+                    "recall": 0.5909090909090909,
+                    "f1-score": 0.7027027027027029,
+                    "support": 22
+          },
+          "faculty": {
+                    "precision": 0.625,
+                    "recall": 0.5,
+                    "f1-score": 0.5555555555555556,
+                    "support": 20
+          },
+          "student": {
+                    "precision": 0.6666666666666666,
+                    "recall": 0.2857142857142857,
+                    "f1-score": 0.4,
+                    "support": 21
+          },
+          "staff": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 2
+          },
+          "department": {
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1-score": 0.0,
+                    "support": 1
+          },
+          "accuracy": 0.715,
+          "macro avg": {
+                    "precision": 0.43765172735760965,
+                    "recall": 0.3408902363606196,
+                    "f1-score": 0.3706779852559903,
+                    "support": 200
+          },
+          "weighted avg": {
+                    "precision": 0.6912156862745098,
+                    "recall": 0.715,
+                    "f1-score": 0.6849103976098861,
+                    "support": 200
+          }
+}{
+ "runtime": 314.2740532066673
+}{
+     "1": 0.758135366037272,
+     "2": 0.7823615686828486,
+     "3": 0.823845358882422,
+     "4": 0.7468170037668832,
+     "5": 0.6935328675773041
+}{
+ "overall_perf": 0.7609384329893459
+}
