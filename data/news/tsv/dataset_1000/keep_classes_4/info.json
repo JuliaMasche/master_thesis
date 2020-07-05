@@ -1,0 +1,24 @@
+{
+    "num_instances": 999,
+    "distribution": {
+        "other": 799,
+        "comp.os.ms-windows.misc": 50,
+        "rec.autos": 50,
+        "talk.politics.guns": 50,
+        "sci.space": 50
+    },
+    "distribution_percentage": {
+        "other": 79.97997997997997,
+        "comp.os.ms-windows.misc": 5.005005005005005,
+        "rec.autos": 5.005005005005005,
+        "talk.politics.guns": 5.005005005005005,
+        "sci.space": 5.005005005005005
+    },
+    "classes": [
+        "rec.autos",
+        "other",
+        "comp.os.ms-windows.misc",
+        "sci.space",
+        "talk.politics.guns"
+    ]
+}
