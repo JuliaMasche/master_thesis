@@ -4,7 +4,7 @@ from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
 from flair.visual.training_curves import Plotter
 from flair.datasets import CSVClassificationCorpus, SentenceDataset
-from word_embeddings import select_word_embedding
+from word_embeddings import select_word_embedding, select_document_embeddding
 from datasets import get_dataset_info
 from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
 from seed_set import select_random
@@ -24,10 +24,16 @@ from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn import preprocessing
 import shutil
 import torch
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+nltk.download('stopwords')
+nltk.download('punkt')
 
-query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL"]
+query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL_indep", "QueryInstanceLAL_iter"]
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_3", "news__1000_4", "news__2000_4", "webkb_1000", "webkb_2000", "movie_70", "movie_80"]
+doc_embeddings = ["Pool", "RNN", "Transformer"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "webkb_1000", "webkb_2000", "movie_70", "movie_80", "news_1000", "news_2000", "news_1500"]
 column_name_map = {0: 'text', 1: 'label'}
 
 
@@ -36,12 +42,14 @@ parser.add_argument("-stop", "--stopping_criterion", default = 10, type = int)
 parser.add_argument("--dataset", choices=sets, default = "SST-2", type = str)
 parser.add_argument("-qs", "--query_str", choices=query_strategy, default = "QueryInstanceUncertainty", type = str)
 parser.add_argument("-we", "--word_embedding", choices=we_embeddings, default = "glove", type = str)
+parser.add_argument("-de", "--document_embedding", choices=doc_embeddings, default = "Pool", type = str)
 parser.add_argument("-lr", "--learning_rate", default = 0.01, type = float)
 parser.add_argument("-mini_b", "--mini_batch_size", default = 32, type = int)
 parser.add_argument("-ep", "--max_epoch", default = 100, type = int)
 parser.add_argument("--seed", default = 5, type = int)
 parser.add_argument("-bs", "--batch_size", default = 20, type = int)
 parser.add_argument("-pm", "--perf_measure", default = "accuracy", type = str)
+parser.add_argument("-num_cl", "--num_classifier", default = 2, type = int)
 args = parser.parse_args()
 dataset = args.dataset
 seed = args.seed
@@ -49,6 +57,7 @@ dataset_path_original, out_dir, classes, sep, minority, average = get_dataset_in
 stopping_crit = args.stopping_criterion
 query_str = args.query_str
 word_embedding = args.word_embedding
+document_embedding = args.document_embedding
 mini_batch_size = args.mini_batch_size
 max_epoch = args.max_epoch
 
@@ -83,14 +92,13 @@ def create_feat_mat(text, document_embeddings):
 def create_pred_mat(unlab_ind, classifier, train_text):
     pred_ma = []
     for idx in unlab_ind:
+        p = []
         sentence = Sentence(train_text[idx])
-        classifier.predict(sentence)
+        classifier.predict(sentence, multi_class_prob=True)
         result = sentence.labels
-        #result_2 = classifier.predict(sentence, multi_class_prob=True)
-        if result[0].value is 1:
-            pred_ma.append([result[0].score, (1-result[0].score)])
-        else:
-            pred_ma.append([(1-result[0].score), result[0].score])
+        for r in result:
+            p.append(r.score)
+        pred_ma.append(p)
     return pred_ma
 
 
@@ -111,6 +119,7 @@ def create_pred_mat_class(unlab_ind, classifier, train_text):
         classifier.predict(sentence)
         result = sentence.labels
         pred_ma.append(result[0].value)
+    print(pred_ma)
     return pred_ma
 
 
@@ -126,10 +135,20 @@ def predict_testset(test_text, classifier):
 
 def create_text_label_list(path:str):
     df = pd.read_csv(path, sep = sep)
-    text = np.asarray(df['sentence'].tolist())
+    text = df['sentence'].tolist()
+    text = [str(i).lower() for i in text]
+    stop = set(stopwords.words('english'))
+    from nltk.tokenize import word_tokenize
+    X = []
+    for x in text:
+        tokens = word_tokenize(x)
+        result = [i for i in tokens if not i in stop]
+        x = (" ").join(result)
+        X.append(x)
+    X = np.asanyarray(X)
     labels = df['label'].tolist()
     labels = [str(i) for i in labels]
-    return text, np.asarray(labels)
+    return X, np.asarray(labels)
 
 
 def create_sentence_dataset(train_text, train_labels):
@@ -150,16 +169,28 @@ def write_json(dictionary, path, size, arg):
 def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
     classifier = TextClassifier(document_embeddings, label_dictionary=label_dict)
     
-    trainer = ModelTrainer(classifier, corpus)
+    if args.document_embedding == "Pool" or args.document_embedding == "RNN":
+        trainer = ModelTrainer(classifier, corpus)
 
-    trainer.train(os.path.join(path_results, path),
-                learning_rate=learning_rate,
-                mini_batch_size=mini_batch_size,
-                anneal_factor=0.5,
-                patience=5,
-                max_epochs=max_epoch,
-                train_with_dev = True,
-                embeddings_storage_mode= "gpu")
+        trainer.train(os.path.join(path_results, path),
+                    learning_rate=learning_rate,
+                    mini_batch_size=mini_batch_size,
+                    anneal_factor=0.5,
+                    patience=5,
+                    max_epochs=max_epoch,
+                    train_with_dev = True,
+                    embeddings_storage_mode= "gpu")
+
+    elif args.document_embedding == "Transformer":
+        trainer = ModelTrainer(classifier, corpus, optimizer=Adam)
+
+        trainer.train(os.path.join(path_results, path),
+                    learning_rate=learning_rate, # use very small learning rate
+                    mini_batch_size=mini_batch_size,
+                    mini_batch_chunk_size=4, # optionally set this if transformer is too much for your machine
+                    max_epochs=5, # terminate after 5 epochs
+                    embeddings_storage_mode= "gpu"
+                    )
 
 
 def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_labels, test_text, test_labels, datapoints, label_ind, unlab_ind):
@@ -178,7 +209,10 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     train = SentenceDataset(train_sentences)
     corpus = Corpus(train=train)
     label_dict = corpus.make_label_dictionary()
-    train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
+    if args.document_embedding == "Pool" or args.document_embedding == "RNN":
+        train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
+    elif args.document_embedding == "Transformer":
+        train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
@@ -196,9 +230,11 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
             word_embeddings = select_word_embedding(word_embedding)
-            #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-            document_embeddings = DocumentRNNEmbeddings([word_embeddings])
-            learning_rate = args.learning_rate + 0.05
+            document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
+            if args.document_embedding == "Pool" or args.document_embedding == "RNN":
+                learning_rate = args.learning_rate + 0.05
+            elif args.document_embedding == "Transformer":
+                learning_rate = 3e-4
             train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier_two, train_text))
@@ -208,14 +244,13 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         else:
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
 
-        del classifier
+        
         torch.cuda.empty_cache()
 
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
         word_embeddings = select_word_embedding(word_embedding)
-        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
+        document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
 
         if len(unlab_ind) < args.batch_size:
             select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
@@ -245,7 +280,6 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     write_json(run_dict, path_results, len(run_dict), "a")
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
-    #conf_mat(test_labels, test_pred, classes, path_results)
     dict_perf = dict(zip(num_instances, performance))
     write_json(dict_perf, path_results, len(dict_perf), "a")
 
@@ -258,6 +292,7 @@ def main_func():
     config = {
         "query_strategy": query_str,
         "word_embedding": word_embedding,
+        "document_embedding": document_embedding,
         "neural network": "rnn",
         "dataset": dataset_path_original,
         "learning_rate": args.learning_rate,
@@ -266,21 +301,12 @@ def main_func():
         "stopping_criterion" : stopping_crit,
         "seed" : args.seed,
         "query batch size" : args.batch_size,
-        "performance_measure": args.perf_measure
+        "performance_measure": args.perf_measure,
+        "num_classifier_QBC": args.num_classifier
         }
 
     write_json(config, path_results, len(config), "w")
 
-
-    #if query_str not in query_strategy:
-        #print("Please choose one of the following strategies:", query_strategy)
-    #if word_embedding not in we_embeddings:
-        #print("Please choose one of the following word embeddings:", we_embeddings)
-    #check if datapaths exists
-    #if query_str == "QueryInstanceBMDR" or query_str == "QueryInstanceSPAL":
-    #check if cvxpy installed
-
-    #create text, label lists and sentence datapoints
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
     le = preprocessing.LabelEncoder()
@@ -300,8 +326,8 @@ def main_func():
         y = le.transform(y_train)
         
         word_embeddings = select_word_embedding(word_embedding)
-        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
-        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
+        document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
+        
 
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))

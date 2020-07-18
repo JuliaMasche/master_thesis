@@ -7,7 +7,7 @@ from flair.data import Sentence
 from flair.visual.training_curves import Plotter
 from flair.datasets import CSVClassificationCorpus, SentenceDataset
 from datasets import get_dataset_info
-from word_embeddings import select_word_embedding
+from word_embeddings import select_word_embedding, select_document_embeddding
 import flair
 import argparse
 import os
@@ -19,14 +19,23 @@ import timeit
 from analysis import accuracy, prec_rec_f1, conf_mat, f1, performance_measure
 import shutil
 import psutil 
+from sklearn import preprocessing
+import torch
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+nltk.download('stopwords')
+nltk.download('punkt')
 
 
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "news_3", "news_1000_4", "news_2000_4", "webkb_1000", "webkb_2000", "movie_70", "movie_80"]
+doc_embeddings = ["Pool", "RNN", "Transformer"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "webkb_1000", "webkb_2000", "news_1000", "news_2000", "news_1500", "movie_80"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", choices=sets, default = "SST-2_50", type = str)
 parser.add_argument("-we", "--word_embedding", choices=we_embeddings, default = "glove", type = str)
+parser.add_argument("-de", "--document_embedding", choices=doc_embeddings, default = "Pool", type = str)
 parser.add_argument("-lr", "--learning_rate", default = 0.01, type = float)
 parser.add_argument("-mini_b", "--mini_batch_size", default = 32, type = int)
 parser.add_argument("-ep", "--max_epoch", default = 100, type = int)
@@ -36,6 +45,7 @@ args = parser.parse_args()
 dataset = args.dataset
 dataset_path_original, out_dir, classes, sep, minority, average = get_dataset_info(dataset)
 word_embedding = args.word_embedding
+document_embedding = args.document_embedding
 learning_rate = args.learning_rate
 mini_batch_size = args.mini_batch_size
 max_epoch = args.max_epoch
@@ -67,10 +77,20 @@ def predict_testset(test_text, classifier):
 
 def create_text_label_list(path:str):
     df = pd.read_csv(path, sep = sep)
-    text = np.asarray(df['sentence'].tolist())
+    text = df['sentence'].tolist()
+    text = [str(i).lower() for i in text]
+    stop = set(stopwords.words('english'))
+    from nltk.tokenize import word_tokenize
+    X = []
+    for x in text:
+        tokens = word_tokenize(x)
+        result = [i for i in tokens if not i in stop]
+        x = (" ").join(result)
+        X.append(x)
+    X = np.asanyarray(X)
     labels = df['label'].tolist()
     labels = [str(i) for i in labels]
-    return text, np.asarray(labels)
+    return X, np.asarray(labels)
 
 
 def create_sentence_dataset(train_text, train_labels):
@@ -90,24 +110,29 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
 
     classifier = TextClassifier(document_embeddings, label_dictionary=label_dict)
 
-    trainer = ModelTrainer(classifier, corpus)
+    if args.document_embedding == "Pool" or args.document_embedding == "RNN":
+        trainer = ModelTrainer(classifier, corpus)
 
-    """
-    gpu = torch.cuda.device_count()
-    print(gpu)
-    num_workers = gpu - 1
-    """
+        trainer.train(os.path.join(path_results,'resources/training'),
+                    learning_rate= learning_rate,
+                    mini_batch_size=mini_batch_size,
+                    anneal_factor=0.5,
+                    patience=5,
+                    max_epochs=max_epoch,
+                    train_with_dev = True,
+                    num_workers = 6,
+                    embeddings_storage_mode ="gpu")
 
-    trainer.train(os.path.join(path_results,'resources/training'),
-                learning_rate= learning_rate,
-                mini_batch_size=mini_batch_size,
-                anneal_factor=0.5,
-                patience=5,
-                max_epochs=max_epoch,
-                train_with_dev = True,
-                num_workers = 6,
-                embeddings_storage_mode ="gpu")
+    elif args.document_embedding == "Transformer":
+        trainer = ModelTrainer(classifier, corpus, optimizer=Adam)
 
+        trainer.train(os.path.join(path_results, 'resources/training'),
+                    learning_rate= 3e-5, # use very small learning rate
+                    mini_batch_size=mini_batch_size,
+                    mini_batch_chunk_size=4, # optionally set this if transformer is too much for your machine
+                    max_epochs=5, # terminate after 5 epochs
+                    embeddings_storage_mode= "gpu")
+                    
     
 
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
@@ -115,12 +140,14 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
 
     #acc = accuracy(test_labels, test_pred)
     score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
+    torch.cuda.empty_cache()
     report = prec_rec_f1(test_labels, test_pred, classes)
     write_json(report, path_results, len(report), "a")
     runtime = timeit.default_timer() - starttime
     run_dict = {"runtime" : runtime}
     write_json(run_dict, path_results, len(run_dict), "a")
     shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
+    del classifier, test_pred
     return score, runtime
 
 
@@ -128,6 +155,7 @@ def main():
 
     config = {
         "word_embedding": word_embedding,
+        "document_embedding": document_embedding,
         "neural network": "rnn",
         "dataset": dataset_path_original,
         "learning_rate": args.learning_rate,
@@ -141,6 +169,8 @@ def main():
 
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
+    #le = preprocessing.LabelEncoder()
+    #le.fit(classes)
 
     performance = []
     runtimes = []
@@ -153,11 +183,12 @@ def main():
         test_idx_list.append(test_index)
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
+        #y_train = le.transform(y_original_train)
+        #y_test = le.transform(y_original_test)
         datapoints = create_sentence_dataset(X_train, y_train)
 
         word_embeddings = select_word_embedding(word_embedding)
-        document_embeddings = DocumentRNNEmbeddings([word_embeddings])
-        #document_embeddings = DocumentPoolEmbeddings([word_embeddings])
+        document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
         
         score, runtime = main_train(datapoints, X_test, y_test, document_embeddings)
         performance.append(score)

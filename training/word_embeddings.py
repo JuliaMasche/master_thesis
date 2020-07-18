@@ -1,4 +1,4 @@
-from flair.embeddings import WordEmbeddings, FlairEmbeddings, TransformerWordEmbeddings, ELMoEmbeddings, FastTextEmbeddings, StackedEmbeddings
+from flair.embeddings import WordEmbeddings, FlairEmbeddings, TransformerWordEmbeddings, ELMoEmbeddings, TransformerDocumentEmbeddings, FastTextEmbeddings, StackedEmbeddings, DocumentPoolEmbeddings, DocumentRNNEmbeddings
 
 
 
@@ -14,7 +14,7 @@ def select_word_embedding(we_name:str):
                                         FlairEmbeddings('news-backward'),
                                        ])
     elif we_name == "bert":
-        word_embeddings = TransformerWordEmbeddings('bert-base-uncased')
+        word_embeddings = TransformerWordEmbeddings('bert-base-uncased', layers='-1')
         
     elif we_name == "fasttext":
         word_embeddings = WordEmbeddings('en')
@@ -29,6 +29,22 @@ def select_word_embedding(we_name:str):
         word_embeddings = ELMoEmbeddings('orignal')
     
     return word_embeddings
+
+
+
+def select_document_embeddding(name:str, word_embeddings):
+
+    if name == "Pool":
+        document_embedding = DocumentPoolEmbeddings([word_embeddings])
+
+    elif name == "RNN":
+        document_embedding = DocumentRNNEmbeddings([word_embeddings], hidden_size=256)
+
+    elif name == "Transformer":
+        document_embedding = TransformerDocumentEmbeddings('bert-base-uncased', fine_tune=True)
+
+    return document_embedding
+
 
 
 

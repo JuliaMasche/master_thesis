@@ -40,35 +40,164 @@ def get_dataset_info(name:str):
         average = 'binary'
         sep = "\t"
 
-    elif name == "news_3":
-        dataset_path_original = "../data/news/tsv/keep_classes_3"
-        out_dir = '../results/news/keep_classes_3'
-        classes = ['other', 'comp.windows.x', 'alt.atheism', 'sci.space']
-        minority = ['comp.windows.x', 'alt.atheism', 'sci.space']
+    elif name == "news_1000":
+        dataset_path_original = "../data/news/tsv/dataset_1000/"
+        out_dir = '../results/news/dataset_1000/'
+        classes = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.mac.hardware",
+        "rec.sport.baseball",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "comp.graphics",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "misc.forsale",
+        "comp.windows.x",
+        "rec.motorcycles",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
+        minority = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.mac.hardware",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "comp.windows.x",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
         average = 'weighted'
         sep = "\t"
 
-    elif name == "news_1000_4":
-        dataset_path_original = "../data/news/tsv/dataset_1000/keep_classes_4"
-        out_dir = '../results/news/dataset_1000/keep_classes_4'
-        classes = ["rec.autos", "other", "comp.os.ms-windows.misc", "sci.space", "talk.politics.guns"]
-        minority = ["rec.autos", "comp.os.ms-windows.misc", "sci.space", "talk.politics.guns"]
+    elif name == "news_2000":
+        dataset_path_original = "../data/news/tsv/dataset_2000/"
+        out_dir = '../results/news/dataset_2000/'
+        classes = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.mac.hardware",
+        "rec.sport.baseball",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "comp.graphics",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "misc.forsale",
+        "comp.windows.x",
+        "rec.motorcycles",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
+        minority = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "comp.windows.x",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
         average = 'weighted'
         sep = "\t"
 
-    elif name == "news_2000_4":
-        dataset_path_original = "../data/news/tsv/dataset_2000/keep_classes_4"
-        out_dir = '../results/news/dataset_2000/keep_classes_4'
-        classes = ["rec.autos", "other", "comp.os.ms-windows.misc", "sci.space", "talk.politics.guns"]
-        minority = ["rec.autos", "comp.os.ms-windows.misc", "sci.space", "talk.politics.guns"]
+    elif name == "news_1500":
+        dataset_path_original = "../data/news/tsv/dataset_1500/"
+        out_dir = '../results/news/dataset_1500/'
+        classes = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.mac.hardware",
+        "rec.sport.baseball",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "comp.graphics",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "misc.forsale",
+        "comp.windows.x",
+        "rec.motorcycles",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
+        minority = [
+        "alt.atheism",
+        "sci.electronics",
+        "sci.crypt",
+        "comp.sys.ibm.pc.hardware",
+        "talk.politics.mideast",
+        "sci.space",
+        "comp.os.ms-windows.misc",
+        "talk.religion.misc",
+        "rec.sport.hockey",
+        "comp.windows.x",
+        "talk.politics.misc",
+        "soc.religion.christian",
+        "sci.med",
+        "talk.politics.guns",
+        "rec.autos"
+    ]
         average = 'weighted'
         sep = "\t"
+
 
     elif name == "webkb_1000":
         dataset_path_original = "../data/webkb/tsv/dataset_1000"
         out_dir = '../results/webkb/dataset_1000'
         classes = ['other', 'project', 'course', 'faculty', 'student', 'staff', 'department']
         minority = ['project', 'course', 'faculty', 'student', 'staff', 'department']
+        average = 'weighted'
+        sep = "\t"
+
+    elif name == "wiki_1000":
+        dataset_path_original = "../data/wiki/tsv/dataset_1000"
+        out_dir = '../results/wiki/dataset_1000'
+        classes = ["romance", "horror", "western",  "unknown", "film noir", "crime", "crime drama", "musical", "drama", "thriller", "action","mystery", "comedy","adventure"]
+        minority = ["romance", "horror", "western", "film noir", "crime", "crime drama", "musical", "thriller", "action","mystery", "comedy","adventure"]
+        average = 'weighted'
+        sep = "\t"
+
+    elif name == "wiki_2000":
+        dataset_path_original = "../data/wiki/tsv/dataset_2000"
+        out_dir = '../results/wiki/dataset_2000'
+        classes = ["romance", "horror", "western",  "unknown", "film noir", "crime", "crime drama", "musical", "drama", "thriller", "action","mystery", "comedy","adventure"]
+        minority = ["romance", "horror", "western", "film noir", "crime", "crime drama", "musical", "thriller", "action","mystery", "comedy","adventure"]
         average = 'weighted'
         sep = "\t"
 
