@@ -1,0 +1,161 @@
+{
+         "word_embedding": "fasttext",
+         "document_embedding": "Pool",
+         "neural network": "rnn",
+         "dataset": "../data/SST-2/tsv/1000_70_30",
+         "learning_rate": 0.1,
+         "max epoch": 100,
+         "mini batch size": 16,
+         "seed": 5,
+         "performance_measure": "g-mean"
+}{
+     "0": {
+          "precision": 0.6481481481481481,
+          "recall": 0.5833333333333334,
+          "f1-score": 0.6140350877192983,
+          "support": 60
+     },
+     "1": {
+          "precision": 0.8287671232876712,
+          "recall": 0.8642857142857143,
+          "f1-score": 0.8461538461538461,
+          "support": 140
+     },
+     "accuracy": 0.78,
+     "macro avg": {
+          "precision": 0.7384576357179097,
+          "recall": 0.7238095238095239,
+          "f1-score": 0.7300944669365722,
+          "support": 200
+     },
+     "weighted avg": {
+          "precision": 0.7745814307458143,
+          "recall": 0.78,
+          "f1-score": 0.7765182186234818,
+          "support": 200
+     }
+}{
+ "runtime": 33.283566592261195
+}{
+     "0": {
+          "precision": 0.6507936507936508,
+          "recall": 0.6833333333333333,
+          "f1-score": 0.6666666666666666,
+          "support": 60
+     },
+     "1": {
+          "precision": 0.8613138686131386,
+          "recall": 0.8428571428571429,
+          "f1-score": 0.8519855595667869,
+          "support": 140
+     },
+     "accuracy": 0.795,
+     "macro avg": {
+          "precision": 0.7560537597033947,
+          "recall": 0.763095238095238,
+          "f1-score": 0.7593261131167268,
+          "support": 200
+     },
+     "weighted avg": {
+          "precision": 0.7981578032672922,
+          "recall": 0.795,
+          "f1-score": 0.7963898916967509,
+          "support": 200
+     }
+}{
+ "runtime": 33.22013622522354
+}{
+     "0": {
+          "precision": 0.8541666666666666,
+          "recall": 0.6833333333333333,
+          "f1-score": 0.7592592592592592,
+          "support": 60
+     },
+     "1": {
+          "precision": 0.875,
+          "recall": 0.95,
+          "f1-score": 0.910958904109589,
+          "support": 140
+     },
+     "accuracy": 0.87,
+     "macro avg": {
+          "precision": 0.8645833333333333,
+          "recall": 0.8166666666666667,
+          "f1-score": 0.8351090816844241,
+          "support": 200
+     },
+     "weighted avg": {
+          "precision": 0.86875,
+          "recall": 0.87,
+          "f1-score": 0.8654490106544901,
+          "support": 200
+     }
+}{
+ "runtime": 33.729870019480586
+}{
+     "0": {
+          "precision": 0.6935483870967742,
+          "recall": 0.7166666666666667,
+          "f1-score": 0.7049180327868854,
+          "support": 60
+     },
+     "1": {
+          "precision": 0.8768115942028986,
+          "recall": 0.8642857142857143,
+          "f1-score": 0.8705035971223022,
+          "support": 140
+     },
+     "accuracy": 0.82,
+     "macro avg": {
+          "precision": 0.7851799906498365,
+          "recall": 0.7904761904761906,
+          "f1-score": 0.7877108149545937,
+          "support": 200
+     },
+     "weighted avg": {
+          "precision": 0.8218326320710613,
+          "recall": 0.82,
+          "f1-score": 0.8208279278216771,
+          "support": 200
+     }
+}{
+ "runtime": 33.96322084777057
+}{
+     "0": {
+          "precision": 0.6666666666666666,
+          "recall": 0.7333333333333333,
+          "f1-score": 0.6984126984126984,
+          "support": 60
+     },
+     "1": {
+          "precision": 0.8805970149253731,
+          "recall": 0.8428571428571429,
+          "f1-score": 0.8613138686131387,
+          "support": 140
+     },
+     "accuracy": 0.81,
+     "macro avg": {
+          "precision": 0.7736318407960199,
+          "recall": 0.7880952380952381,
+          "f1-score": 0.7798632835129186,
+          "support": 200
+     },
+     "weighted avg": {
+          "precision": 0.8164179104477611,
+          "recall": 0.81,
+          "f1-score": 0.8124435175530067,
+          "support": 200
+     }
+}{
+ "runtime": 35.19108096137643
+}{
+     "1": 0.7216251500210182,
+     "2": 0.7624279825474853,
+     "3": 0.8149233092751734,
+     "4": 0.7899246498122162,
+     "5": 0.7877907626484877
+}{
+ "overall_perf": 0.7753383708608761
+}{
+ "overall_runtime": 33.87757492922246
+}
