@@ -61,7 +61,7 @@ document_embedding = args.document_embedding
 mini_batch_size = args.mini_batch_size
 max_epoch = args.max_epoch
 
-path_tmp = word_embedding + "/" + query_str 
+path_tmp = document_embedding + '/' + word_embedding + "/" + query_str 
 path_results = os.path.join(out_dir, path_tmp)
 try:
     os.makedirs(path_results, exist_ok = True)
@@ -202,30 +202,43 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     starttime = timeit.default_timer()
 
     #first training without querying
+
+    #create train sentences
     train_sentences = []
     for idx in label_ind:
         train_sentences.append(datapoints[idx])
-        
+    
+    #initialize trainer
     train = SentenceDataset(train_sentences)
     corpus = Corpus(train=train)
     label_dict = corpus.make_label_dictionary()
+    #train
     if args.document_embedding == "Pool" or args.document_embedding == "RNN":
         train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
     elif args.document_embedding == "Transformer":
         train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
+    #load classifier and create pred test set
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
+    #if DocumentRNNEmbeddings, then update feature matrix of AL with trained embeddings
+    if args.document_embedding == "RNN":
+        document_embeddings_trained = classifier.document_embeddings
+        feat_mat = create_feat_mat(train_text, document_embeddings_trained)
+        idx = list(range(0, len(train_text)))
+        alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
+        al_strategy = select_query_strategy(alibox, query_str, idx)
 
+    #calculate score
     score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
     num_instances.append(len(label_ind))
     performance.append(score)
 
 
     while len(unlab_ind) != 0:
-    #while num_queries <= stopping_crit:
         num_queries += 1
 
+        #if QBC strategy, train second committte member and create two prediction matrices; for Random none; else one predicition matrix
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
@@ -244,14 +257,15 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         else:
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
 
-        
+        #empty cache
         torch.cuda.empty_cache()
-
         shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
+        #initialize word/document embeddings new after every query
         word_embeddings = select_word_embedding(word_embedding)
         document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
 
+        #select new labeled instances 
         if len(unlab_ind) < args.batch_size:
             select_ind = select_next_batch(al_strategy, query_str, label_ind, unlab_ind, len(unlab_ind), pred_mat)
         else:
@@ -259,22 +273,31 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         label_ind.extend(select_ind)
         unlab_ind = [n for n in unlab_ind if n not in select_ind]
 
+        #update train sentences with new labeled data
         train_sentences = []
         for idx in label_ind:
             train_sentences.append(datapoints[idx])
         
+        #train new query
         train = SentenceDataset(train_sentences)
         corpus = Corpus(train=train)
         label_dict = corpus.make_label_dictionary()
         train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
         classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
-        
         test_pred = predict_testset(test_text, classifier)
+
+        if args.document_embedding == "RNN":
+            document_embeddings_trained = classifier.document_embeddings
+            feat_mat = create_feat_mat(train_text, document_embeddings_trained)
+            idx = list(range(0, len(train_text)))
+            alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
+            al_strategy = select_query_strategy(alibox, query_str, idx)
 
         score = performance_measure(test_labels, test_pred, average, args.perf_measure, minority, classes)
         num_instances.append(len(label_ind))
         performance.append(score)
 
+    #runtime, report, update json
     runtime = timeit.default_timer() - starttime
     run_dict = {"runtime" :runtime}
     write_json(run_dict, path_results, len(run_dict), "a")
@@ -288,7 +311,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
 
 def main_func():
 
-    #initialize results
+    #create config file
     config = {
         "query_strategy": query_str,
         "word_embedding": word_embedding,
@@ -307,11 +330,13 @@ def main_func():
 
     write_json(config, path_results, len(config), "w")
 
+    #load file and create lists
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
     le = preprocessing.LabelEncoder()
     le.fit(classes)
 
+    #initialze KFold
     cv = StratifiedKFold(n_splits=5, random_state=args.seed, shuffle=True)
     kfold_label_idx = []
     test_idx_list = []
@@ -325,21 +350,22 @@ def main_func():
         datapoints = create_sentence_dataset(X_train, y_train)
         y = le.transform(y_train)
         
+        #initialze embeddings
         word_embeddings = select_word_embedding(word_embedding)
         document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
         
-
+        #create feature matrix
         feat_mat = create_feat_mat(X_train, document_embeddings)
         idx = list(range(0, len(X_train)))
 
         dict_train_to_train_idx = dict(zip(idx, train_index))
-
         dict_instances = {"train_length": len(X_train), "test_length": len(X_test)}
         write_json(dict_instances, path_results, len(dict_instances), "a")
 
         #initialize Active Learning
         alibox = ToolBox(X=feat_mat, y=y, query_type='AllLabels', saving_path='.')
        
+        #select random label and unlab set
         label_ind, unlab_ind = select_random(seed_label, idx, 100)
         seed_label = seed_label + 1
 
@@ -348,8 +374,10 @@ def main_func():
         dict_seedset = dict(zip(label_ind, seed_set_labels))
         write_json(dict_seedset, path_results, len(dict_seedset), "a")
 
+        #select al strategy
         al_strategy = select_query_strategy(alibox, query_str, idx)
 
+        #start querying
         num_instances, performance, label_ind_new, runtime = al_main_loop(alibox, al_strategy, document_embeddings, X_train, y_train, X_test, y_test, datapoints, label_ind, unlab_ind)
         overall_run.append(runtime)
         original_kfold_idx = []

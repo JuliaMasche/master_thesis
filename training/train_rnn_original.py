@@ -50,7 +50,7 @@ learning_rate = args.learning_rate
 mini_batch_size = args.mini_batch_size
 max_epoch = args.max_epoch
 
-tmp = word_embedding + "/no_al_training"
+tmp = document_embedding + '/' + word_embedding + "/no_al_training"
 path_results = os.path.join(out_dir, tmp)
 try:
     os.makedirs(path_results, exist_ok = True)
