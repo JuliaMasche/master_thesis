@@ -182,7 +182,7 @@ def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
                     embeddings_storage_mode= "gpu")
 
     elif args.document_embedding == "Transformer":
-        trainer = ModelTrainer(classifier, corpus, optimizer=Adam)
+        trainer = ModelTrainer(classifier, corpus, optimizer="Adam")
 
         trainer.train(os.path.join(path_results, path),
                     learning_rate=learning_rate, # use very small learning rate
@@ -193,7 +193,7 @@ def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
                     )
 
 
-def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_labels, test_text, test_labels, datapoints, label_ind, unlab_ind):
+def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_labels, test_text, test_labels, datapoints, label_ind, unlab_ind, y):
     shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
     num_instances = []
     performance = []
@@ -378,7 +378,7 @@ def main_func():
         al_strategy = select_query_strategy(alibox, query_str, idx)
 
         #start querying
-        num_instances, performance, label_ind_new, runtime = al_main_loop(alibox, al_strategy, document_embeddings, X_train, y_train, X_test, y_test, datapoints, label_ind, unlab_ind)
+        num_instances, performance, label_ind_new, runtime = al_main_loop(alibox, al_strategy, document_embeddings, X_train, y_train, X_test, y_test, datapoints, label_ind, unlab_ind, y)
         overall_run.append(runtime)
         original_kfold_idx = []
         for i in range(len(label_ind_new)):
