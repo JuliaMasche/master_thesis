@@ -1,0 +1,15 @@
+{
+             "query_strategy": "QueryInstanceLAL_iter",
+             "word_embedding": "bert",
+             "document_embedding": "Transformer",
+             "neural network": "rnn",
+             "dataset": "../data/SST-2/tsv/1000_70_30",
+             "learning_rate": 0.1,
+             "max epoch": 100,
+             "mini batch size": 16,
+             "stopping_criterion": 30,
+             "seed": 5,
+             "query batch size": 100,
+             "performance_measure": "g-mean",
+             "num_classifier_QBC": 2
+}
