@@ -1,0 +1,1082 @@
+{
+             "query_strategy": "QueryInstanceRandom",
+             "word_embedding": "bert",
+             "document_embedding": "RNN",
+             "neural network": "rnn",
+             "dataset": "../data/wiki/tsv/dataset_1000",
+             "learning_rate": 0.1,
+             "max epoch": 100,
+             "mini batch size": 16,
+             "stopping_criterion": 30,
+             "seed": 5,
+             "query batch size": 100,
+             "performance_measure": "g-mean",
+             "num_classifier_QBC": 2
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "1": "unknown",
+                                                                                                    "3": "comedy",
+                                                                                                    "5": "comedy",
+                                                                                                    "9": "unknown",
+                                                                                                    "13": "drama",
+                                                                                                    "18": "comedy",
+                                                                                                    "22": "comedy",
+                                                                                                    "23": "comedy",
+                                                                                                    "29": "unknown",
+                                                                                                    "47": "comedy",
+                                                                                                    "53": "romance",
+                                                                                                    "58": "comedy",
+                                                                                                    "66": "drama",
+                                                                                                    "67": "unknown",
+                                                                                                    "73": "drama",
+                                                                                                    "104": "adventure",
+                                                                                                    "115": "drama",
+                                                                                                    "129": "comedy",
+                                                                                                    "135": "comedy",
+                                                                                                    "142": "musical",
+                                                                                                    "149": "western",
+                                                                                                    "160": "drama",
+                                                                                                    "163": "drama",
+                                                                                                    "169": "comedy",
+                                                                                                    "170": "drama",
+                                                                                                    "180": "drama",
+                                                                                                    "185": "drama",
+                                                                                                    "186": "adventure",
+                                                                                                    "189": "comedy",
+                                                                                                    "201": "drama",
+                                                                                                    "203": "thriller",
+                                                                                                    "209": "western",
+                                                                                                    "214": "comedy",
+                                                                                                    "220": "comedy",
+                                                                                                    "221": "musical",
+                                                                                                    "252": "thriller",
+                                                                                                    "255": "drama",
+                                                                                                    "261": "drama",
+                                                                                                    "262": "adventure",
+                                                                                                    "270": "drama",
+                                                                                                    "286": "drama",
+                                                                                                    "296": "western",
+                                                                                                    "305": "drama",
+                                                                                                    "308": "comedy",
+                                                                                                    "313": "action",
+                                                                                                    "317": "musical",
+                                                                                                    "321": "western",
+                                                                                                    "323": "western",
+                                                                                                    "339": "drama",
+                                                                                                    "346": "comedy",
+                                                                                                    "363": "drama",
+                                                                                                    "366": "drama",
+                                                                                                    "367": "drama",
+                                                                                                    "369": "drama",
+                                                                                                    "374": "comedy",
+                                                                                                    "380": "drama",
+                                                                                                    "385": "comedy",
+                                                                                                    "389": "comedy",
+                                                                                                    "392": "comedy",
+                                                                                                    "398": "drama",
+                                                                                                    "413": "drama",
+                                                                                                    "417": "drama",
+                                                                                                    "424": "drama",
+                                                                                                    "428": "comedy",
+                                                                                                    "455": "film noir",
+                                                                                                    "463": "comedy",
+                                                                                                    "476": "film noir",
+                                                                                                    "480": "drama",
+                                                                                                    "483": "adventure",
+                                                                                                    "492": "thriller",
+                                                                                                    "542": "thriller",
+                                                                                                    "552": "thriller",
+                                                                                                    "556": "horror",
+                                                                                                    "562": "unknown",
+                                                                                                    "587": "unknown",
+                                                                                                    "592": "unknown",
+                                                                                                    "600": "horror",
+                                                                                                    "610": "unknown",
+                                                                                                    "617": "thriller",
+                                                                                                    "632": "unknown",
+                                                                                                    "637": "thriller",
+                                                                                                    "638": "unknown",
+                                                                                                    "640": "unknown",
+                                                                                                    "664": "unknown",
+                                                                                                    "667": "unknown",
+                                                                                                    "694": "unknown",
+                                                                                                    "707": "unknown",
+                                                                                                    "713": "unknown",
+                                                                                                    "723": "unknown",
+                                                                                                    "724": "unknown",
+                                                                                                    "746": "unknown",
+                                                                                                    "748": "unknown",
+                                                                                                    "751": "unknown",
+                                                                                                    "757": "unknown",
+                                                                                                    "759": "unknown",
+                                                                                                    "766": "unknown",
+                                                                                                    "771": "unknown",
+                                                                                                    "789": "unknown",
+                                                                                                    "794": "unknown",
+                                                                                                    "795": "unknown"
+}{
+ "runtime": 1559.739423668012
+}{
+                 "romance": {
+                                  "precision": 0.25,
+                                  "recall": 0.16666666666666666,
+                                  "f1-score": 0.2,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "western": {
+                                  "precision": 0.6666666666666666,
+                                  "recall": 0.6666666666666666,
+                                  "f1-score": 0.6666666666666666,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.5573770491803278,
+                                  "recall": 0.6415094339622641,
+                                  "f1-score": 0.5964912280701753,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "crime": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.25,
+                                  "f1-score": 0.28571428571428575,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "drama": {
+                                  "precision": 0.3492063492063492,
+                                  "recall": 0.43137254901960786,
+                                  "f1-score": 0.38596491228070173,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 3
+                 },
+                 "comedy": {
+                                  "precision": 0.45454545454545453,
+                                  "recall": 0.5263157894736842,
+                                  "f1-score": 0.4878048780487805,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "accuracy": 0.425,
+                 "macro avg": {
+                                  "precision": 0.18650920378086652,
+                                  "recall": 0.1916093646992064,
+                                  "f1-score": 0.18733156934147213,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.3739495067773756,
+                                  "recall": 0.425,
+                                  "f1-score": 0.3966027263280151,
+                                  "support": 200
+                 }
+}{
+        "100": 0.5474813160927874,
+        "200": 0.5356557650224829,
+        "300": 0.5538238434806045,
+        "400": 0.568132779127204,
+        "500": 0.6060212121095936,
+        "600": 0.613657892513852,
+        "700": 0.624601484638112,
+        "800": 0.6008046673025872
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "0": "unknown",
+                                                                                                    "12": "drama",
+                                                                                                    "17": "comedy",
+                                                                                                    "22": "adventure",
+                                                                                                    "29": "unknown",
+                                                                                                    "37": "drama",
+                                                                                                    "46": "romance",
+                                                                                                    "82": "romance",
+                                                                                                    "90": "drama",
+                                                                                                    "91": "drama",
+                                                                                                    "95": "comedy",
+                                                                                                    "96": "drama",
+                                                                                                    "99": "comedy",
+                                                                                                    "119": "drama",
+                                                                                                    "122": "crime",
+                                                                                                    "141": "drama",
+                                                                                                    "149": "comedy",
+                                                                                                    "173": "comedy",
+                                                                                                    "193": "comedy",
+                                                                                                    "197": "drama",
+                                                                                                    "198": "crime",
+                                                                                                    "200": "comedy",
+                                                                                                    "201": "thriller",
+                                                                                                    "202": "action",
+                                                                                                    "203": "comedy",
+                                                                                                    "205": "western",
+                                                                                                    "214": "drama",
+                                                                                                    "228": "drama",
+                                                                                                    "250": "drama",
+                                                                                                    "256": "comedy",
+                                                                                                    "267": "drama",
+                                                                                                    "271": "thriller",
+                                                                                                    "274": "drama",
+                                                                                                    "279": "comedy",
+                                                                                                    "298": "comedy",
+                                                                                                    "311": "drama",
+                                                                                                    "313": "action",
+                                                                                                    "319": "drama",
+                                                                                                    "327": "comedy",
+                                                                                                    "340": "drama",
+                                                                                                    "343": "comedy",
+                                                                                                    "365": "drama",
+                                                                                                    "369": "comedy",
+                                                                                                    "370": "drama",
+                                                                                                    "382": "comedy",
+                                                                                                    "388": "comedy",
+                                                                                                    "419": "film noir",
+                                                                                                    "423": "drama",
+                                                                                                    "434": "drama",
+                                                                                                    "440": "drama",
+                                                                                                    "455": "comedy",
+                                                                                                    "481": "film noir",
+                                                                                                    "495": "drama",
+                                                                                                    "496": "drama",
+                                                                                                    "498": "drama",
+                                                                                                    "500": "drama",
+                                                                                                    "512": "drama",
+                                                                                                    "515": "drama",
+                                                                                                    "527": "crime",
+                                                                                                    "534": "thriller",
+                                                                                                    "537": "crime",
+                                                                                                    "551": "crime",
+                                                                                                    "552": "thriller",
+                                                                                                    "566": "unknown",
+                                                                                                    "571": "thriller",
+                                                                                                    "576": "unknown",
+                                                                                                    "587": "unknown",
+                                                                                                    "589": "unknown",
+                                                                                                    "600": "action",
+                                                                                                    "602": "action",
+                                                                                                    "603": "unknown",
+                                                                                                    "611": "unknown",
+                                                                                                    "616": "thriller",
+                                                                                                    "622": "romance",
+                                                                                                    "624": "action",
+                                                                                                    "633": "unknown",
+                                                                                                    "635": "thriller",
+                                                                                                    "648": "unknown",
+                                                                                                    "650": "unknown",
+                                                                                                    "660": "unknown",
+                                                                                                    "663": "unknown",
+                                                                                                    "671": "unknown",
+                                                                                                    "678": "unknown",
+                                                                                                    "687": "unknown",
+                                                                                                    "694": "unknown",
+                                                                                                    "698": "romance",
+                                                                                                    "702": "unknown",
+                                                                                                    "714": "unknown",
+                                                                                                    "716": "unknown",
+                                                                                                    "717": "unknown",
+                                                                                                    "746": "unknown",
+                                                                                                    "747": "unknown",
+                                                                                                    "752": "unknown",
+                                                                                                    "761": "unknown",
+                                                                                                    "768": "unknown",
+                                                                                                    "771": "unknown",
+                                                                                                    "775": "unknown",
+                                                                                                    "777": "unknown",
+                                                                                                    "780": "unknown",
+                                                                                                    "791": "unknown"
+}{
+ "runtime": 1457.2671292740852
+}{
+                 "romance": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "western": {
+                                  "precision": 0.8571428571428571,
+                                  "recall": 0.75,
+                                  "f1-score": 0.7999999999999999,
+                                  "support": 8
+                 },
+                 "unknown": {
+                                  "precision": 0.48333333333333334,
+                                  "recall": 0.5471698113207547,
+                                  "f1-score": 0.5132743362831859,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "crime": {
+                                  "precision": 0.14285714285714285,
+                                  "recall": 0.125,
+                                  "f1-score": 0.13333333333333333,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "drama": {
+                                  "precision": 0.3611111111111111,
+                                  "recall": 0.5098039215686274,
+                                  "f1-score": 0.42276422764227634,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.16666666666666666,
+                                  "recall": 0.2857142857142857,
+                                  "f1-score": 0.2105263157894737,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "comedy": {
+                                  "precision": 0.6363636363636364,
+                                  "recall": 0.3684210526315789,
+                                  "f1-score": 0.4666666666666667,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "accuracy": 0.39,
+                 "macro avg": {
+                                  "precision": 0.18910533910533908,
+                                  "recall": 0.18472207651680334,
+                                  "f1-score": 0.1818974914082097,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.38690909090909087,
+                                  "recall": 0.39,
+                                  "f1-score": 0.3771909982164563,
+                                  "support": 200
+                 }
+}{
+        "100": 0.5572974012590706,
+        "200": 0.5539190404417239,
+        "300": 0.5679901540342986,
+        "400": 0.5924848212203808,
+        "500": 0.569149727012251,
+        "600": 0.5693628453181934,
+        "700": 0.5859131922810379,
+        "800": 0.5757364607309458
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "38": "comedy",
+                                                                                                    "40": "drama",
+                                                                                                    "47": "drama",
+                                                                                                    "49": "romance",
+                                                                                                    "50": "drama",
+                                                                                                    "59": "unknown",
+                                                                                                    "60": "drama",
+                                                                                                    "61": "comedy",
+                                                                                                    "63": "comedy",
+                                                                                                    "64": "romance",
+                                                                                                    "71": "unknown",
+                                                                                                    "74": "drama",
+                                                                                                    "79": "drama",
+                                                                                                    "83": "comedy",
+                                                                                                    "88": "drama",
+                                                                                                    "92": "adventure",
+                                                                                                    "96": "unknown",
+                                                                                                    "99": "comedy",
+                                                                                                    "105": "drama",
+                                                                                                    "120": "drama",
+                                                                                                    "126": "crime",
+                                                                                                    "136": "musical",
+                                                                                                    "147": "drama",
+                                                                                                    "154": "drama",
+                                                                                                    "155": "drama",
+                                                                                                    "168": "comedy",
+                                                                                                    "184": "drama",
+                                                                                                    "185": "crime",
+                                                                                                    "192": "action",
+                                                                                                    "210": "western",
+                                                                                                    "219": "musical",
+                                                                                                    "226": "drama",
+                                                                                                    "228": "comedy",
+                                                                                                    "246": "drama",
+                                                                                                    "249": "drama",
+                                                                                                    "254": "mystery",
+                                                                                                    "294": "musical",
+                                                                                                    "296": "musical",
+                                                                                                    "306": "western",
+                                                                                                    "307": "drama",
+                                                                                                    "315": "western",
+                                                                                                    "321": "musical",
+                                                                                                    "331": "adventure",
+                                                                                                    "350": "drama",
+                                                                                                    "351": "comedy",
+                                                                                                    "370": "comedy",
+                                                                                                    "374": "drama",
+                                                                                                    "381": "drama",
+                                                                                                    "404": "drama",
+                                                                                                    "406": "drama",
+                                                                                                    "428": "romance",
+                                                                                                    "429": "comedy",
+                                                                                                    "431": "comedy",
+                                                                                                    "434": "adventure",
+                                                                                                    "437": "drama",
+                                                                                                    "444": "crime drama",
+                                                                                                    "459": "film noir",
+                                                                                                    "464": "adventure",
+                                                                                                    "476": "drama",
+                                                                                                    "500": "drama",
+                                                                                                    "506": "drama",
+                                                                                                    "508": "crime",
+                                                                                                    "519": "crime",
+                                                                                                    "524": "romance",
+                                                                                                    "537": "unknown",
+                                                                                                    "544": "horror",
+                                                                                                    "548": "action",
+                                                                                                    "553": "unknown",
+                                                                                                    "560": "action",
+                                                                                                    "564": "unknown",
+                                                                                                    "570": "unknown",
+                                                                                                    "571": "unknown",
+                                                                                                    "573": "unknown",
+                                                                                                    "577": "unknown",
+                                                                                                    "579": "unknown",
+                                                                                                    "584": "action",
+                                                                                                    "586": "thriller",
+                                                                                                    "588": "action",
+                                                                                                    "590": "romance",
+                                                                                                    "595": "unknown",
+                                                                                                    "596": "unknown",
+                                                                                                    "599": "unknown",
+                                                                                                    "623": "action",
+                                                                                                    "633": "unknown",
+                                                                                                    "642": "thriller",
+                                                                                                    "645": "unknown",
+                                                                                                    "654": "unknown",
+                                                                                                    "666": "unknown",
+                                                                                                    "684": "unknown",
+                                                                                                    "696": "unknown",
+                                                                                                    "698": "unknown",
+                                                                                                    "715": "unknown",
+                                                                                                    "729": "unknown",
+                                                                                                    "733": "unknown",
+                                                                                                    "756": "unknown",
+                                                                                                    "757": "unknown",
+                                                                                                    "768": "unknown",
+                                                                                                    "783": "unknown",
+                                                                                                    "790": "unknown",
+                                                                                                    "794": "unknown"
+}{
+ "runtime": 1336.4079157467932
+}{
+                 "romance": {
+                                  "precision": 1.0,
+                                  "recall": 0.16666666666666666,
+                                  "f1-score": 0.2857142857142857,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.5,
+                                  "recall": 0.2,
+                                  "f1-score": 0.28571428571428575,
+                                  "support": 5
+                 },
+                 "western": {
+                                  "precision": 0.4166666666666667,
+                                  "recall": 0.5555555555555556,
+                                  "f1-score": 0.4761904761904762,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.4626865671641791,
+                                  "recall": 0.5849056603773585,
+                                  "f1-score": 0.5166666666666667,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "crime": {
+                                  "precision": 0.14285714285714285,
+                                  "recall": 0.125,
+                                  "f1-score": 0.13333333333333333,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "drama": {
+                                  "precision": 0.36363636363636365,
+                                  "recall": 0.4,
+                                  "f1-score": 0.380952380952381,
+                                  "support": 50
+                 },
+                 "thriller": {
+                                  "precision": 0.5,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.22222222222222224,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 1.0,
+                                  "recall": 0.25,
+                                  "f1-score": 0.4,
+                                  "support": 4
+                 },
+                 "comedy": {
+                                  "precision": 0.4166666666666667,
+                                  "recall": 0.5263157894736842,
+                                  "f1-score": 0.46511627906976744,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "accuracy": 0.405,
+                 "macro avg": {
+                                  "precision": 0.3430366719279299,
+                                  "recall": 0.21080720106645767,
+                                  "f1-score": 0.22613642356167274,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.39715198358855075,
+                                  "recall": 0.405,
+                                  "f1-score": 0.378780823181986,
+                                  "support": 200
+                 }
+}{
+        "100": 0.5092849814641571,
+        "200": 0.4879461218337745,
+        "300": 0.5437253015689973,
+        "400": 0.5572624077135666,
+        "500": 0.5903099545597332,
+        "600": 0.5509823999359528,
+        "700": 0.5655840468642737,
+        "800": 0.5833030324420119
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "12": "drama",
+                                                                                                    "20": "comedy",
+                                                                                                    "31": "drama",
+                                                                                                    "38": "drama",
+                                                                                                    "44": "drama",
+                                                                                                    "59": "comedy",
+                                                                                                    "64": "unknown",
+                                                                                                    "65": "comedy",
+                                                                                                    "73": "drama",
+                                                                                                    "87": "romance",
+                                                                                                    "88": "drama",
+                                                                                                    "91": "unknown",
+                                                                                                    "99": "drama",
+                                                                                                    "110": "drama",
+                                                                                                    "116": "comedy",
+                                                                                                    "129": "drama",
+                                                                                                    "138": "comedy",
+                                                                                                    "140": "drama",
+                                                                                                    "145": "comedy",
+                                                                                                    "151": "drama",
+                                                                                                    "153": "comedy",
+                                                                                                    "162": "musical",
+                                                                                                    "196": "western",
+                                                                                                    "197": "drama",
+                                                                                                    "198": "western",
+                                                                                                    "202": "comedy",
+                                                                                                    "212": "action",
+                                                                                                    "214": "comedy",
+                                                                                                    "225": "drama",
+                                                                                                    "232": "musical",
+                                                                                                    "239": "drama",
+                                                                                                    "240": "thriller",
+                                                                                                    "249": "western",
+                                                                                                    "253": "western",
+                                                                                                    "264": "comedy",
+                                                                                                    "273": "action",
+                                                                                                    "291": "drama",
+                                                                                                    "292": "comedy",
+                                                                                                    "302": "musical",
+                                                                                                    "316": "comedy",
+                                                                                                    "321": "western",
+                                                                                                    "346": "comedy",
+                                                                                                    "352": "drama",
+                                                                                                    "364": "musical",
+                                                                                                    "365": "comedy",
+                                                                                                    "379": "drama",
+                                                                                                    "384": "drama",
+                                                                                                    "386": "drama",
+                                                                                                    "388": "comedy",
+                                                                                                    "395": "drama",
+                                                                                                    "399": "drama",
+                                                                                                    "410": "drama",
+                                                                                                    "412": "crime drama",
+                                                                                                    "417": "drama",
+                                                                                                    "436": "comedy",
+                                                                                                    "455": "comedy",
+                                                                                                    "464": "film noir",
+                                                                                                    "467": "drama",
+                                                                                                    "470": "drama",
+                                                                                                    "485": "film noir",
+                                                                                                    "496": "drama",
+                                                                                                    "499": "drama",
+                                                                                                    "500": "drama",
+                                                                                                    "506": "drama",
+                                                                                                    "509": "crime",
+                                                                                                    "515": "drama",
+                                                                                                    "518": "drama",
+                                                                                                    "519": "crime",
+                                                                                                    "522": "drama",
+                                                                                                    "529": "crime",
+                                                                                                    "532": "romance",
+                                                                                                    "541": "unknown",
+                                                                                                    "544": "unknown",
+                                                                                                    "552": "action",
+                                                                                                    "558": "horror",
+                                                                                                    "570": "unknown",
+                                                                                                    "586": "action",
+                                                                                                    "592": "action",
+                                                                                                    "595": "action",
+                                                                                                    "598": "unknown",
+                                                                                                    "615": "thriller",
+                                                                                                    "621": "horror",
+                                                                                                    "635": "unknown",
+                                                                                                    "638": "thriller",
+                                                                                                    "657": "unknown",
+                                                                                                    "659": "unknown",
+                                                                                                    "665": "unknown",
+                                                                                                    "672": "unknown",
+                                                                                                    "676": "unknown",
+                                                                                                    "678": "unknown",
+                                                                                                    "706": "unknown",
+                                                                                                    "707": "unknown",
+                                                                                                    "717": "unknown",
+                                                                                                    "718": "unknown",
+                                                                                                    "721": "unknown",
+                                                                                                    "730": "unknown",
+                                                                                                    "739": "unknown",
+                                                                                                    "743": "unknown",
+                                                                                                    "762": "unknown",
+                                                                                                    "780": "unknown"
+}{
+ "runtime": 1179.493699669838
+}{
+                 "romance": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "western": {
+                                  "precision": 0.6666666666666666,
+                                  "recall": 0.2222222222222222,
+                                  "f1-score": 0.3333333333333333,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.5256410256410257,
+                                  "recall": 0.7735849056603774,
+                                  "f1-score": 0.6259541984732825,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 3
+                 },
+                 "crime": {
+                                  "precision": 1.0,
+                                  "recall": 0.125,
+                                  "f1-score": 0.2222222222222222,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "drama": {
+                                  "precision": 0.43137254901960786,
+                                  "recall": 0.43137254901960786,
+                                  "f1-score": 0.43137254901960786,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.2,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.16666666666666666,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.15384615384615383,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "comedy": {
+                                  "precision": 0.375,
+                                  "recall": 0.5526315789473685,
+                                  "f1-score": 0.44680851063829785,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "accuracy": 0.445,
+                 "macro avg": {
+                                  "precision": 0.2499057315233786,
+                                  "recall": 0.17075182439741868,
+                                  "f1-score": 0.17239549768092124,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.4080448717948718,
+                                  "recall": 0.445,
+                                  "f1-score": 0.39704498389020076,
+                                  "support": 200
+                 }
+}{
+        "100": 0.5354616944470225,
+        "200": 0.5324524911522314,
+        "300": 0.5503915633916907,
+        "400": 0.6039026493723072,
+        "500": 0.6058614522763308,
+        "600": 0.6061291606148402,
+        "700": 0.6407190969611731,
+        "800": 0.6117229177362176
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "3": "comedy",
+                                                                                                    "5": "comedy",
+                                                                                                    "6": "comedy",
+                                                                                                    "8": "drama",
+                                                                                                    "17": "unknown",
+                                                                                                    "24": "comedy",
+                                                                                                    "35": "drama",
+                                                                                                    "41": "comedy",
+                                                                                                    "42": "romance",
+                                                                                                    "44": "unknown",
+                                                                                                    "52": "drama",
+                                                                                                    "55": "drama",
+                                                                                                    "56": "unknown",
+                                                                                                    "64": "comedy",
+                                                                                                    "70": "romance",
+                                                                                                    "82": "comedy",
+                                                                                                    "85": "western",
+                                                                                                    "86": "comedy",
+                                                                                                    "89": "drama",
+                                                                                                    "95": "adventure",
+                                                                                                    "104": "comedy",
+                                                                                                    "113": "drama",
+                                                                                                    "114": "comedy",
+                                                                                                    "124": "drama",
+                                                                                                    "135": "drama",
+                                                                                                    "136": "drama",
+                                                                                                    "141": "musical",
+                                                                                                    "142": "adventure",
+                                                                                                    "148": "drama",
+                                                                                                    "152": "musical",
+                                                                                                    "160": "musical",
+                                                                                                    "172": "drama",
+                                                                                                    "173": "drama",
+                                                                                                    "176": "western",
+                                                                                                    "190": "western",
+                                                                                                    "196": "western",
+                                                                                                    "202": "musical",
+                                                                                                    "204": "comedy",
+                                                                                                    "207": "drama",
+                                                                                                    "209": "comedy",
+                                                                                                    "214": "drama",
+                                                                                                    "229": "drama",
+                                                                                                    "242": "drama",
+                                                                                                    "243": "adventure",
+                                                                                                    "273": "mystery",
+                                                                                                    "274": "drama",
+                                                                                                    "276": "drama",
+                                                                                                    "287": "comedy",
+                                                                                                    "298": "comedy",
+                                                                                                    "338": "western",
+                                                                                                    "342": "western",
+                                                                                                    "346": "crime",
+                                                                                                    "349": "drama",
+                                                                                                    "382": "comedy",
+                                                                                                    "387": "drama",
+                                                                                                    "388": "drama",
+                                                                                                    "392": "drama",
+                                                                                                    "406": "drama",
+                                                                                                    "407": "crime",
+                                                                                                    "421": "drama",
+                                                                                                    "430": "drama",
+                                                                                                    "431": "drama",
+                                                                                                    "432": "drama",
+                                                                                                    "434": "comedy",
+                                                                                                    "462": "comedy",
+                                                                                                    "474": "adventure",
+                                                                                                    "503": "drama",
+                                                                                                    "508": "drama",
+                                                                                                    "512": "drama",
+                                                                                                    "514": "drama",
+                                                                                                    "518": "drama",
+                                                                                                    "550": "action",
+                                                                                                    "552": "action",
+                                                                                                    "567": "unknown",
+                                                                                                    "568": "unknown",
+                                                                                                    "586": "action",
+                                                                                                    "589": "action",
+                                                                                                    "592": "unknown",
+                                                                                                    "593": "unknown",
+                                                                                                    "604": "action",
+                                                                                                    "611": "thriller",
+                                                                                                    "619": "unknown",
+                                                                                                    "620": "action",
+                                                                                                    "623": "action",
+                                                                                                    "627": "unknown",
+                                                                                                    "631": "thriller",
+                                                                                                    "654": "unknown",
+                                                                                                    "690": "unknown",
+                                                                                                    "692": "unknown",
+                                                                                                    "699": "romance",
+                                                                                                    "704": "unknown",
+                                                                                                    "716": "unknown",
+                                                                                                    "720": "unknown",
+                                                                                                    "725": "unknown",
+                                                                                                    "733": "unknown",
+                                                                                                    "742": "unknown",
+                                                                                                    "743": "unknown",
+                                                                                                    "745": "unknown",
+                                                                                                    "796": "unknown",
+                                                                                                    "799": "unknown"
+}{
+ "runtime": 1557.2428974043578
+}{
+                 "romance": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.16666666666666666,
+                                  "f1-score": 0.2222222222222222,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "western": {
+                                  "precision": 0.5,
+                                  "recall": 0.6666666666666666,
+                                  "f1-score": 0.5714285714285715,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.49295774647887325,
+                                  "recall": 0.660377358490566,
+                                  "f1-score": 0.5645161290322581,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.3333333333333333,
+                                  "f1-score": 0.3333333333333333,
+                                  "support": 3
+                 },
+                 "crime": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.25,
+                                  "f1-score": 0.28571428571428575,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "drama": {
+                                  "precision": 0.4461538461538462,
+                                  "recall": 0.5686274509803921,
+                                  "f1-score": 0.5,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.2,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.5,
+                                  "recall": 0.3333333333333333,
+                                  "f1-score": 0.4,
+                                  "support": 3
+                 },
+                 "comedy": {
+                                  "precision": 0.38461538461538464,
+                                  "recall": 0.2631578947368421,
+                                  "f1-score": 0.3125,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "accuracy": 0.43,
+                 "macro avg": {
+                                  "precision": 0.2612185936129598,
+                                  "recall": 0.2417871319332102,
+                                  "f1-score": 0.24212246726647652,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.3874799566630553,
+                                  "recall": 0.43,
+                                  "f1-score": 0.3982812980030723,
+                                  "support": 200
+                 }
+}{
+        "100": 0.5292574360366258,
+        "200": 0.5962130119705759,
+        "300": 0.5826994381250277,
+        "400": 0.5724063640136837,
+        "500": 0.614777281512728,
+        "600": 0.6012661791197754,
+        "700": 0.6125275975469757,
+        "800": 0.6047256925727835
+}{
+ "overall_runtime": 1418.0302131526173
+}
