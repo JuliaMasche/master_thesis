@@ -1,0 +1,785 @@
+	Strategy	Query	Class	Value
+0	Random	q0	romance	1
+1	Random	q0	mystery	0
+2	Random	q0	comedy	21
+3	Random	q0	action	1
+4	Random	q0	horror	2
+5	Random	q0	unknown	28
+6	Random	q0	film noir	2
+7	Random	q0	drama	26
+8	Random	q0	crime drama	0
+9	Random	q0	western	5
+10	Random	q0	musical	3
+11	Random	q0	thriller	7
+12	Random	q0	crime	0
+13	Random	q0	adventure	4
+14	Random	q1	romance	2
+15	Random	q1	mystery	3
+16	Random	q1	comedy	11
+17	Random	q1	action	1
+18	Random	q1	horror	4
+19	Random	q1	unknown	38
+20	Random	q1	film noir	1
+21	Random	q1	drama	24
+22	Random	q1	crime drama	1
+23	Random	q1	western	3
+24	Random	q1	musical	3
+25	Random	q1	thriller	2
+26	Random	q1	crime	4
+27	Random	q1	adventure	3
+28	Random	q2	romance	1
+29	Random	q2	mystery	2
+30	Random	q2	comedy	27
+31	Random	q2	action	4
+32	Random	q2	horror	0
+33	Random	q2	unknown	23
+34	Random	q2	film noir	2
+35	Random	q2	drama	24
+36	Random	q2	crime drama	2
+37	Random	q2	western	6
+38	Random	q2	musical	1
+39	Random	q2	thriller	1
+40	Random	q2	crime	6
+41	Random	q2	adventure	1
+42	Random	q3	romance	3
+43	Random	q3	mystery	2
+44	Random	q3	comedy	22
+45	Random	q3	action	6
+46	Random	q3	horror	0
+47	Random	q3	unknown	24
+48	Random	q3	film noir	0
+49	Random	q3	drama	22
+50	Random	q3	crime drama	0
+51	Random	q3	western	6
+52	Random	q3	musical	0
+53	Random	q3	thriller	6
+54	Random	q3	crime	6
+55	Random	q3	adventure	3
+56	Random	q4	romance	1
+57	Random	q4	mystery	2
+58	Random	q4	comedy	19
+59	Random	q4	action	7
+60	Random	q4	horror	3
+61	Random	q4	unknown	22
+62	Random	q4	film noir	0
+63	Random	q4	drama	27
+64	Random	q4	crime drama	0
+65	Random	q4	western	5
+66	Random	q4	musical	2
+67	Random	q4	thriller	4
+68	Random	q4	crime	5
+69	Random	q4	adventure	3
+70	Random	q5	romance	3
+71	Random	q5	mystery	1
+72	Random	q5	comedy	13
+73	Random	q5	action	4
+74	Random	q5	horror	6
+75	Random	q5	unknown	28
+76	Random	q5	film noir	3
+77	Random	q5	drama	20
+78	Random	q5	crime drama	1
+79	Random	q5	western	4
+80	Random	q5	musical	6
+81	Random	q5	thriller	5
+82	Random	q5	crime	3
+83	Random	q5	adventure	3
+84	Random	q6	romance	6
+85	Random	q6	mystery	3
+86	Random	q6	comedy	19
+87	Random	q6	action	4
+88	Random	q6	horror	2
+89	Random	q6	unknown	25
+90	Random	q6	film noir	1
+91	Random	q6	drama	29
+92	Random	q6	crime drama	2
+93	Random	q6	western	2
+94	Random	q6	musical	1
+95	Random	q6	thriller	2
+96	Random	q6	crime	4
+97	Random	q6	adventure	0
+98	Random	q7	romance	7
+99	Random	q7	mystery	2
+100	Random	q7	comedy	20
+101	Random	q7	action	1
+102	Random	q7	horror	1
+103	Random	q7	unknown	24
+104	Random	q7	film noir	1
+105	Random	q7	drama	31
+106	Random	q7	crime drama	2
+107	Random	q7	western	4
+108	Random	q7	musical	1
+109	Random	q7	thriller	1
+110	Random	q7	crime	4
+111	Random	q7	adventure	1
+112	Uncertainty	q0	romance	1
+113	Uncertainty	q0	mystery	0
+114	Uncertainty	q0	comedy	21
+115	Uncertainty	q0	action	1
+116	Uncertainty	q0	horror	2
+117	Uncertainty	q0	unknown	28
+118	Uncertainty	q0	film noir	2
+119	Uncertainty	q0	drama	26
+120	Uncertainty	q0	crime drama	0
+121	Uncertainty	q0	western	5
+122	Uncertainty	q0	musical	3
+123	Uncertainty	q0	thriller	7
+124	Uncertainty	q0	crime	0
+125	Uncertainty	q0	adventure	4
+126	Uncertainty	q1	romance	1
+127	Uncertainty	q1	mystery	2
+128	Uncertainty	q1	comedy	12
+129	Uncertainty	q1	action	4
+130	Uncertainty	q1	horror	3
+131	Uncertainty	q1	unknown	32
+132	Uncertainty	q1	film noir	0
+133	Uncertainty	q1	drama	27
+134	Uncertainty	q1	crime drama	2
+135	Uncertainty	q1	western	3
+136	Uncertainty	q1	musical	0
+137	Uncertainty	q1	thriller	8
+138	Uncertainty	q1	crime	3
+139	Uncertainty	q1	adventure	3
+140	Uncertainty	q2	romance	1
+141	Uncertainty	q2	mystery	6
+142	Uncertainty	q2	comedy	13
+143	Uncertainty	q2	action	7
+144	Uncertainty	q2	horror	1
+145	Uncertainty	q2	unknown	26
+146	Uncertainty	q2	film noir	3
+147	Uncertainty	q2	drama	18
+148	Uncertainty	q2	crime drama	1
+149	Uncertainty	q2	western	7
+150	Uncertainty	q2	musical	1
+151	Uncertainty	q2	thriller	2
+152	Uncertainty	q2	crime	11
+153	Uncertainty	q2	adventure	3
+154	Uncertainty	q3	romance	2
+155	Uncertainty	q3	mystery	2
+156	Uncertainty	q3	comedy	24
+157	Uncertainty	q3	action	3
+158	Uncertainty	q3	horror	4
+159	Uncertainty	q3	unknown	28
+160	Uncertainty	q3	film noir	2
+161	Uncertainty	q3	drama	20
+162	Uncertainty	q3	crime drama	0
+163	Uncertainty	q3	western	6
+164	Uncertainty	q3	musical	4
+165	Uncertainty	q3	thriller	0
+166	Uncertainty	q3	crime	3
+167	Uncertainty	q3	adventure	2
+168	Uncertainty	q4	romance	6
+169	Uncertainty	q4	mystery	2
+170	Uncertainty	q4	comedy	23
+171	Uncertainty	q4	action	3
+172	Uncertainty	q4	horror	4
+173	Uncertainty	q4	unknown	19
+174	Uncertainty	q4	film noir	0
+175	Uncertainty	q4	drama	23
+176	Uncertainty	q4	crime drama	1
+177	Uncertainty	q4	western	4
+178	Uncertainty	q4	musical	4
+179	Uncertainty	q4	thriller	2
+180	Uncertainty	q4	crime	6
+181	Uncertainty	q4	adventure	3
+182	Uncertainty	q5	romance	7
+183	Uncertainty	q5	mystery	0
+184	Uncertainty	q5	comedy	24
+185	Uncertainty	q5	action	4
+186	Uncertainty	q5	horror	1
+187	Uncertainty	q5	unknown	27
+188	Uncertainty	q5	film noir	1
+189	Uncertainty	q5	drama	21
+190	Uncertainty	q5	crime drama	2
+191	Uncertainty	q5	western	4
+192	Uncertainty	q5	musical	1
+193	Uncertainty	q5	thriller	3
+194	Uncertainty	q5	crime	3
+195	Uncertainty	q5	adventure	2
+196	Uncertainty	q6	romance	2
+197	Uncertainty	q6	mystery	0
+198	Uncertainty	q6	comedy	16
+199	Uncertainty	q6	action	5
+200	Uncertainty	q6	horror	2
+201	Uncertainty	q6	unknown	28
+202	Uncertainty	q6	film noir	2
+203	Uncertainty	q6	drama	32
+204	Uncertainty	q6	crime drama	1
+205	Uncertainty	q6	western	4
+206	Uncertainty	q6	musical	2
+207	Uncertainty	q6	thriller	3
+208	Uncertainty	q6	crime	3
+209	Uncertainty	q6	adventure	0
+210	Uncertainty	q7	romance	4
+211	Uncertainty	q7	mystery	3
+212	Uncertainty	q7	comedy	19
+213	Uncertainty	q7	action	1
+214	Uncertainty	q7	horror	1
+215	Uncertainty	q7	unknown	24
+216	Uncertainty	q7	film noir	0
+217	Uncertainty	q7	drama	36
+218	Uncertainty	q7	crime drama	1
+219	Uncertainty	q7	western	2
+220	Uncertainty	q7	musical	2
+221	Uncertainty	q7	thriller	3
+222	Uncertainty	q7	crime	3
+223	Uncertainty	q7	adventure	1
+224	QBC	q0	romance	1
+225	QBC	q0	mystery	0
+226	QBC	q0	comedy	21
+227	QBC	q0	action	1
+228	QBC	q0	horror	2
+229	QBC	q0	unknown	28
+230	QBC	q0	film noir	2
+231	QBC	q0	drama	26
+232	QBC	q0	crime drama	0
+233	QBC	q0	western	5
+234	QBC	q0	musical	3
+235	QBC	q0	thriller	7
+236	QBC	q0	crime	0
+237	QBC	q0	adventure	4
+238	QBC	q1	romance	3
+239	QBC	q1	mystery	2
+240	QBC	q1	comedy	19
+241	QBC	q1	action	10
+242	QBC	q1	horror	4
+243	QBC	q1	unknown	12
+244	QBC	q1	film noir	0
+245	QBC	q1	drama	32
+246	QBC	q1	crime drama	0
+247	QBC	q1	western	2
+248	QBC	q1	musical	1
+249	QBC	q1	thriller	4
+250	QBC	q1	crime	10
+251	QBC	q1	adventure	1
+252	QBC	q2	romance	1
+253	QBC	q2	mystery	2
+254	QBC	q2	comedy	30
+255	QBC	q2	action	0
+256	QBC	q2	horror	2
+257	QBC	q2	unknown	1
+258	QBC	q2	film noir	4
+259	QBC	q2	drama	34
+260	QBC	q2	crime drama	4
+261	QBC	q2	western	7
+262	QBC	q2	musical	3
+263	QBC	q2	thriller	1
+264	QBC	q2	crime	6
+265	QBC	q2	adventure	5
+266	QBC	q3	romance	7
+267	QBC	q3	mystery	4
+268	QBC	q3	comedy	17
+269	QBC	q3	action	7
+270	QBC	q3	horror	3
+271	QBC	q3	unknown	12
+272	QBC	q3	film noir	0
+273	QBC	q3	drama	26
+274	QBC	q3	crime drama	2
+275	QBC	q3	western	8
+276	QBC	q3	musical	0
+277	QBC	q3	thriller	7
+278	QBC	q3	crime	5
+279	QBC	q3	adventure	2
+280	QBC	q4	romance	2
+281	QBC	q4	mystery	3
+282	QBC	q4	comedy	14
+283	QBC	q4	action	5
+284	QBC	q4	horror	4
+285	QBC	q4	unknown	22
+286	QBC	q4	film noir	4
+287	QBC	q4	drama	23
+288	QBC	q4	crime drama	0
+289	QBC	q4	western	8
+290	QBC	q4	musical	2
+291	QBC	q4	thriller	6
+292	QBC	q4	crime	6
+293	QBC	q4	adventure	1
+294	QBC	q5	romance	4
+295	QBC	q5	mystery	2
+296	QBC	q5	comedy	14
+297	QBC	q5	action	0
+298	QBC	q5	horror	2
+299	QBC	q5	unknown	45
+300	QBC	q5	film noir	0
+301	QBC	q5	drama	22
+302	QBC	q5	crime drama	0
+303	QBC	q5	western	3
+304	QBC	q5	musical	3
+305	QBC	q5	thriller	2
+306	QBC	q5	crime	2
+307	QBC	q5	adventure	1
+308	QBC	q6	romance	2
+309	QBC	q6	mystery	1
+310	QBC	q6	comedy	21
+311	QBC	q6	action	3
+312	QBC	q6	horror	1
+313	QBC	q6	unknown	39
+314	QBC	q6	film noir	0
+315	QBC	q6	drama	24
+316	QBC	q6	crime drama	2
+317	QBC	q6	western	1
+318	QBC	q6	musical	2
+319	QBC	q6	thriller	1
+320	QBC	q6	crime	1
+321	QBC	q6	adventure	2
+322	QBC	q7	romance	4
+323	QBC	q7	mystery	1
+324	QBC	q7	comedy	16
+325	QBC	q7	action	2
+326	QBC	q7	horror	0
+327	QBC	q7	unknown	53
+328	QBC	q7	film noir	0
+329	QBC	q7	drama	16
+330	QBC	q7	crime drama	0
+331	QBC	q7	western	1
+332	QBC	q7	musical	3
+333	QBC	q7	thriller	0
+334	QBC	q7	crime	2
+335	QBC	q7	adventure	2
+336	GraphDensity	q0	romance	1
+337	GraphDensity	q0	mystery	0
+338	GraphDensity	q0	comedy	21
+339	GraphDensity	q0	action	1
+340	GraphDensity	q0	horror	2
+341	GraphDensity	q0	unknown	28
+342	GraphDensity	q0	film noir	2
+343	GraphDensity	q0	drama	26
+344	GraphDensity	q0	crime drama	0
+345	GraphDensity	q0	western	5
+346	GraphDensity	q0	musical	3
+347	GraphDensity	q0	thriller	7
+348	GraphDensity	q0	crime	0
+349	GraphDensity	q0	adventure	4
+350	GraphDensity	q1	romance	3
+351	GraphDensity	q1	mystery	1
+352	GraphDensity	q1	comedy	22
+353	GraphDensity	q1	action	3
+354	GraphDensity	q1	horror	2
+355	GraphDensity	q1	unknown	22
+356	GraphDensity	q1	film noir	2
+357	GraphDensity	q1	drama	30
+358	GraphDensity	q1	crime drama	1
+359	GraphDensity	q1	western	5
+360	GraphDensity	q1	musical	1
+361	GraphDensity	q1	thriller	2
+362	GraphDensity	q1	crime	3
+363	GraphDensity	q1	adventure	3
+364	GraphDensity	q2	romance	4
+365	GraphDensity	q2	mystery	1
+366	GraphDensity	q2	comedy	18
+367	GraphDensity	q2	action	4
+368	GraphDensity	q2	horror	2
+369	GraphDensity	q2	unknown	21
+370	GraphDensity	q2	film noir	0
+371	GraphDensity	q2	drama	28
+372	GraphDensity	q2	crime drama	1
+373	GraphDensity	q2	western	7
+374	GraphDensity	q2	musical	3
+375	GraphDensity	q2	thriller	3
+376	GraphDensity	q2	crime	7
+377	GraphDensity	q2	adventure	1
+378	GraphDensity	q3	romance	5
+379	GraphDensity	q3	mystery	1
+380	GraphDensity	q3	comedy	15
+381	GraphDensity	q3	action	3
+382	GraphDensity	q3	horror	1
+383	GraphDensity	q3	unknown	30
+384	GraphDensity	q3	film noir	0
+385	GraphDensity	q3	drama	31
+386	GraphDensity	q3	crime drama	1
+387	GraphDensity	q3	western	5
+388	GraphDensity	q3	musical	1
+389	GraphDensity	q3	thriller	3
+390	GraphDensity	q3	crime	3
+391	GraphDensity	q3	adventure	1
+392	GraphDensity	q4	romance	1
+393	GraphDensity	q4	mystery	4
+394	GraphDensity	q4	comedy	16
+395	GraphDensity	q4	action	4
+396	GraphDensity	q4	horror	1
+397	GraphDensity	q4	unknown	30
+398	GraphDensity	q4	film noir	1
+399	GraphDensity	q4	drama	23
+400	GraphDensity	q4	crime drama	2
+401	GraphDensity	q4	western	3
+402	GraphDensity	q4	musical	4
+403	GraphDensity	q4	thriller	4
+404	GraphDensity	q4	crime	4
+405	GraphDensity	q4	adventure	3
+406	GraphDensity	q5	romance	3
+407	GraphDensity	q5	mystery	3
+408	GraphDensity	q5	comedy	23
+409	GraphDensity	q5	action	4
+410	GraphDensity	q5	horror	3
+411	GraphDensity	q5	unknown	24
+412	GraphDensity	q5	film noir	2
+413	GraphDensity	q5	drama	24
+414	GraphDensity	q5	crime drama	2
+415	GraphDensity	q5	western	2
+416	GraphDensity	q5	musical	1
+417	GraphDensity	q5	thriller	2
+418	GraphDensity	q5	crime	5
+419	GraphDensity	q5	adventure	2
+420	GraphDensity	q6	romance	3
+421	GraphDensity	q6	mystery	2
+422	GraphDensity	q6	comedy	21
+423	GraphDensity	q6	action	4
+424	GraphDensity	q6	horror	4
+425	GraphDensity	q6	unknown	28
+426	GraphDensity	q6	film noir	1
+427	GraphDensity	q6	drama	21
+428	GraphDensity	q6	crime drama	0
+429	GraphDensity	q6	western	3
+430	GraphDensity	q6	musical	3
+431	GraphDensity	q6	thriller	3
+432	GraphDensity	q6	crime	6
+433	GraphDensity	q6	adventure	1
+434	GraphDensity	q7	romance	4
+435	GraphDensity	q7	mystery	3
+436	GraphDensity	q7	comedy	16
+437	GraphDensity	q7	action	5
+438	GraphDensity	q7	horror	3
+439	GraphDensity	q7	unknown	29
+440	GraphDensity	q7	film noir	2
+441	GraphDensity	q7	drama	20
+442	GraphDensity	q7	crime drama	1
+443	GraphDensity	q7	western	5
+444	GraphDensity	q7	musical	1
+445	GraphDensity	q7	thriller	4
+446	GraphDensity	q7	crime	4
+447	GraphDensity	q7	adventure	3
+448	EER	q0	romance	1
+449	EER	q0	mystery	0
+450	EER	q0	comedy	21
+451	EER	q0	action	1
+452	EER	q0	horror	2
+453	EER	q0	unknown	28
+454	EER	q0	film noir	2
+455	EER	q0	drama	26
+456	EER	q0	crime drama	0
+457	EER	q0	western	5
+458	EER	q0	musical	3
+459	EER	q0	thriller	7
+460	EER	q0	crime	0
+461	EER	q0	adventure	4
+462	EER	q1	romance	1
+463	EER	q1	mystery	4
+464	EER	q1	comedy	21
+465	EER	q1	action	4
+466	EER	q1	horror	1
+467	EER	q1	unknown	21
+468	EER	q1	film noir	3
+469	EER	q1	drama	26
+470	EER	q1	crime drama	2
+471	EER	q1	western	4
+472	EER	q1	musical	3
+473	EER	q1	thriller	2
+474	EER	q1	crime	5
+475	EER	q1	adventure	3
+476	EER	q2	romance	3
+477	EER	q2	mystery	3
+478	EER	q2	comedy	11
+479	EER	q2	action	9
+480	EER	q2	horror	2
+481	EER	q2	unknown	27
+482	EER	q2	film noir	1
+483	EER	q2	drama	27
+484	EER	q2	crime drama	0
+485	EER	q2	western	3
+486	EER	q2	musical	2
+487	EER	q2	thriller	3
+488	EER	q2	crime	7
+489	EER	q2	adventure	2
+490	EER	q3	romance	5
+491	EER	q3	mystery	3
+492	EER	q3	comedy	20
+493	EER	q3	action	7
+494	EER	q3	horror	2
+495	EER	q3	unknown	33
+496	EER	q3	film noir	0
+497	EER	q3	drama	18
+498	EER	q3	crime drama	2
+499	EER	q3	western	3
+500	EER	q3	musical	0
+501	EER	q3	thriller	4
+502	EER	q3	crime	2
+503	EER	q3	adventure	1
+504	EER	q4	romance	3
+505	EER	q4	mystery	1
+506	EER	q4	comedy	17
+507	EER	q4	action	0
+508	EER	q4	horror	4
+509	EER	q4	unknown	20
+510	EER	q4	film noir	1
+511	EER	q4	drama	32
+512	EER	q4	crime drama	1
+513	EER	q4	western	5
+514	EER	q4	musical	2
+515	EER	q4	thriller	3
+516	EER	q4	crime	11
+517	EER	q4	adventure	0
+518	EER	q5	romance	3
+519	EER	q5	mystery	1
+520	EER	q5	comedy	20
+521	EER	q5	action	2
+522	EER	q5	horror	0
+523	EER	q5	unknown	23
+524	EER	q5	film noir	3
+525	EER	q5	drama	27
+526	EER	q5	crime drama	1
+527	EER	q5	western	8
+528	EER	q5	musical	2
+529	EER	q5	thriller	4
+530	EER	q5	crime	5
+531	EER	q5	adventure	1
+532	EER	q6	romance	3
+533	EER	q6	mystery	2
+534	EER	q6	comedy	23
+535	EER	q6	action	3
+536	EER	q6	horror	3
+537	EER	q6	unknown	27
+538	EER	q6	film noir	0
+539	EER	q6	drama	23
+540	EER	q6	crime drama	1
+541	EER	q6	western	4
+542	EER	q6	musical	2
+543	EER	q6	thriller	2
+544	EER	q6	crime	2
+545	EER	q6	adventure	5
+546	EER	q7	romance	5
+547	EER	q7	mystery	1
+548	EER	q7	comedy	19
+549	EER	q7	action	2
+550	EER	q7	horror	4
+551	EER	q7	unknown	33
+552	EER	q7	film noir	0
+553	EER	q7	drama	24
+554	EER	q7	crime drama	1
+555	EER	q7	western	3
+556	EER	q7	musical	3
+557	EER	q7	thriller	3
+558	EER	q7	crime	0
+559	EER	q7	adventure	2
+560	LAL_iter	q0	romance	1
+561	LAL_iter	q0	mystery	0
+562	LAL_iter	q0	comedy	21
+563	LAL_iter	q0	action	1
+564	LAL_iter	q0	horror	2
+565	LAL_iter	q0	unknown	28
+566	LAL_iter	q0	film noir	2
+567	LAL_iter	q0	drama	26
+568	LAL_iter	q0	crime drama	0
+569	LAL_iter	q0	western	5
+570	LAL_iter	q0	musical	3
+571	LAL_iter	q0	thriller	7
+572	LAL_iter	q0	crime	0
+573	LAL_iter	q0	adventure	4
+574	LAL_iter	q1	romance	0
+575	LAL_iter	q1	mystery	7
+576	LAL_iter	q1	comedy	30
+577	LAL_iter	q1	action	4
+578	LAL_iter	q1	horror	0
+579	LAL_iter	q1	unknown	3
+580	LAL_iter	q1	film noir	0
+581	LAL_iter	q1	drama	38
+582	LAL_iter	q1	crime drama	1
+583	LAL_iter	q1	western	8
+584	LAL_iter	q1	musical	3
+585	LAL_iter	q1	thriller	3
+586	LAL_iter	q1	crime	2
+587	LAL_iter	q1	adventure	1
+588	LAL_iter	q2	romance	1
+589	LAL_iter	q2	mystery	4
+590	LAL_iter	q2	comedy	35
+591	LAL_iter	q2	action	1
+592	LAL_iter	q2	horror	0
+593	LAL_iter	q2	unknown	3
+594	LAL_iter	q2	film noir	1
+595	LAL_iter	q2	drama	30
+596	LAL_iter	q2	crime drama	2
+597	LAL_iter	q2	western	13
+598	LAL_iter	q2	musical	3
+599	LAL_iter	q2	thriller	0
+600	LAL_iter	q2	crime	4
+601	LAL_iter	q2	adventure	3
+602	LAL_iter	q3	romance	2
+603	LAL_iter	q3	mystery	1
+604	LAL_iter	q3	comedy	20
+605	LAL_iter	q3	action	2
+606	LAL_iter	q3	horror	3
+607	LAL_iter	q3	unknown	8
+608	LAL_iter	q3	film noir	7
+609	LAL_iter	q3	drama	36
+610	LAL_iter	q3	crime drama	4
+611	LAL_iter	q3	western	3
+612	LAL_iter	q3	musical	5
+613	LAL_iter	q3	thriller	1
+614	LAL_iter	q3	crime	5
+615	LAL_iter	q3	adventure	3
+616	LAL_iter	q4	romance	3
+617	LAL_iter	q4	mystery	3
+618	LAL_iter	q4	comedy	17
+619	LAL_iter	q4	action	0
+620	LAL_iter	q4	horror	5
+621	LAL_iter	q4	unknown	8
+622	LAL_iter	q4	film noir	0
+623	LAL_iter	q4	drama	31
+624	LAL_iter	q4	crime drama	1
+625	LAL_iter	q4	western	1
+626	LAL_iter	q4	musical	3
+627	LAL_iter	q4	thriller	4
+628	LAL_iter	q4	crime	19
+629	LAL_iter	q4	adventure	5
+630	LAL_iter	q5	romance	5
+631	LAL_iter	q5	mystery	0
+632	LAL_iter	q5	comedy	18
+633	LAL_iter	q5	action	14
+634	LAL_iter	q5	horror	5
+635	LAL_iter	q5	unknown	27
+636	LAL_iter	q5	film noir	0
+637	LAL_iter	q5	drama	16
+638	LAL_iter	q5	crime drama	0
+639	LAL_iter	q5	western	5
+640	LAL_iter	q5	musical	0
+641	LAL_iter	q5	thriller	6
+642	LAL_iter	q5	crime	2
+643	LAL_iter	q5	adventure	2
+644	LAL_iter	q6	romance	7
+645	LAL_iter	q6	mystery	0
+646	LAL_iter	q6	comedy	11
+647	LAL_iter	q6	action	6
+648	LAL_iter	q6	horror	3
+649	LAL_iter	q6	unknown	40
+650	LAL_iter	q6	film noir	0
+651	LAL_iter	q6	drama	26
+652	LAL_iter	q6	crime drama	0
+653	LAL_iter	q6	western	0
+654	LAL_iter	q6	musical	0
+655	LAL_iter	q6	thriller	7
+656	LAL_iter	q6	crime	0
+657	LAL_iter	q6	adventure	0
+658	LAL_iter	q7	romance	5
+659	LAL_iter	q7	mystery	0
+660	LAL_iter	q7	comedy	0
+661	LAL_iter	q7	action	0
+662	LAL_iter	q7	horror	0
+663	LAL_iter	q7	unknown	95
+664	LAL_iter	q7	film noir	0
+665	LAL_iter	q7	drama	0
+666	LAL_iter	q7	crime drama	0
+667	LAL_iter	q7	western	0
+668	LAL_iter	q7	musical	0
+669	LAL_iter	q7	thriller	0
+670	LAL_iter	q7	crime	0
+671	LAL_iter	q7	adventure	0
+672	LAL_indep	q0	romance	1
+673	LAL_indep	q0	mystery	0
+674	LAL_indep	q0	comedy	21
+675	LAL_indep	q0	action	1
+676	LAL_indep	q0	horror	2
+677	LAL_indep	q0	unknown	28
+678	LAL_indep	q0	film noir	2
+679	LAL_indep	q0	drama	26
+680	LAL_indep	q0	crime drama	0
+681	LAL_indep	q0	western	5
+682	LAL_indep	q0	musical	3
+683	LAL_indep	q0	thriller	7
+684	LAL_indep	q0	crime	0
+685	LAL_indep	q0	adventure	4
+686	LAL_indep	q1	romance	4
+687	LAL_indep	q1	mystery	2
+688	LAL_indep	q1	comedy	17
+689	LAL_indep	q1	action	4
+690	LAL_indep	q1	horror	2
+691	LAL_indep	q1	unknown	24
+692	LAL_indep	q1	film noir	1
+693	LAL_indep	q1	drama	25
+694	LAL_indep	q1	crime drama	3
+695	LAL_indep	q1	western	5
+696	LAL_indep	q1	musical	3
+697	LAL_indep	q1	thriller	6
+698	LAL_indep	q1	crime	2
+699	LAL_indep	q1	adventure	2
+700	LAL_indep	q2	romance	1
+701	LAL_indep	q2	mystery	4
+702	LAL_indep	q2	comedy	23
+703	LAL_indep	q2	action	9
+704	LAL_indep	q2	horror	2
+705	LAL_indep	q2	unknown	17
+706	LAL_indep	q2	film noir	0
+707	LAL_indep	q2	drama	24
+708	LAL_indep	q2	crime drama	0
+709	LAL_indep	q2	western	5
+710	LAL_indep	q2	musical	2
+711	LAL_indep	q2	thriller	4
+712	LAL_indep	q2	crime	7
+713	LAL_indep	q2	adventure	2
+714	LAL_indep	q3	romance	4
+715	LAL_indep	q3	mystery	3
+716	LAL_indep	q3	comedy	17
+717	LAL_indep	q3	action	4
+718	LAL_indep	q3	horror	4
+719	LAL_indep	q3	unknown	18
+720	LAL_indep	q3	film noir	0
+721	LAL_indep	q3	drama	28
+722	LAL_indep	q3	crime drama	0
+723	LAL_indep	q3	western	4
+724	LAL_indep	q3	musical	2
+725	LAL_indep	q3	thriller	3
+726	LAL_indep	q3	crime	9
+727	LAL_indep	q3	adventure	4
+728	LAL_indep	q4	romance	0
+729	LAL_indep	q4	mystery	4
+730	LAL_indep	q4	comedy	25
+731	LAL_indep	q4	action	2
+732	LAL_indep	q4	horror	0
+733	LAL_indep	q4	unknown	16
+734	LAL_indep	q4	film noir	3
+735	LAL_indep	q4	drama	27
+736	LAL_indep	q4	crime drama	0
+737	LAL_indep	q4	western	11
+738	LAL_indep	q4	musical	2
+739	LAL_indep	q4	thriller	2
+740	LAL_indep	q4	crime	3
+741	LAL_indep	q4	adventure	5
+742	LAL_indep	q5	romance	5
+743	LAL_indep	q5	mystery	2
+744	LAL_indep	q5	comedy	25
+745	LAL_indep	q5	action	1
+746	LAL_indep	q5	horror	3
+747	LAL_indep	q5	unknown	8
+748	LAL_indep	q5	film noir	1
+749	LAL_indep	q5	drama	40
+750	LAL_indep	q5	crime drama	3
+751	LAL_indep	q5	western	2
+752	LAL_indep	q5	musical	5
+753	LAL_indep	q5	thriller	2
+754	LAL_indep	q5	crime	2
+755	LAL_indep	q5	adventure	1
+756	LAL_indep	q6	romance	4
+757	LAL_indep	q6	mystery	0
+758	LAL_indep	q6	comedy	24
+759	LAL_indep	q6	action	2
+760	LAL_indep	q6	horror	3
+761	LAL_indep	q6	unknown	16
+762	LAL_indep	q6	film noir	3
+763	LAL_indep	q6	drama	33
+764	LAL_indep	q6	crime drama	2
+765	LAL_indep	q6	western	3
+766	LAL_indep	q6	musical	0
+767	LAL_indep	q6	thriller	1
+768	LAL_indep	q6	crime	9
+769	LAL_indep	q6	adventure	0
+770	LAL_indep	q7	romance	5
+771	LAL_indep	q7	mystery	0
+772	LAL_indep	q7	comedy	0
+773	LAL_indep	q7	action	5
+774	LAL_indep	q7	horror	2
+775	LAL_indep	q7	unknown	85
+776	LAL_indep	q7	film noir	0
+777	LAL_indep	q7	drama	0
+778	LAL_indep	q7	crime drama	0
+779	LAL_indep	q7	western	0
+780	LAL_indep	q7	musical	0
+781	LAL_indep	q7	thriller	3
+782	LAL_indep	q7	crime	0
+783	LAL_indep	q7	adventure	0
