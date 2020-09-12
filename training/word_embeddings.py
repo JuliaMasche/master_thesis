@@ -14,10 +14,10 @@ def select_word_embedding(we_name:str):
                                         FlairEmbeddings('news-backward'),
                                        ])
     elif we_name == "bert":
-        word_embeddings = TransformerWordEmbeddings('bert-base-uncased', layers='-1')
+        word_embeddings = TransformerWordEmbeddings('bert-base-uncased', layers='-1', fine_tune = True)
         
     elif we_name == "fasttext":
-        word_embeddings = WordEmbeddings('en')
+        word_embeddings = WordEmbeddings('de')
     
     elif we_name == "elmo_small":
         word_embeddings = ELMoEmbeddings('small')
@@ -40,7 +40,10 @@ def select_document_embeddding(name:str, word_embeddings):
     elif name == "RNN":
         document_embedding = DocumentRNNEmbeddings([word_embeddings], hidden_size=256)
 
-    elif name == "Transformer":
+    elif name == "Transformer_ger":
+        document_embedding = TransformerDocumentEmbeddings('bert-base-german-dbmdz-uncased', fine_tune=True)
+
+    elif name == "Transformer_eng":
         document_embedding = TransformerDocumentEmbeddings('bert-base-uncased', fine_tune=True)
 
     return document_embedding

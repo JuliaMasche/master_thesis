@@ -24,13 +24,14 @@ import torch
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from torch.optim.adam import Adam
 nltk.download('stopwords')
 nltk.download('punkt')
 
 
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-doc_embeddings = ["Pool", "RNN", "Transformer"]
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "webkb_1000", "webkb_2000", "news_1000", "news_2000", "news_1500", "movie_80"]
+doc_embeddings = ["Pool", "RNN", "Transformer_eng", "Transformer_ger"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "wiki_3000", "wiki_original", "wiki_1000_wo_unknown", "webkb_1000", "webkb_2000", "news_original", "news_1000", "news_2000", "news_3000","news_balanced", "scan"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", choices=sets, default = "SST-2_50", type = str)
@@ -77,20 +78,26 @@ def predict_testset(test_text, classifier):
 
 def create_text_label_list(path:str):
     df = pd.read_csv(path, sep = sep)
-    text = df['sentence'].tolist()
-    text = [str(i).lower() for i in text]
-    stop = set(stopwords.words('english'))
+    if args.document_embedding == "Transformer_ger":
+        stop = set(stopwords.words('german'))
+    else:
+        stop = set(stopwords.words('english'))
     from nltk.tokenize import word_tokenize
     X = []
-    for x in text:
-        tokens = word_tokenize(x)
+    idx = []
+    for x in range(len(df)):
+        text = df['sentence'][x]
+        tokens = word_tokenize(text)
         result = [i for i in tokens if not i in stop]
-        x = (" ").join(result)
-        X.append(x)
-    X = np.asanyarray(X)
+        if not result:
+            idx.append(x)
+        new = (" ").join(result)
+        df['sentence'][x] = new.lower()
+    df = df.drop(index = idx)
+    X = df['sentence'].tolist()
     labels = df['label'].tolist()
     labels = [str(i) for i in labels]
-    return X, np.asarray(labels)
+    return np.asarray(X), np.asarray(labels)
 
 
 def create_sentence_dataset(train_text, train_labels):
@@ -123,8 +130,8 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
                     num_workers = 6,
                     embeddings_storage_mode ="gpu")
 
-    elif args.document_embedding == "Transformer":
-        trainer = ModelTrainer(classifier, corpus, optimizer=Adam)
+    elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
+        trainer = ModelTrainer(classifier, corpus, optimizer= Adam)
 
         trainer.train(os.path.join(path_results, 'resources/training'),
                     learning_rate= 3e-5, # use very small learning rate
@@ -146,8 +153,8 @@ def main_train(datapoints, test_text, test_labels, document_embeddings):
     runtime = timeit.default_timer() - starttime
     run_dict = {"runtime" : runtime}
     write_json(run_dict, path_results, len(run_dict), "a")
-    shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
-    del classifier, test_pred
+    #shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
+    #del classifier, test_pred
     return score, runtime
 
 
@@ -210,8 +217,8 @@ def main():
     for i in range(len(test_idx_list)):
         name = "kfold" + str(i+1)
         test_dict[name] = list(test_idx_list[i])
-    df_test_idx = pd.DataFrame(test_dict)
-    df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
+    #df_test_idx = pd.DataFrame(test_dict)
+    #df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
 
 
 main()

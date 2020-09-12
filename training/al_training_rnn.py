@@ -29,11 +29,12 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
 nltk.download('punkt')
+from torch.optim.adam import Adam
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL_indep", "QueryInstanceLAL_iter"]
 we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
-doc_embeddings = ["Pool", "RNN", "Transformer"]
-sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "webkb_1000", "webkb_2000", "movie_70", "movie_80", "news_1000", "news_2000", "news_1500"]
+doc_embeddings = ["Pool", "RNN", "Transformer_eng", "Transformer_ger"]
+sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "wiki_3000", "wiki_1000_wo_unknown", "webkb_1000", "webkb_2000", "movie_70", "movie_80", "news_1000", "news_2000", "news_3000", "news_balanced", "scan"]
 column_name_map = {0: 'text', 1: 'label'}
 
 
@@ -135,20 +136,27 @@ def predict_testset(test_text, classifier):
 
 def create_text_label_list(path:str):
     df = pd.read_csv(path, sep = sep)
-    text = df['sentence'].tolist()
-    text = [str(i).lower() for i in text]
-    stop = set(stopwords.words('english'))
+    if args.document_embedding == "Transformer_ger":
+        stop = set(stopwords.words('german'))
+    else:
+        stop = set(stopwords.words('english'))
     from nltk.tokenize import word_tokenize
     X = []
-    for x in text:
-        tokens = word_tokenize(x)
+    idx = []
+    for x in range(len(df)):
+        text = df['sentence'][x]
+        tokens = word_tokenize(text)
         result = [i for i in tokens if not i in stop]
-        x = (" ").join(result)
-        X.append(x)
-    X = np.asanyarray(X)
+        if not result:
+            idx.append(x)
+        new = (" ").join(result)
+        df['sentence'][x] = new.lower()
+    df = df.drop(index = idx)
+    X = df['sentence'].tolist()
     labels = df['label'].tolist()
     labels = [str(i) for i in labels]
-    return X, np.asarray(labels)
+    return np.asarray(X), np.asarray(labels)
+
 
 
 def create_sentence_dataset(train_text, train_labels):
@@ -181,16 +189,15 @@ def train_trainer(document_embeddings, label_dict, corpus, learning_rate, path):
                     train_with_dev = True,
                     embeddings_storage_mode= "gpu")
 
-    elif args.document_embedding == "Transformer":
-        trainer = ModelTrainer(classifier, corpus, optimizer="Adam")
+    elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
+        trainer = ModelTrainer(classifier, corpus, optimizer= Adam)
 
         trainer.train(os.path.join(path_results, path),
-                    learning_rate=learning_rate, # use very small learning rate
+                    learning_rate=learning_rate, 
                     mini_batch_size=mini_batch_size,
-                    mini_batch_chunk_size=4, # optionally set this if transformer is too much for your machine
-                    max_epochs=5, # terminate after 5 epochs
-                    embeddings_storage_mode= "gpu"
-                    )
+                    mini_batch_chunk_size=4, 
+                    max_epochs=5,
+                    embeddings_storage_mode= "gpu")
 
 
 def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_labels, test_text, test_labels, datapoints, label_ind, unlab_ind, y):
@@ -215,14 +222,14 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     #train
     if args.document_embedding == "Pool" or args.document_embedding == "RNN":
         train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
-    elif args.document_embedding == "Transformer":
+    elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
         train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
     #load classifier and create pred test set
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
     #if DocumentRNNEmbeddings, then update feature matrix of AL with trained embeddings
-    if args.document_embedding == "RNN":
+    if args.document_embedding == "RNN" or args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
         document_embeddings_trained = classifier.document_embeddings
         feat_mat = create_feat_mat(train_text, document_embeddings_trained)
         idx = list(range(0, len(train_text)))
@@ -246,7 +253,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
             document_embeddings = select_document_embeddding(document_embedding, word_embeddings)
             if args.document_embedding == "Pool" or args.document_embedding == "RNN":
                 learning_rate = args.learning_rate + 0.05
-            elif args.document_embedding == "Transformer":
+            elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
                 learning_rate = 3e-4
             train_trainer(document_embeddings, label_dict, corpus, learning_rate, 'resources/QBC/training')
             classifier_two = TextClassifier.load(os.path.join(path_results, 'resources/QBC/training/final-model.pt'))
@@ -282,11 +289,14 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         train = SentenceDataset(train_sentences)
         corpus = Corpus(train=train)
         label_dict = corpus.make_label_dictionary()
-        train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
+        if args.document_embedding == "Pool" or args.document_embedding == "RNN":
+            train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
+        elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
+            train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
         classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
         test_pred = predict_testset(test_text, classifier)
 
-        if args.document_embedding == "RNN":
+        if args.document_embedding == "RNN" or args.document_embedding == "Transformer_ger" or args.document_embedding == "Transformer_eng":
             document_embeddings_trained = classifier.document_embeddings
             feat_mat = create_feat_mat(train_text, document_embeddings_trained)
             idx = list(range(0, len(train_text)))
