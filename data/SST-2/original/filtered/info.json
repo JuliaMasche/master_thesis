@@ -1,0 +1,22 @@
+{
+           "num_instances": 67293,
+           "distribution": {
+                      "1": 37531,
+                      "0": 29762
+           },
+           "distribution_percentage": {
+                      "1": 55.77251720089757,
+                      "0": 44.22748279910243
+           },
+           "classes": [
+                      0,
+                      1
+           ],
+           "longest instance": "addition sporting one worst titles recent cinematic history , ballistic : ecks vs. sever also features terrible , banal dialogue ; convenient , hole-ridden plotting ; superficial characters rather dull , unimaginative car chase .",
+           "lo_length": 229,
+           "shortest instance": ".",
+           "sh_length": 1,
+           "mean length of instances": 39.44218566567102,
+           "stdev of length of instances": 31.9771897362329,
+           "median": 29
+}

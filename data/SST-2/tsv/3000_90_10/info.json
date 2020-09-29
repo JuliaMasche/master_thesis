@@ -1,15 +1,22 @@
 {
-    "num_instances": 3000,
-    "distribution": {
-        "1": 2700,
-        "0": 300
-    },
-    "distribution_percentage": {
-        "1": 90.0,
-        "0": 10.0
-    },
-    "classes": [
-        0,
-        1
-    ]
+           "num_instances": 3000,
+           "distribution": {
+                      "1": 2700,
+                      "0": 300
+           },
+           "distribution_percentage": {
+                      "1": 90.0,
+                      "0": 10.0
+           },
+           "classes": [
+                      0,
+                      1
+           ],
+           "longest instance": "produced jerry bruckheimer directed joel schumacher , reflects worst shallow styles : wildly overproduced , inadequately motivated every step way demographically targeted please every one ( one )",
+           "lo_length": 195,
+           "shortest instance": "tv",
+           "sh_length": 2,
+           "mean length of instances": 39.10166666666667,
+           "stdev of length of instances": 31.58951244196396,
+           "median": 28.0
 }

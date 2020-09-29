@@ -1,15 +1,22 @@
 {
-    "num_instances": 1000,
-    "distribution": {
-        "1": 900,
-        "0": 100
-    },
-    "distribution_percentage": {
-        "1": 90.0,
-        "0": 10.0
-    },
-    "classes": [
-        0,
-        1
-    ]
+           "num_instances": 1000,
+           "distribution": {
+                      "1": 900,
+                      "0": 100
+           },
+           "distribution_percentage": {
+                      "1": 90.0,
+                      "0": 10.0
+           },
+           "classes": [
+                      0,
+                      1
+           ],
+           "longest instance": "build some robots , haul 'em to the theater with you for the late show , and put on your own mystery science theatre 3000 tribute to what is almost certainly going to go down as the worst -- and only -- killer website movie of this or any other year ",
+           "lo_length": 250,
+           "shortest instance": "free ",
+           "sh_length": 5,
+           "mean length of instances": 53.959,
+           "stdev of length of instances": 44.75444424053637,
+           "median": 38.0
 }
