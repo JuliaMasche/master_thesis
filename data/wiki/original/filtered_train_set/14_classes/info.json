@@ -34,18 +34,18 @@
     },
     "classes": [
         "unknown",
+        "western",
+        "romance",
+        "action",
+        "film noir",
+        "drama",
+        "comedy",
         "horror",
         "mystery",
         "musical",
-        "crime",
-        "action",
-        "drama",
-        "comedy",
-        "western",
-        "romance",
         "crime drama",
-        "film noir",
         "adventure",
+        "crime",
         "thriller"
     ]
 }

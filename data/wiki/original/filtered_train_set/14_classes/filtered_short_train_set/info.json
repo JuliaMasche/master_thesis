@@ -1,0 +1,51 @@
+{
+    "num_instances": 3000,
+    "distribution": {
+        "unknown": 792,
+        "drama": 762,
+        "comedy": 566,
+        "western": 132,
+        "crime": 120,
+        "action": 106,
+        "thriller": 106,
+        "romance": 90,
+        "horror": 71,
+        "adventure": 68,
+        "musical": 64,
+        "mystery": 55,
+        "film noir": 37,
+        "crime drama": 31
+    },
+    "distribution_percentage": {
+        "unknown": 26.400000000000002,
+        "drama": 25.4,
+        "comedy": 18.866666666666667,
+        "western": 4.3999999999999995,
+        "crime": 4.0,
+        "action": 3.5333333333333337,
+        "thriller": 3.5333333333333337,
+        "romance": 3.0,
+        "horror": 2.3666666666666667,
+        "adventure": 2.2666666666666666,
+        "musical": 2.1333333333333333,
+        "mystery": 1.8333333333333333,
+        "film noir": 1.2333333333333334,
+        "crime drama": 1.0333333333333332
+    },
+    "classes": [
+        "unknown",
+        "western",
+        "romance",
+        "action",
+        "film noir",
+        "drama",
+        "comedy",
+        "horror",
+        "mystery",
+        "musical",
+        "crime drama",
+        "adventure",
+        "crime",
+        "thriller"
+    ]
+}
