@@ -1,0 +1,1301 @@
+{
+            "query_strategy": "QueryInstanceQBC",
+            "word_embedding": "glove",
+            "neural network": "rnn",
+            "dataset": "../data/news/tsv/dataset_2000/",
+            "learning_rate": 0.1,
+            "max epoch": 100,
+            "mini batch size": 16,
+            "stopping_criterion": 20,
+            "seed": 5,
+            "query batch size": 100,
+            "performance_measure": "g-mean",
+            "num_classifier_QBC": 2
+}{
+  "train_length": 1600,
+  "test_length": 400
+}{
+                                                                                                    "3": "rec.autos",
+                                                                                                    "6": "rec.autos",
+                                                                                                    "10": "rec.autos",
+                                                                                                    "18": "rec.autos",
+                                                                                                    "26": "rec.autos",
+                                                                                                    "37": "rec.autos",
+                                                                                                    "44": "comp.sys.mac.hardware",
+                                                                                                    "46": "comp.sys.mac.hardware",
+                                                                                                    "59": "comp.sys.mac.hardware",
+                                                                                                    "95": "comp.sys.mac.hardware",
+                                                                                                    "106": "comp.sys.mac.hardware",
+                                                                                                    "116": "comp.sys.mac.hardware",
+                                                                                                    "133": "comp.sys.mac.hardware",
+                                                                                                    "135": "comp.sys.mac.hardware",
+                                                                                                    "147": "comp.sys.mac.hardware",
+                                                                                                    "208": "comp.sys.mac.hardware",
+                                                                                                    "231": "comp.sys.mac.hardware",
+                                                                                                    "259": "comp.sys.mac.hardware",
+                                                                                                    "270": "comp.graphics",
+                                                                                                    "284": "comp.graphics",
+                                                                                                    "298": "comp.graphics",
+                                                                                                    "321": "comp.graphics",
+                                                                                                    "326": "comp.graphics",
+                                                                                                    "339": "comp.graphics",
+                                                                                                    "340": "comp.graphics",
+                                                                                                    "360": "comp.graphics",
+                                                                                                    "370": "comp.graphics",
+                                                                                                    "372": "comp.graphics",
+                                                                                                    "378": "comp.graphics",
+                                                                                                    "403": "comp.graphics",
+                                                                                                    "407": "comp.graphics",
+                                                                                                    "419": "comp.graphics",
+                                                                                                    "428": "comp.graphics",
+                                                                                                    "441": "comp.graphics",
+                                                                                                    "443": "comp.graphics",
+                                                                                                    "504": "comp.graphics",
+                                                                                                    "510": "comp.graphics",
+                                                                                                    "523": "sci.space",
+                                                                                                    "524": "sci.space",
+                                                                                                    "540": "talk.politics.guns",
+                                                                                                    "572": "sci.med",
+                                                                                                    "592": "comp.sys.ibm.pc.hardware",
+                                                                                                    "611": "comp.os.ms-windows.misc",
+                                                                                                    "617": "comp.os.ms-windows.misc",
+                                                                                                    "626": "comp.os.ms-windows.misc",
+                                                                                                    "634": "comp.os.ms-windows.misc",
+                                                                                                    "642": "comp.os.ms-windows.misc",
+                                                                                                    "646": "rec.motorcycles",
+                                                                                                    "679": "rec.motorcycles",
+                                                                                                    "692": "rec.motorcycles",
+                                                                                                    "727": "rec.motorcycles",
+                                                                                                    "732": "rec.motorcycles",
+                                                                                                    "734": "rec.motorcycles",
+                                                                                                    "739": "rec.motorcycles",
+                                                                                                    "749": "rec.motorcycles",
+                                                                                                    "761": "rec.motorcycles",
+                                                                                                    "770": "rec.motorcycles",
+                                                                                                    "779": "rec.motorcycles",
+                                                                                                    "784": "rec.motorcycles",
+                                                                                                    "797": "rec.motorcycles",
+                                                                                                    "827": "rec.motorcycles",
+                                                                                                    "835": "rec.motorcycles",
+                                                                                                    "849": "rec.motorcycles",
+                                                                                                    "857": "rec.motorcycles",
+                                                                                                    "911": "misc.forsale",
+                                                                                                    "927": "misc.forsale",
+                                                                                                    "953": "misc.forsale",
+                                                                                                    "960": "misc.forsale",
+                                                                                                    "967": "misc.forsale",
+                                                                                                    "984": "misc.forsale",
+                                                                                                    "985": "misc.forsale",
+                                                                                                    "1085": "misc.forsale",
+                                                                                                    "1104": "misc.forsale",
+                                                                                                    "1113": "misc.forsale",
+                                                                                                    "1124": "misc.forsale",
+                                                                                                    "1175": "alt.atheism",
+                                                                                                    "1184": "sci.electronics",
+                                                                                                    "1200": "sci.electronics",
+                                                                                                    "1220": "comp.windows.x",
+                                                                                                    "1235": "rec.sport.hockey",
+                                                                                                    "1264": "rec.sport.baseball",
+                                                                                                    "1265": "rec.sport.baseball",
+                                                                                                    "1275": "rec.sport.baseball",
+                                                                                                    "1277": "rec.sport.baseball",
+                                                                                                    "1281": "rec.sport.baseball",
+                                                                                                    "1329": "rec.sport.baseball",
+                                                                                                    "1335": "rec.sport.baseball",
+                                                                                                    "1388": "rec.sport.baseball",
+                                                                                                    "1414": "rec.sport.baseball",
+                                                                                                    "1426": "rec.sport.baseball",
+                                                                                                    "1443": "rec.sport.baseball",
+                                                                                                    "1449": "rec.sport.baseball",
+                                                                                                    "1497": "rec.sport.baseball",
+                                                                                                    "1515": "soc.religion.christian",
+                                                                                                    "1519": "soc.religion.christian",
+                                                                                                    "1535": "talk.politics.mideast",
+                                                                                                    "1560": "talk.politics.misc",
+                                                                                                    "1568": "talk.politics.misc",
+                                                                                                    "1584": "sci.crypt",
+                                                                                                    "1589": "sci.crypt"
+}{
+ "runtime": 2180.164509644732
+}{
+                       "alt.atheism": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.2,
+                                              "f1-score": 0.25,
+                                              "support": 10
+                       },
+                       "sci.electronics": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 7
+                       },
+                       "sci.crypt": {
+                                              "precision": 1.0,
+                                              "recall": 0.3333333333333333,
+                                              "f1-score": 0.5,
+                                              "support": 3
+                       },
+                       "comp.sys.mac.hardware": {
+                                              "precision": 0.46808510638297873,
+                                              "recall": 0.4,
+                                              "f1-score": 0.43137254901960786,
+                                              "support": 55
+                       },
+                       "rec.sport.baseball": {
+                                              "precision": 0.6122448979591837,
+                                              "recall": 0.9523809523809523,
+                                              "f1-score": 0.7453416149068324,
+                                              "support": 63
+                       },
+                       "comp.sys.ibm.pc.hardware": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "talk.politics.mideast": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 2
+                       },
+                       "sci.space": {
+                                              "precision": 0.5,
+                                              "recall": 0.6666666666666666,
+                                              "f1-score": 0.5714285714285715,
+                                              "support": 3
+                       },
+                       "comp.os.ms-windows.misc": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 9
+                       },
+                       "comp.graphics": {
+                                              "precision": 0.6511627906976745,
+                                              "recall": 0.4444444444444444,
+                                              "f1-score": 0.5283018867924528,
+                                              "support": 63
+                       },
+                       "talk.religion.misc": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.25,
+                                              "f1-score": 0.28571428571428575,
+                                              "support": 4
+                       },
+                       "rec.sport.hockey": {
+                                              "precision": 1.0,
+                                              "recall": 0.16666666666666666,
+                                              "f1-score": 0.2857142857142857,
+                                              "support": 6
+                       },
+                       "misc.forsale": {
+                                              "precision": 0.53,
+                                              "recall": 0.8833333333333333,
+                                              "f1-score": 0.6625,
+                                              "support": 60
+                       },
+                       "comp.windows.x": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "rec.motorcycles": {
+                                              "precision": 0.7636363636363637,
+                                              "recall": 0.7,
+                                              "f1-score": 0.7304347826086957,
+                                              "support": 60
+                       },
+                       "talk.politics.misc": {
+                                              "precision": 0.5,
+                                              "recall": 0.09090909090909091,
+                                              "f1-score": 0.15384615384615385,
+                                              "support": 11
+                       },
+                       "soc.religion.christian": {
+                                              "precision": 0.5714285714285714,
+                                              "recall": 0.5,
+                                              "f1-score": 0.5333333333333333,
+                                              "support": 8
+                       },
+                       "sci.med": {
+                                              "precision": 0.6666666666666666,
+                                              "recall": 0.8571428571428571,
+                                              "f1-score": 0.75,
+                                              "support": 7
+                       },
+                       "talk.politics.guns": {
+                                              "precision": 0.16666666666666666,
+                                              "recall": 0.125,
+                                              "f1-score": 0.14285714285714288,
+                                              "support": 8
+                       },
+                       "rec.autos": {
+                                              "precision": 0.6,
+                                              "recall": 0.2727272727272727,
+                                              "f1-score": 0.37499999999999994,
+                                              "support": 11
+                       },
+                       "accuracy": 0.5675,
+                       "macro avg": {
+                                              "precision": 0.43482788650523857,
+                                              "recall": 0.34213023088023087,
+                                              "f1-score": 0.3472922303110681,
+                                              "support": 400
+                       },
+                       "weighted avg": {
+                                              "precision": 0.5519891057318074,
+                                              "recall": 0.5675,
+                                              "f1-score": 0.531473444582288,
+                                              "support": 400
+                       }
+}{
+                "100": 0.6231285587778435,
+                "200": 0.5353758852638724,
+                "300": 0.6762296885363407,
+                "400": 0.7003474121144345,
+                "500": 0.6881754610334384,
+                "600": 0.7424831005728991,
+                "700": 0.7264888899377245,
+                "800": 0.725087043510895,
+                "900": 0.735721895207213,
+                "1000": 0.7492297139851319,
+                "1100": 0.7449440054120272,
+                "1200": 0.7621375520152065,
+                "1300": 0.7550461547402249,
+                "1400": 0.7507763377209913,
+                "1500": 0.773176639459614,
+                "1600": 0.7292458485406267
+}{
+  "train_length": 1600,
+  "test_length": 400
+}{
+                                                                                                    "0": "rec.autos",
+                                                                                                    "25": "rec.autos",
+                                                                                                    "34": "rec.autos",
+                                                                                                    "44": "comp.sys.mac.hardware",
+                                                                                                    "58": "comp.sys.mac.hardware",
+                                                                                                    "75": "comp.sys.mac.hardware",
+                                                                                                    "93": "comp.sys.mac.hardware",
+                                                                                                    "165": "comp.sys.mac.hardware",
+                                                                                                    "180": "comp.sys.mac.hardware",
+                                                                                                    "183": "comp.sys.mac.hardware",
+                                                                                                    "190": "comp.sys.mac.hardware",
+                                                                                                    "192": "comp.sys.mac.hardware",
+                                                                                                    "199": "comp.sys.mac.hardware",
+                                                                                                    "239": "comp.sys.mac.hardware",
+                                                                                                    "244": "comp.sys.mac.hardware",
+                                                                                                    "282": "comp.graphics",
+                                                                                                    "298": "comp.graphics",
+                                                                                                    "346": "comp.graphics",
+                                                                                                    "386": "comp.graphics",
+                                                                                                    "395": "comp.graphics",
+                                                                                                    "396": "comp.graphics",
+                                                                                                    "401": "comp.graphics",
+                                                                                                    "403": "comp.graphics",
+                                                                                                    "405": "comp.graphics",
+                                                                                                    "407": "comp.graphics",
+                                                                                                    "411": "comp.graphics",
+                                                                                                    "429": "comp.graphics",
+                                                                                                    "456": "comp.graphics",
+                                                                                                    "501": "comp.graphics",
+                                                                                                    "512": "comp.graphics",
+                                                                                                    "535": "talk.politics.guns",
+                                                                                                    "543": "talk.politics.guns",
+                                                                                                    "548": "talk.politics.guns",
+                                                                                                    "558": "sci.med",
+                                                                                                    "596": "comp.sys.ibm.pc.hardware",
+                                                                                                    "623": "comp.os.ms-windows.misc",
+                                                                                                    "626": "comp.os.ms-windows.misc",
+                                                                                                    "639": "comp.os.ms-windows.misc",
+                                                                                                    "654": "rec.motorcycles",
+                                                                                                    "681": "rec.motorcycles",
+                                                                                                    "687": "rec.motorcycles",
+                                                                                                    "731": "rec.motorcycles",
+                                                                                                    "738": "rec.motorcycles",
+                                                                                                    "740": "rec.motorcycles",
+                                                                                                    "741": "rec.motorcycles",
+                                                                                                    "764": "rec.motorcycles",
+                                                                                                    "777": "rec.motorcycles",
+                                                                                                    "839": "rec.motorcycles",
+                                                                                                    "847": "rec.motorcycles",
+                                                                                                    "869": "rec.motorcycles",
+                                                                                                    "880": "rec.motorcycles",
+                                                                                                    "911": "misc.forsale",
+                                                                                                    "963": "misc.forsale",
+                                                                                                    "990": "misc.forsale",
+                                                                                                    "993": "misc.forsale",
+                                                                                                    "996": "misc.forsale",
+                                                                                                    "1001": "misc.forsale",
+                                                                                                    "1024": "misc.forsale",
+                                                                                                    "1031": "misc.forsale",
+                                                                                                    "1054": "misc.forsale",
+                                                                                                    "1069": "misc.forsale",
+                                                                                                    "1075": "misc.forsale",
+                                                                                                    "1102": "misc.forsale",
+                                                                                                    "1104": "misc.forsale",
+                                                                                                    "1133": "misc.forsale",
+                                                                                                    "1142": "alt.atheism",
+                                                                                                    "1153": "alt.atheism",
+                                                                                                    "1175": "alt.atheism",
+                                                                                                    "1179": "sci.electronics",
+                                                                                                    "1201": "sci.electronics",
+                                                                                                    "1205": "comp.windows.x",
+                                                                                                    "1206": "comp.windows.x",
+                                                                                                    "1223": "comp.windows.x",
+                                                                                                    "1232": "rec.sport.hockey",
+                                                                                                    "1245": "rec.sport.hockey",
+                                                                                                    "1249": "rec.sport.hockey",
+                                                                                                    "1266": "rec.sport.baseball",
+                                                                                                    "1270": "rec.sport.baseball",
+                                                                                                    "1297": "rec.sport.baseball",
+                                                                                                    "1300": "rec.sport.baseball",
+                                                                                                    "1320": "rec.sport.baseball",
+                                                                                                    "1327": "rec.sport.baseball",
+                                                                                                    "1342": "rec.sport.baseball",
+                                                                                                    "1357": "rec.sport.baseball",
+                                                                                                    "1374": "rec.sport.baseball",
+                                                                                                    "1389": "rec.sport.baseball",
+                                                                                                    "1396": "rec.sport.baseball",
+                                                                                                    "1404": "rec.sport.baseball",
+                                                                                                    "1429": "rec.sport.baseball",
+                                                                                                    "1432": "rec.sport.baseball",
+                                                                                                    "1435": "rec.sport.baseball",
+                                                                                                    "1472": "rec.sport.baseball",
+                                                                                                    "1492": "rec.sport.baseball",
+                                                                                                    "1494": "rec.sport.baseball",
+                                                                                                    "1504": "soc.religion.christian",
+                                                                                                    "1547": "talk.politics.misc",
+                                                                                                    "1555": "talk.politics.misc",
+                                                                                                    "1561": "talk.politics.misc",
+                                                                                                    "1577": "talk.politics.misc",
+                                                                                                    "1593": "sci.crypt"
+}{
+ "runtime": 2232.182735113427
+}{
+                       "alt.atheism": {
+                                              "precision": 0.18181818181818182,
+                                              "recall": 0.4444444444444444,
+                                              "f1-score": 0.2580645161290322,
+                                              "support": 9
+                       },
+                       "sci.electronics": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 7
+                       },
+                       "sci.crypt": {
+                                              "precision": 0.16666666666666666,
+                                              "recall": 0.25,
+                                              "f1-score": 0.2,
+                                              "support": 4
+                       },
+                       "comp.sys.mac.hardware": {
+                                              "precision": 0.5064935064935064,
+                                              "recall": 0.7090909090909091,
+                                              "f1-score": 0.5909090909090908,
+                                              "support": 55
+                       },
+                       "rec.sport.baseball": {
+                                              "precision": 0.75,
+                                              "recall": 0.8095238095238095,
+                                              "f1-score": 0.7786259541984734,
+                                              "support": 63
+                       },
+                       "comp.sys.ibm.pc.hardware": {
+                                              "precision": 0.16666666666666666,
+                                              "recall": 0.16666666666666666,
+                                              "f1-score": 0.16666666666666666,
+                                              "support": 6
+                       },
+                       "talk.politics.mideast": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 1
+                       },
+                       "sci.space": {
+                                              "precision": 0.14285714285714285,
+                                              "recall": 0.25,
+                                              "f1-score": 0.18181818181818182,
+                                              "support": 4
+                       },
+                       "comp.os.ms-windows.misc": {
+                                              "precision": 0.6666666666666666,
+                                              "recall": 0.2222222222222222,
+                                              "f1-score": 0.3333333333333333,
+                                              "support": 9
+                       },
+                       "comp.graphics": {
+                                              "precision": 0.5918367346938775,
+                                              "recall": 0.46774193548387094,
+                                              "f1-score": 0.5225225225225224,
+                                              "support": 62
+                       },
+                       "talk.religion.misc": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 3
+                       },
+                       "rec.sport.hockey": {
+                                              "precision": 0.6666666666666666,
+                                              "recall": 0.3333333333333333,
+                                              "f1-score": 0.4444444444444444,
+                                              "support": 6
+                       },
+                       "misc.forsale": {
+                                              "precision": 0.7441860465116279,
+                                              "recall": 0.5245901639344263,
+                                              "f1-score": 0.6153846153846153,
+                                              "support": 61
+                       },
+                       "comp.windows.x": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 6
+                       },
+                       "rec.motorcycles": {
+                                              "precision": 0.5466666666666666,
+                                              "recall": 0.6833333333333333,
+                                              "f1-score": 0.6074074074074074,
+                                              "support": 60
+                       },
+                       "talk.politics.misc": {
+                                              "precision": 0.3,
+                                              "recall": 0.2727272727272727,
+                                              "f1-score": 0.28571428571428564,
+                                              "support": 11
+                       },
+                       "soc.religion.christian": {
+                                              "precision": 0.6666666666666666,
+                                              "recall": 0.25,
+                                              "f1-score": 0.36363636363636365,
+                                              "support": 8
+                       },
+                       "sci.med": {
+                                              "precision": 1.0,
+                                              "recall": 0.16666666666666666,
+                                              "f1-score": 0.2857142857142857,
+                                              "support": 6
+                       },
+                       "talk.politics.guns": {
+                                              "precision": 0.6,
+                                              "recall": 0.375,
+                                              "f1-score": 0.4615384615384615,
+                                              "support": 8
+                       },
+                       "rec.autos": {
+                                              "precision": 0.3684210526315789,
+                                              "recall": 0.6363636363636364,
+                                              "f1-score": 0.4666666666666667,
+                                              "support": 11
+                       },
+                       "accuracy": 0.5475,
+                       "macro avg": {
+                                              "precision": 0.40328063325029584,
+                                              "recall": 0.3280852196895296,
+                                              "f1-score": 0.32812233980419153,
+                                              "support": 400
+                       },
+                       "weighted avg": {
+                                              "precision": 0.5683919825802805,
+                                              "recall": 0.5475,
+                                              "f1-score": 0.537602830811954,
+                                              "support": 400
+                       }
+}{
+                "100": 0.6246696691379005,
+                "200": 0.6357496408303874,
+                "300": 0.6638374475348662,
+                "400": 0.6776731135980957,
+                "500": 0.6848774323382316,
+                "600": 0.6971242486673926,
+                "700": 0.724239227946072,
+                "800": 0.7147608121345483,
+                "900": 0.7121724582896027,
+                "1000": 0.692405235939627,
+                "1100": 0.6957203031999125,
+                "1200": 0.7207752114376873,
+                "1300": 0.7115222737648991,
+                "1400": 0.721409205425436,
+                "1500": 0.7304409823826218,
+                "1600": 0.7191439619304786
+}{
+  "train_length": 1600,
+  "test_length": 400
+}{
+                                                                                                    "76": "comp.sys.mac.hardware",
+                                                                                                    "80": "comp.sys.mac.hardware",
+                                                                                                    "95": "comp.sys.mac.hardware",
+                                                                                                    "98": "comp.sys.mac.hardware",
+                                                                                                    "101": "comp.sys.mac.hardware",
+                                                                                                    "118": "comp.sys.mac.hardware",
+                                                                                                    "121": "comp.sys.mac.hardware",
+                                                                                                    "122": "comp.sys.mac.hardware",
+                                                                                                    "126": "comp.sys.mac.hardware",
+                                                                                                    "128": "comp.sys.mac.hardware",
+                                                                                                    "143": "comp.sys.mac.hardware",
+                                                                                                    "148": "comp.sys.mac.hardware",
+                                                                                                    "149": "comp.sys.mac.hardware",
+                                                                                                    "158": "comp.sys.mac.hardware",
+                                                                                                    "167": "comp.sys.mac.hardware",
+                                                                                                    "176": "comp.sys.mac.hardware",
+                                                                                                    "185": "comp.sys.mac.hardware",
+                                                                                                    "192": "comp.sys.mac.hardware",
+                                                                                                    "199": "comp.sys.mac.hardware",
+                                                                                                    "211": "comp.sys.mac.hardware",
+                                                                                                    "241": "comp.sys.mac.hardware",
+                                                                                                    "253": "comp.sys.mac.hardware",
+                                                                                                    "272": "comp.graphics",
+                                                                                                    "295": "comp.graphics",
+                                                                                                    "308": "comp.graphics",
+                                                                                                    "311": "comp.graphics",
+                                                                                                    "337": "comp.graphics",
+                                                                                                    "368": "comp.graphics",
+                                                                                                    "370": "comp.graphics",
+                                                                                                    "384": "comp.graphics",
+                                                                                                    "421": "comp.graphics",
+                                                                                                    "439": "comp.graphics",
+                                                                                                    "452": "comp.graphics",
+                                                                                                    "457": "comp.graphics",
+                                                                                                    "492": "comp.graphics",
+                                                                                                    "499": "comp.graphics",
+                                                                                                    "508": "comp.graphics",
+                                                                                                    "589": "comp.sys.ibm.pc.hardware",
+                                                                                                    "593": "comp.sys.ibm.pc.hardware",
+                                                                                                    "613": "comp.os.ms-windows.misc",
+                                                                                                    "614": "comp.os.ms-windows.misc",
+                                                                                                    "631": "comp.os.ms-windows.misc",
+                                                                                                    "642": "comp.os.ms-windows.misc",
+                                                                                                    "643": "rec.motorcycles",
+                                                                                                    "663": "rec.motorcycles",
+                                                                                                    "700": "rec.motorcycles",
+                                                                                                    "703": "rec.motorcycles",
+                                                                                                    "740": "rec.motorcycles",
+                                                                                                    "748": "rec.motorcycles",
+                                                                                                    "762": "rec.motorcycles",
+                                                                                                    "808": "rec.motorcycles",
+                                                                                                    "812": "rec.motorcycles",
+                                                                                                    "856": "rec.motorcycles",
+                                                                                                    "858": "rec.motorcycles",
+                                                                                                    "863": "rec.motorcycles",
+                                                                                                    "869": "rec.motorcycles",
+                                                                                                    "875": "rec.motorcycles",
+                                                                                                    "888": "talk.religion.misc",
+                                                                                                    "919": "misc.forsale",
+                                                                                                    "928": "misc.forsale",
+                                                                                                    "953": "misc.forsale",
+                                                                                                    "1001": "misc.forsale",
+                                                                                                    "1013": "misc.forsale",
+                                                                                                    "1016": "misc.forsale",
+                                                                                                    "1039": "misc.forsale",
+                                                                                                    "1048": "misc.forsale",
+                                                                                                    "1075": "misc.forsale",
+                                                                                                    "1088": "misc.forsale",
+                                                                                                    "1097": "misc.forsale",
+                                                                                                    "1107": "misc.forsale",
+                                                                                                    "1121": "misc.forsale",
+                                                                                                    "1128": "misc.forsale",
+                                                                                                    "1140": "alt.atheism",
+                                                                                                    "1142": "alt.atheism",
+                                                                                                    "1147": "alt.atheism",
+                                                                                                    "1155": "alt.atheism",
+                                                                                                    "1158": "alt.atheism",
+                                                                                                    "1169": "alt.atheism",
+                                                                                                    "1173": "alt.atheism",
+                                                                                                    "1176": "alt.atheism",
+                                                                                                    "1181": "sci.electronics",
+                                                                                                    "1191": "sci.electronics",
+                                                                                                    "1193": "sci.electronics",
+                                                                                                    "1199": "sci.electronics",
+                                                                                                    "1247": "rec.sport.hockey",
+                                                                                                    "1267": "rec.sport.baseball",
+                                                                                                    "1284": "rec.sport.baseball",
+                                                                                                    "1291": "rec.sport.baseball",
+                                                                                                    "1308": "rec.sport.baseball",
+                                                                                                    "1333": "rec.sport.baseball",
+                                                                                                    "1368": "rec.sport.baseball",
+                                                                                                    "1393": "rec.sport.baseball",
+                                                                                                    "1396": "rec.sport.baseball",
+                                                                                                    "1431": "rec.sport.baseball",
+                                                                                                    "1458": "rec.sport.baseball",
+                                                                                                    "1493": "rec.sport.baseball",
+                                                                                                    "1550": "talk.politics.misc",
+                                                                                                    "1565": "talk.politics.misc",
+                                                                                                    "1591": "sci.crypt",
+                                                                                                    "1597": "sci.crypt"
+}{
+ "runtime": 2191.383356327191
+}{
+                       "alt.atheism": {
+                                              "precision": 0.2,
+                                              "recall": 0.1111111111111111,
+                                              "f1-score": 0.14285714285714285,
+                                              "support": 9
+                       },
+                       "sci.electronics": {
+                                              "precision": 0.2,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.16666666666666666,
+                                              "support": 7
+                       },
+                       "sci.crypt": {
+                                              "precision": 0.4,
+                                              "recall": 0.5,
+                                              "f1-score": 0.4444444444444445,
+                                              "support": 4
+                       },
+                       "comp.sys.mac.hardware": {
+                                              "precision": 0.5192307692307693,
+                                              "recall": 0.4909090909090909,
+                                              "f1-score": 0.5046728971962617,
+                                              "support": 55
+                       },
+                       "rec.sport.baseball": {
+                                              "precision": 0.6436781609195402,
+                                              "recall": 0.8888888888888888,
+                                              "f1-score": 0.7466666666666666,
+                                              "support": 63
+                       },
+                       "comp.sys.ibm.pc.hardware": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 6
+                       },
+                       "talk.politics.mideast": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 2
+                       },
+                       "sci.space": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 4
+                       },
+                       "comp.os.ms-windows.misc": {
+                                              "precision": 1.0,
+                                              "recall": 0.1111111111111111,
+                                              "f1-score": 0.19999999999999998,
+                                              "support": 9
+                       },
+                       "comp.graphics": {
+                                              "precision": 0.5222222222222223,
+                                              "recall": 0.7580645161290323,
+                                              "f1-score": 0.618421052631579,
+                                              "support": 62
+                       },
+                       "talk.religion.misc": {
+                                              "precision": 0.1,
+                                              "recall": 0.3333333333333333,
+                                              "f1-score": 0.15384615384615383,
+                                              "support": 3
+                       },
+                       "rec.sport.hockey": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 7
+                       },
+                       "misc.forsale": {
+                                              "precision": 0.6615384615384615,
+                                              "recall": 0.7049180327868853,
+                                              "f1-score": 0.6825396825396826,
+                                              "support": 61
+                       },
+                       "comp.windows.x": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "rec.motorcycles": {
+                                              "precision": 0.6590909090909091,
+                                              "recall": 0.48333333333333334,
+                                              "f1-score": 0.5576923076923077,
+                                              "support": 60
+                       },
+                       "talk.politics.misc": {
+                                              "precision": 0.25,
+                                              "recall": 0.09090909090909091,
+                                              "f1-score": 0.13333333333333333,
+                                              "support": 11
+                       },
+                       "soc.religion.christian": {
+                                              "precision": 0.2727272727272727,
+                                              "recall": 0.42857142857142855,
+                                              "f1-score": 0.33333333333333326,
+                                              "support": 7
+                       },
+                       "sci.med": {
+                                              "precision": 0.42857142857142855,
+                                              "recall": 0.42857142857142855,
+                                              "f1-score": 0.42857142857142855,
+                                              "support": 7
+                       },
+                       "talk.politics.guns": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.2,
+                                              "support": 7
+                       },
+                       "rec.autos": {
+                                              "precision": 0.25,
+                                              "recall": 0.09090909090909091,
+                                              "f1-score": 0.13333333333333333,
+                                              "support": 11
+                       },
+                       "accuracy": 0.5425,
+                       "macro avg": {
+                                              "precision": 0.3220196278816968,
+                                              "recall": 0.28531723711390555,
+                                              "f1-score": 0.2723189221556167,
+                                              "support": 400
+                       },
+                       "weighted avg": {
+                                              "precision": 0.5205722979128152,
+                                              "recall": 0.5425,
+                                              "f1-score": 0.5109848439094381,
+                                              "support": 400
+                       }
+}{
+                "100": 0.6250359650049446,
+                "200": 0.6763791518257056,
+                "300": 0.6770553172378652,
+                "400": 0.6820371243319072,
+                "500": 0.6770484076036591,
+                "600": 0.6669997182150029,
+                "700": 0.6372061123392415,
+                "800": 0.6946910047880462,
+                "900": 0.701175268365568,
+                "1000": 0.6905715191001053,
+                "1100": 0.719806851122748,
+                "1200": 0.7136628926983027,
+                "1300": 0.7133325555576474,
+                "1400": 0.7208107513968253,
+                "1500": 0.7122093802737433,
+                "1600": 0.7131138387509606
+}{
+  "train_length": 1600,
+  "test_length": 400
+}{
+                                                                                                    "40": "rec.autos",
+                                                                                                    "62": "comp.sys.mac.hardware",
+                                                                                                    "76": "comp.sys.mac.hardware",
+                                                                                                    "89": "comp.sys.mac.hardware",
+                                                                                                    "118": "comp.sys.mac.hardware",
+                                                                                                    "129": "comp.sys.mac.hardware",
+                                                                                                    "131": "comp.sys.mac.hardware",
+                                                                                                    "146": "comp.sys.mac.hardware",
+                                                                                                    "174": "comp.sys.mac.hardware",
+                                                                                                    "176": "comp.sys.mac.hardware",
+                                                                                                    "183": "comp.sys.mac.hardware",
+                                                                                                    "198": "comp.sys.mac.hardware",
+                                                                                                    "199": "comp.sys.mac.hardware",
+                                                                                                    "220": "comp.sys.mac.hardware",
+                                                                                                    "232": "comp.sys.mac.hardware",
+                                                                                                    "258": "comp.sys.mac.hardware",
+                                                                                                    "276": "comp.graphics",
+                                                                                                    "280": "comp.graphics",
+                                                                                                    "291": "comp.graphics",
+                                                                                                    "303": "comp.graphics",
+                                                                                                    "307": "comp.graphics",
+                                                                                                    "324": "comp.graphics",
+                                                                                                    "393": "comp.graphics",
+                                                                                                    "395": "comp.graphics",
+                                                                                                    "397": "comp.graphics",
+                                                                                                    "404": "comp.graphics",
+                                                                                                    "425": "comp.graphics",
+                                                                                                    "428": "comp.graphics",
+                                                                                                    "450": "comp.graphics",
+                                                                                                    "464": "comp.graphics",
+                                                                                                    "479": "comp.graphics",
+                                                                                                    "480": "comp.graphics",
+                                                                                                    "499": "comp.graphics",
+                                                                                                    "506": "comp.graphics",
+                                                                                                    "529": "talk.politics.guns",
+                                                                                                    "546": "talk.politics.guns",
+                                                                                                    "582": "sci.med",
+                                                                                                    "585": "comp.sys.ibm.pc.hardware",
+                                                                                                    "632": "comp.os.ms-windows.misc",
+                                                                                                    "642": "comp.os.ms-windows.misc",
+                                                                                                    "693": "rec.motorcycles",
+                                                                                                    "704": "rec.motorcycles",
+                                                                                                    "728": "rec.motorcycles",
+                                                                                                    "730": "rec.motorcycles",
+                                                                                                    "731": "rec.motorcycles",
+                                                                                                    "758": "rec.motorcycles",
+                                                                                                    "768": "rec.motorcycles",
+                                                                                                    "772": "rec.motorcycles",
+                                                                                                    "776": "rec.motorcycles",
+                                                                                                    "791": "rec.motorcycles",
+                                                                                                    "799": "rec.motorcycles",
+                                                                                                    "820": "rec.motorcycles",
+                                                                                                    "824": "rec.motorcycles",
+                                                                                                    "834": "rec.motorcycles",
+                                                                                                    "872": "rec.motorcycles",
+                                                                                                    "911": "misc.forsale",
+                                                                                                    "928": "misc.forsale",
+                                                                                                    "934": "misc.forsale",
+                                                                                                    "940": "misc.forsale",
+                                                                                                    "971": "misc.forsale",
+                                                                                                    "993": "misc.forsale",
+                                                                                                    "998": "misc.forsale",
+                                                                                                    "1000": "misc.forsale",
+                                                                                                    "1013": "misc.forsale",
+                                                                                                    "1019": "misc.forsale",
+                                                                                                    "1031": "misc.forsale",
+                                                                                                    "1037": "misc.forsale",
+                                                                                                    "1039": "misc.forsale",
+                                                                                                    "1044": "misc.forsale",
+                                                                                                    "1058": "misc.forsale",
+                                                                                                    "1065": "misc.forsale",
+                                                                                                    "1082": "misc.forsale",
+                                                                                                    "1089": "misc.forsale",
+                                                                                                    "1105": "misc.forsale",
+                                                                                                    "1116": "misc.forsale",
+                                                                                                    "1141": "alt.atheism",
+                                                                                                    "1173": "alt.atheism",
+                                                                                                    "1185": "sci.electronics",
+                                                                                                    "1190": "sci.electronics",
+                                                                                                    "1196": "sci.electronics",
+                                                                                                    "1231": "rec.sport.hockey",
+                                                                                                    "1242": "rec.sport.hockey",
+                                                                                                    "1270": "rec.sport.baseball",
+                                                                                                    "1277": "rec.sport.baseball",
+                                                                                                    "1314": "rec.sport.baseball",
+                                                                                                    "1318": "rec.sport.baseball",
+                                                                                                    "1330": "rec.sport.baseball",
+                                                                                                    "1345": "rec.sport.baseball",
+                                                                                                    "1353": "rec.sport.baseball",
+                                                                                                    "1357": "rec.sport.baseball",
+                                                                                                    "1413": "rec.sport.baseball",
+                                                                                                    "1415": "rec.sport.baseball",
+                                                                                                    "1435": "rec.sport.baseball",
+                                                                                                    "1436": "rec.sport.baseball",
+                                                                                                    "1437": "rec.sport.baseball",
+                                                                                                    "1443": "rec.sport.baseball",
+                                                                                                    "1486": "rec.sport.baseball",
+                                                                                                    "1492": "rec.sport.baseball",
+                                                                                                    "1554": "talk.politics.misc",
+                                                                                                    "1565": "talk.politics.misc"
+}{
+ "runtime": 2015.058478731662
+}{
+                       "alt.atheism": {
+                                              "precision": 0.36363636363636365,
+                                              "recall": 0.4444444444444444,
+                                              "f1-score": 0.39999999999999997,
+                                              "support": 9
+                       },
+                       "sci.electronics": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 7
+                       },
+                       "sci.crypt": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.25,
+                                              "f1-score": 0.28571428571428575,
+                                              "support": 4
+                       },
+                       "comp.sys.mac.hardware": {
+                                              "precision": 0.45614035087719296,
+                                              "recall": 0.4727272727272727,
+                                              "f1-score": 0.46428571428571425,
+                                              "support": 55
+                       },
+                       "rec.sport.baseball": {
+                                              "precision": 0.7941176470588235,
+                                              "recall": 0.8571428571428571,
+                                              "f1-score": 0.8244274809160305,
+                                              "support": 63
+                       },
+                       "comp.sys.ibm.pc.hardware": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 6
+                       },
+                       "talk.politics.mideast": {
+                                              "precision": 1.0,
+                                              "recall": 0.5,
+                                              "f1-score": 0.6666666666666666,
+                                              "support": 2
+                       },
+                       "sci.space": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.25,
+                                              "f1-score": 0.28571428571428575,
+                                              "support": 4
+                       },
+                       "comp.os.ms-windows.misc": {
+                                              "precision": 0.25,
+                                              "recall": 0.1111111111111111,
+                                              "f1-score": 0.15384615384615383,
+                                              "support": 9
+                       },
+                       "comp.graphics": {
+                                              "precision": 0.5925925925925926,
+                                              "recall": 0.7741935483870968,
+                                              "f1-score": 0.6713286713286712,
+                                              "support": 62
+                       },
+                       "talk.religion.misc": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 3
+                       },
+                       "rec.sport.hockey": {
+                                              "precision": 0.5,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.22222222222222224,
+                                              "support": 7
+                       },
+                       "misc.forsale": {
+                                              "precision": 0.6428571428571429,
+                                              "recall": 0.7377049180327869,
+                                              "f1-score": 0.6870229007633588,
+                                              "support": 61
+                       },
+                       "comp.windows.x": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "rec.motorcycles": {
+                                              "precision": 0.7045454545454546,
+                                              "recall": 0.5166666666666667,
+                                              "f1-score": 0.5961538461538463,
+                                              "support": 60
+                       },
+                       "talk.politics.misc": {
+                                              "precision": 0.375,
+                                              "recall": 0.2727272727272727,
+                                              "f1-score": 0.3157894736842105,
+                                              "support": 11
+                       },
+                       "soc.religion.christian": {
+                                              "precision": 0.75,
+                                              "recall": 0.42857142857142855,
+                                              "f1-score": 0.5454545454545454,
+                                              "support": 7
+                       },
+                       "sci.med": {
+                                              "precision": 0.4,
+                                              "recall": 0.5714285714285714,
+                                              "f1-score": 0.47058823529411764,
+                                              "support": 7
+                       },
+                       "talk.politics.guns": {
+                                              "precision": 0.16666666666666666,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.15384615384615383,
+                                              "support": 7
+                       },
+                       "rec.autos": {
+                                              "precision": 0.3125,
+                                              "recall": 0.45454545454545453,
+                                              "f1-score": 0.3703703703703703,
+                                              "support": 11
+                       },
+                       "accuracy": 0.5725,
+                       "macro avg": {
+                                              "precision": 0.3987361442450452,
+                                              "recall": 0.34634889157496246,
+                                              "f1-score": 0.3556715503130316,
+                                              "support": 400
+                       },
+                       "weighted avg": {
+                                              "precision": 0.5595336134919147,
+                                              "recall": 0.5725,
+                                              "f1-score": 0.5566771257689502,
+                                              "support": 400
+                       }
+}{
+                "100": 0.6482913354392804,
+                "200": 0.6604236568474323,
+                "300": 0.6605595645185518,
+                "400": 0.6580653442718275,
+                "500": 0.6934277790231804,
+                "600": 0.6547467631275977,
+                "700": 0.6957248205946149,
+                "800": 0.7189826756322295,
+                "900": 0.7310666233370069,
+                "1000": 0.729809816264008,
+                "1100": 0.7278553787497021,
+                "1200": 0.7190643248770993,
+                "1300": 0.7294851287275068,
+                "1400": 0.7133634579145466,
+                "1500": 0.7166330193354625,
+                "1600": 0.7359678958611651
+}{
+  "train_length": 1600,
+  "test_length": 400
+}{
+                                                                                                    "7": "rec.autos",
+                                                                                                    "10": "rec.autos",
+                                                                                                    "13": "rec.autos",
+                                                                                                    "16": "rec.autos",
+                                                                                                    "35": "rec.autos",
+                                                                                                    "48": "comp.sys.mac.hardware",
+                                                                                                    "83": "comp.sys.mac.hardware",
+                                                                                                    "84": "comp.sys.mac.hardware",
+                                                                                                    "88": "comp.sys.mac.hardware",
+                                                                                                    "105": "comp.sys.mac.hardware",
+                                                                                                    "110": "comp.sys.mac.hardware",
+                                                                                                    "112": "comp.sys.mac.hardware",
+                                                                                                    "129": "comp.sys.mac.hardware",
+                                                                                                    "140": "comp.sys.mac.hardware",
+                                                                                                    "165": "comp.sys.mac.hardware",
+                                                                                                    "171": "comp.sys.mac.hardware",
+                                                                                                    "173": "comp.sys.mac.hardware",
+                                                                                                    "179": "comp.sys.mac.hardware",
+                                                                                                    "191": "comp.sys.mac.hardware",
+                                                                                                    "208": "comp.sys.mac.hardware",
+                                                                                                    "227": "comp.sys.mac.hardware",
+                                                                                                    "229": "comp.sys.mac.hardware",
+                                                                                                    "248": "comp.sys.mac.hardware",
+                                                                                                    "271": "comp.graphics",
+                                                                                                    "272": "comp.graphics",
+                                                                                                    "283": "comp.graphics",
+                                                                                                    "284": "comp.graphics",
+                                                                                                    "297": "comp.graphics",
+                                                                                                    "321": "comp.graphics",
+                                                                                                    "344": "comp.graphics",
+                                                                                                    "346": "comp.graphics",
+                                                                                                    "353": "comp.graphics",
+                                                                                                    "381": "comp.graphics",
+                                                                                                    "393": "comp.graphics",
+                                                                                                    "404": "comp.graphics",
+                                                                                                    "405": "comp.graphics",
+                                                                                                    "408": "comp.graphics",
+                                                                                                    "415": "comp.graphics",
+                                                                                                    "419": "comp.graphics",
+                                                                                                    "429": "comp.graphics",
+                                                                                                    "459": "comp.graphics",
+                                                                                                    "484": "comp.graphics",
+                                                                                                    "487": "comp.graphics",
+                                                                                                    "546": "talk.politics.guns",
+                                                                                                    "547": "talk.politics.guns",
+                                                                                                    "575": "sci.med",
+                                                                                                    "596": "comp.sys.ibm.pc.hardware",
+                                                                                                    "676": "rec.motorcycles",
+                                                                                                    "684": "rec.motorcycles",
+                                                                                                    "692": "rec.motorcycles",
+                                                                                                    "699": "rec.motorcycles",
+                                                                                                    "764": "rec.motorcycles",
+                                                                                                    "775": "rec.motorcycles",
+                                                                                                    "776": "rec.motorcycles",
+                                                                                                    "785": "rec.motorcycles",
+                                                                                                    "812": "rec.motorcycles",
+                                                                                                    "815": "rec.motorcycles",
+                                                                                                    "842": "rec.motorcycles",
+                                                                                                    "860": "rec.motorcycles",
+                                                                                                    "863": "rec.motorcycles",
+                                                                                                    "865": "rec.motorcycles",
+                                                                                                    "869": "rec.motorcycles",
+                                                                                                    "925": "misc.forsale",
+                                                                                                    "948": "misc.forsale",
+                                                                                                    "949": "misc.forsale",
+                                                                                                    "1007": "misc.forsale",
+                                                                                                    "1017": "misc.forsale",
+                                                                                                    "1025": "misc.forsale",
+                                                                                                    "1029": "misc.forsale",
+                                                                                                    "1036": "misc.forsale",
+                                                                                                    "1100": "misc.forsale",
+                                                                                                    "1105": "misc.forsale",
+                                                                                                    "1135": "misc.forsale",
+                                                                                                    "1173": "alt.atheism",
+                                                                                                    "1185": "sci.electronics",
+                                                                                                    "1187": "sci.electronics",
+                                                                                                    "1209": "comp.windows.x",
+                                                                                                    "1222": "comp.windows.x",
+                                                                                                    "1238": "rec.sport.hockey",
+                                                                                                    "1247": "rec.sport.hockey",
+                                                                                                    "1255": "rec.sport.baseball",
+                                                                                                    "1262": "rec.sport.baseball",
+                                                                                                    "1308": "rec.sport.baseball",
+                                                                                                    "1380": "rec.sport.baseball",
+                                                                                                    "1385": "rec.sport.baseball",
+                                                                                                    "1409": "rec.sport.baseball",
+                                                                                                    "1433": "rec.sport.baseball",
+                                                                                                    "1435": "rec.sport.baseball",
+                                                                                                    "1440": "rec.sport.baseball",
+                                                                                                    "1451": "rec.sport.baseball",
+                                                                                                    "1473": "rec.sport.baseball",
+                                                                                                    "1484": "rec.sport.baseball",
+                                                                                                    "1486": "rec.sport.baseball",
+                                                                                                    "1491": "rec.sport.baseball",
+                                                                                                    "1507": "soc.religion.christian",
+                                                                                                    "1528": "soc.religion.christian",
+                                                                                                    "1565": "talk.politics.misc",
+                                                                                                    "1566": "talk.politics.misc",
+                                                                                                    "1582": "talk.politics.misc",
+                                                                                                    "1585": "sci.crypt"
+}{
+ "runtime": 2046.5817534904927
+}{
+                       "alt.atheism": {
+                                              "precision": 0.36363636363636365,
+                                              "recall": 0.4444444444444444,
+                                              "f1-score": 0.39999999999999997,
+                                              "support": 9
+                       },
+                       "sci.electronics": {
+                                              "precision": 0.14285714285714285,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.14285714285714285,
+                                              "support": 7
+                       },
+                       "sci.crypt": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 4
+                       },
+                       "comp.sys.mac.hardware": {
+                                              "precision": 0.5714285714285714,
+                                              "recall": 0.36363636363636365,
+                                              "f1-score": 0.4444444444444444,
+                                              "support": 55
+                       },
+                       "rec.sport.baseball": {
+                                              "precision": 0.7794117647058824,
+                                              "recall": 0.8412698412698413,
+                                              "f1-score": 0.8091603053435115,
+                                              "support": 63
+                       },
+                       "comp.sys.ibm.pc.hardware": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "talk.politics.mideast": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 2
+                       },
+                       "sci.space": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 3
+                       },
+                       "comp.os.ms-windows.misc": {
+                                              "precision": 0.16666666666666666,
+                                              "recall": 0.1111111111111111,
+                                              "f1-score": 0.13333333333333333,
+                                              "support": 9
+                       },
+                       "comp.graphics": {
+                                              "precision": 0.48936170212765956,
+                                              "recall": 0.7301587301587301,
+                                              "f1-score": 0.5859872611464967,
+                                              "support": 63
+                       },
+                       "talk.religion.misc": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.25,
+                                              "f1-score": 0.28571428571428575,
+                                              "support": 4
+                       },
+                       "rec.sport.hockey": {
+                                              "precision": 0.5,
+                                              "recall": 0.16666666666666666,
+                                              "f1-score": 0.25,
+                                              "support": 6
+                       },
+                       "misc.forsale": {
+                                              "precision": 0.6896551724137931,
+                                              "recall": 0.6557377049180327,
+                                              "f1-score": 0.6722689075630253,
+                                              "support": 61
+                       },
+                       "comp.windows.x": {
+                                              "precision": 0.0,
+                                              "recall": 0.0,
+                                              "f1-score": 0.0,
+                                              "support": 5
+                       },
+                       "rec.motorcycles": {
+                                              "precision": 0.6266666666666667,
+                                              "recall": 0.7833333333333333,
+                                              "f1-score": 0.6962962962962963,
+                                              "support": 60
+                       },
+                       "talk.politics.misc": {
+                                              "precision": 0.3,
+                                              "recall": 0.2727272727272727,
+                                              "f1-score": 0.28571428571428564,
+                                              "support": 11
+                       },
+                       "soc.religion.christian": {
+                                              "precision": 0.4444444444444444,
+                                              "recall": 0.5,
+                                              "f1-score": 0.47058823529411764,
+                                              "support": 8
+                       },
+                       "sci.med": {
+                                              "precision": 0.3333333333333333,
+                                              "recall": 0.14285714285714285,
+                                              "f1-score": 0.2,
+                                              "support": 7
+                       },
+                       "talk.politics.guns": {
+                                              "precision": 0.5,
+                                              "recall": 0.125,
+                                              "f1-score": 0.2,
+                                              "support": 8
+                       },
+                       "rec.autos": {
+                                              "precision": 0.7142857142857143,
+                                              "recall": 0.5,
+                                              "f1-score": 0.588235294117647,
+                                              "support": 10
+                       },
+                       "accuracy": 0.57,
+                       "macro avg": {
+                                              "precision": 0.3477540437949786,
+                                              "recall": 0.30148998769900415,
+                                              "f1-score": 0.3082299895912294,
+                                              "support": 400
+                       },
+                       "weighted avg": {
+                                              "precision": 0.5536701799853315,
+                                              "recall": 0.57,
+                                              "f1-score": 0.5483942384542023,
+                                              "support": 400
+                       }
+}{
+                "100": 0.6116770360795509,
+                "200": 0.6881418964615824,
+                "300": 0.6600441238534754,
+                "400": 0.6660451393750787,
+                "500": 0.7052625678806884,
+                "600": 0.7220427568663321,
+                "700": 0.6563957748821014,
+                "800": 0.7195262767627253,
+                "900": 0.7406254043368498,
+                "1000": 0.7345774847603647,
+                "1100": 0.7327431361668701,
+                "1200": 0.7280375646591085,
+                "1300": 0.7371668030325728,
+                "1400": 0.7319072401998645,
+                "1500": 0.6722543773167593,
+                "1600": 0.7326708898805016
+}{
+ "overall_runtime": 2133.074166661501
+}
