@@ -44,16 +44,16 @@ def performance_measure(y_true, y_pred, average, measure:str, minority, classes)
 def plot_num_instances_performance(instances, performance, out_dir, label, name):
     for i in range(len(instances)):
         plt.plot(instances[i], performance[i], label = label[i])
-    plt.axhline(y= 0.9787604098305159, color='r', linestyle='--', label="no active learning")
+    plt.axhline(y= 0.6480061777634462, color='r', linestyle='--', label="no active learning")
     plt.xlabel("Number of instances")
     plt.ylabel("Performance: G-Mean")
     plt.xlim(left =instances[0][0], right = instances[0][-1])
-    plt.ylim(bottom=0.45, top = 1.0)
+    plt.ylim(bottom=0.4, top = 0.7)
     #plt.xticks(ticks=instances[0])
     plt.title(name)
     plt.legend()
     plt.savefig(os.path.join(out_dir, 'num_instance_performance.png'))
-"""
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--paths', nargs='+', help='<Required> Set flag')
 parser.add_argument('-o','--out', type = str, help='<Required> Set flag')
@@ -67,4 +67,3 @@ for p in args.paths:
     num_instances.append(df['num_instances'].tolist())
     performance.append(df['performance'].tolist())
 plot_num_instances_performance(num_instances, performance, args.out, args.strategy, args.name)
-"""

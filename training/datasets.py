@@ -319,8 +319,8 @@ def get_dataset_info(name:str):
 
 
     elif name == "scan":
-        dataset_path_original = "../data/Scan/tsv/"
-        out_dir = '../results/Scan/'
+        dataset_path_original = "../data/Scan/tsv/original_short_sequences"
+        out_dir = '../results/Scan/original_short_sequences'
         classes = [
         "kv_vitalleistung",
         "urem_rechnung",
