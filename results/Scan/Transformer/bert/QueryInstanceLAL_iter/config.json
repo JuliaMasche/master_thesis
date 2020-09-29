@@ -1,0 +1,1322 @@
+{
+             "query_strategy": "QueryInstanceLAL_iter",
+             "word_embedding": "bert",
+             "document_embedding": "Transformer",
+             "neural network": "rnn",
+             "dataset": "../data/Scan/tsv/",
+             "learning_rate": 0.1,
+             "max epoch": 100,
+             "mini batch size": 16,
+             "stopping_criterion": 30,
+             "seed": 5,
+             "query batch size": 100,
+             "performance_measure": "g-mean",
+             "num_classifier_QBC": 2
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "1": "uits_rechnung",
+                                                                                                    "3": "kfz_schaden",
+                                                                                                    "5": "lv_drittrechte",
+                                                                                                    "9": "provisionsnote",
+                                                                                                    "13": "flv_faelligkeit",
+                                                                                                    "18": "lv_drittrechte",
+                                                                                                    "22": "kfz_bonus_malus",
+                                                                                                    "23": "fed_vertrag",
+                                                                                                    "29": "kv_arztbericht",
+                                                                                                    "47": "rv_abbucher",
+                                                                                                    "53": "kfz_bonus_malus",
+                                                                                                    "58": "urem_rechnung",
+                                                                                                    "66": "urem_rechnung",
+                                                                                                    "67": "kv_leistung",
+                                                                                                    "73": "kfz_bonus_malus",
+                                                                                                    "104": "kv_leistung",
+                                                                                                    "115": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "129": "urem_rechnung",
+                                                                                                    "135": "kv_leistung",
+                                                                                                    "142": "rv_abbucher",
+                                                                                                    "149": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "160": "oeamtc_kv_antrag",
+                                                                                                    "163": "lv_drittrechte",
+                                                                                                    "169": "kfz_schaden",
+                                                                                                    "170": "rechnung",
+                                                                                                    "180": "urem_rechnung",
+                                                                                                    "185": "kv_vitalleistung",
+                                                                                                    "186": "kv_leistung",
+                                                                                                    "189": "urem_rechnung",
+                                                                                                    "201": "kv_arztbericht",
+                                                                                                    "203": "kv_leistung",
+                                                                                                    "209": "oeamtc_kv_antrag",
+                                                                                                    "214": "uv_ruecktritt_kuendigung",
+                                                                                                    "220": "lv_drittrechte",
+                                                                                                    "221": "rv_abbucher",
+                                                                                                    "252": "uv_schadenmeldung",
+                                                                                                    "255": "lv_drittrechte",
+                                                                                                    "261": "kv_kuendigung",
+                                                                                                    "262": "urem_rechnung",
+                                                                                                    "270": "oeamtc_kv_antrag",
+                                                                                                    "286": "kfz_schaden",
+                                                                                                    "296": "oeamtc_kv_antrag",
+                                                                                                    "305": "urem_rechnung",
+                                                                                                    "308": "lv_drittrechte",
+                                                                                                    "313": "rv_abbucher",
+                                                                                                    "317": "rv_sach_antrag",
+                                                                                                    "321": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "323": "kfz_bonus_malus",
+                                                                                                    "339": "kfz_schaden",
+                                                                                                    "346": "kfz_bonus_malus",
+                                                                                                    "363": "lv_drittrechte",
+                                                                                                    "366": "kv_akut_versorgt_leistung",
+                                                                                                    "367": "kfz_schaden",
+                                                                                                    "369": "rv_abbucher",
+                                                                                                    "374": "kv_leistung",
+                                                                                                    "380": "provisionsnote",
+                                                                                                    "385": "fed_vertrag",
+                                                                                                    "389": "fed_vertrag",
+                                                                                                    "392": "uits_rechnung",
+                                                                                                    "398": "lv_drittrechte",
+                                                                                                    "413": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "417": "kv_akut_versorgt_leistung",
+                                                                                                    "424": "lv_drittrechte",
+                                                                                                    "428": "kv_akut_versorgt_leistung",
+                                                                                                    "455": "provisionsnote",
+                                                                                                    "463": "lv_drittrechte",
+                                                                                                    "476": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "480": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "483": "kv_leistung",
+                                                                                                    "492": "kfz_bonus_malus",
+                                                                                                    "542": "oeamtc_kv_antrag",
+                                                                                                    "552": "urem_rechnung",
+                                                                                                    "556": "uv_ruecktritt_kuendigung",
+                                                                                                    "562": "kv_leistung",
+                                                                                                    "587": "urem_rechnung",
+                                                                                                    "592": "uits_rechnung",
+                                                                                                    "600": "lv_drittrechte",
+                                                                                                    "610": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "617": "flv_faelligkeit",
+                                                                                                    "632": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "637": "kfz_schaden",
+                                                                                                    "638": "kfz_bonus_malus",
+                                                                                                    "640": "kv_kuendigung",
+                                                                                                    "664": "kfz_bonus_malus",
+                                                                                                    "667": "uits_rechnung",
+                                                                                                    "694": "provisionsnote",
+                                                                                                    "707": "flv_faelligkeit",
+                                                                                                    "713": "kfz_bonus_malus",
+                                                                                                    "723": "provisionsnote",
+                                                                                                    "724": "fed_vertrag",
+                                                                                                    "746": "flv_faelligkeit",
+                                                                                                    "748": "kfz_schaden",
+                                                                                                    "751": "urem_rechnung",
+                                                                                                    "757": "urem_rechnung",
+                                                                                                    "759": "uits_rechnung",
+                                                                                                    "766": "kv_kuendigung",
+                                                                                                    "771": "flv_faelligkeit",
+                                                                                                    "789": "urem_rechnung",
+                                                                                                    "794": "kv_vitalleistung",
+                                                                                                    "795": "rv_abbucher"
+}{
+ "runtime": 556.9329806063324
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.8571428571428571,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.8571428571428571,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 2
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.3333333333333333,
+                                                  "recall": 0.6666666666666666,
+                                                  "f1-score": 0.4444444444444444,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 1
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 0.8461538461538461,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.9166666666666666,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.8235294117647058,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.8749999999999999,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.4,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.9090909090909091,
+                                                  "recall": 0.9090909090909091,
+                                                  "f1-score": 0.9090909090909091,
+                                                  "support": 11
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.9285714285714286,
+                                                  "recall": 0.8666666666666667,
+                                                  "f1-score": 0.896551724137931,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.7777777777777778,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.823529411764706,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.5,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 1
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.7857142857142857,
+                                                  "recall": 0.7857142857142857,
+                                                  "f1-score": 0.7857142857142857,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "rechnung": {
+                                                  "precision": 0.75,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.8571428571428571,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.9333333333333333,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8333333333333334,
+                                                  "f1-score": 0.9090909090909091,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.9411764705882353,
+                                                  "f1-score": 0.9696969696969697,
+                                                  "support": 17
+                         },
+                         "accuracy": 0.875,
+                         "macro avg": {
+                                                  "precision": 0.7732415386158702,
+                                                  "recall": 0.7833454869551126,
+                                                  "f1-score": 0.7651733920289149,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.8764182467858939,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.8713605371133261,
+                                                  "support": 200
+                         }
+}{
+        "100": 0.513390571269661,
+        "200": 0.8582276168101435,
+        "300": 0.9201302515206211,
+        "400": 0.8917005437383803,
+        "500": 0.9053638179909456,
+        "600": 0.9342430632088464,
+        "700": 0.9491598735401929,
+        "800": 0.9324595412472199
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "0": "kfz_schaden",
+                                                                                                    "12": "flv_faelligkeit",
+                                                                                                    "17": "lv_drittrechte",
+                                                                                                    "22": "kfz_schaden",
+                                                                                                    "29": "lv_drittrechte",
+                                                                                                    "37": "flv_faelligkeit",
+                                                                                                    "46": "urem_rechnung",
+                                                                                                    "82": "kfz_bonus_malus",
+                                                                                                    "90": "urem_rechnung",
+                                                                                                    "91": "kv_akut_versorgt_leistung",
+                                                                                                    "95": "provisionsnote",
+                                                                                                    "96": "rechnung",
+                                                                                                    "99": "kv_leistung",
+                                                                                                    "119": "kv_leistung",
+                                                                                                    "122": "lv_drittrechte",
+                                                                                                    "141": "kv_vitalleistung",
+                                                                                                    "149": "kfz_schaden",
+                                                                                                    "173": "oeamtc_kv_antrag",
+                                                                                                    "193": "rv_abbucher",
+                                                                                                    "197": "kfz_schaden",
+                                                                                                    "198": "kfz_schaden",
+                                                                                                    "200": "kv_leistung",
+                                                                                                    "201": "oeamtc_kv_antrag",
+                                                                                                    "202": "rv_abbucher",
+                                                                                                    "203": "kv_arztbericht",
+                                                                                                    "205": "kv_leistung",
+                                                                                                    "214": "provisionsnote",
+                                                                                                    "228": "kv_vitalleistung",
+                                                                                                    "250": "flv_faelligkeit",
+                                                                                                    "256": "uits_rechnung",
+                                                                                                    "267": "kfz_bonus_malus",
+                                                                                                    "271": "rv_abbucher",
+                                                                                                    "274": "kfz_schaden",
+                                                                                                    "279": "kfz_schaden",
+                                                                                                    "298": "provisionsnote",
+                                                                                                    "311": "kv_leistung",
+                                                                                                    "313": "rv_abbucher",
+                                                                                                    "319": "lv_drittrechte",
+                                                                                                    "327": "uits_rechnung",
+                                                                                                    "340": "flv_faelligkeit",
+                                                                                                    "343": "kfz_schaden",
+                                                                                                    "365": "kfz_bonus_malus",
+                                                                                                    "369": "rv_abbucher",
+                                                                                                    "370": "oeamtc_kv_antrag",
+                                                                                                    "382": "uits_rechnung",
+                                                                                                    "388": "fed_vertrag",
+                                                                                                    "419": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "423": "kfz_schaden",
+                                                                                                    "434": "lv_drittrechte",
+                                                                                                    "440": "provisionsnote",
+                                                                                                    "455": "provisionsnote",
+                                                                                                    "481": "kfz_schaden",
+                                                                                                    "495": "fed_vertrag",
+                                                                                                    "496": "kfz_bonus_malus",
+                                                                                                    "498": "urem_rechnung",
+                                                                                                    "500": "kfz_schaden",
+                                                                                                    "512": "kfz_bonus_malus",
+                                                                                                    "515": "rv_abbucher",
+                                                                                                    "527": "provisionsnote",
+                                                                                                    "534": "kv_leistung",
+                                                                                                    "537": "kv_leistung",
+                                                                                                    "551": "provisionsnote",
+                                                                                                    "552": "kfz_bonus_malus",
+                                                                                                    "566": "kfz_bonus_malus",
+                                                                                                    "571": "uv_ruecktritt_kuendigung",
+                                                                                                    "576": "uv_ruecktritt_kuendigung",
+                                                                                                    "587": "kv_akut_versorgt_leistung",
+                                                                                                    "589": "urem_rechnung",
+                                                                                                    "600": "rv_abbucher",
+                                                                                                    "602": "lv_drittrechte",
+                                                                                                    "603": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "611": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "616": "flv_faelligkeit",
+                                                                                                    "622": "kv_leistung",
+                                                                                                    "624": "kv_vitalleistung",
+                                                                                                    "633": "lv_drittrechte",
+                                                                                                    "635": "lv_drittrechte",
+                                                                                                    "648": "fed_vertrag",
+                                                                                                    "650": "kv_kuendigung",
+                                                                                                    "660": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "663": "kfz_schaden",
+                                                                                                    "671": "uits_rechnung",
+                                                                                                    "678": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "687": "kfz_schaden",
+                                                                                                    "694": "kv_leistung",
+                                                                                                    "698": "kfz_bonus_malus",
+                                                                                                    "702": "kv_akut_versorgt_leistung",
+                                                                                                    "714": "kfz_bonus_malus",
+                                                                                                    "716": "uits_rechnung",
+                                                                                                    "717": "provisionsnote",
+                                                                                                    "746": "kv_akut_versorgt_leistung",
+                                                                                                    "747": "kfz_schaden",
+                                                                                                    "752": "flv_faelligkeit",
+                                                                                                    "761": "kfz_bonus_malus",
+                                                                                                    "768": "urem_rechnung",
+                                                                                                    "771": "urem_rechnung",
+                                                                                                    "775": "flv_faelligkeit",
+                                                                                                    "777": "rv_abbucher",
+                                                                                                    "780": "urem_rechnung",
+                                                                                                    "791": "kv_vitalleistung"
+}{
+ "runtime": 563.8600894454867
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.5,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 12
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.9230769230769231,
+                                                  "recall": 0.8,
+                                                  "f1-score": 0.8571428571428571,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.6666666666666666,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.8,
+                                                  "support": 2
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 11
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.8,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.888888888888889,
+                                                  "support": 16
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.7,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.8,
+                                                  "support": 15
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.7692307692307693,
+                                                  "recall": 0.7142857142857143,
+                                                  "f1-score": 0.7407407407407408,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 4
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.5714285714285714,
+                                                  "recall": 0.8,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.9285714285714286,
+                                                  "recall": 0.8125,
+                                                  "f1-score": 0.8666666666666666,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8,
+                                                  "f1-score": 0.888888888888889,
+                                                  "support": 5
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.905,
+                         "macro avg": {
+                                                  "precision": 0.8799533799533799,
+                                                  "recall": 0.8432088744588744,
+                                                  "f1-score": 0.8453971953971955,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.9098150183150184,
+                                                  "recall": 0.905,
+                                                  "f1-score": 0.8999452584452585,
+                                                  "support": 200
+                         }
+}{
+        "100": 0.866577886321299,
+        "200": 0.8973488988321142,
+        "300": 0.8939194625413395,
+        "400": 0.9093411468283706,
+        "500": 0.965132232283437,
+        "600": 0.9548233771595093,
+        "700": 0.9621270517607163,
+        "800": 0.9481818429315532
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "38": "kv_akut_versorgt_leistung",
+                                                                                                    "40": "lv_drittrechte",
+                                                                                                    "47": "kfz_bonus_malus",
+                                                                                                    "49": "urem_rechnung",
+                                                                                                    "50": "lv_drittrechte",
+                                                                                                    "59": "urem_rechnung",
+                                                                                                    "60": "provisionsnote",
+                                                                                                    "61": "flv_faelligkeit",
+                                                                                                    "63": "uits_rechnung",
+                                                                                                    "64": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "71": "lv_drittrechte",
+                                                                                                    "74": "lv_drittrechte",
+                                                                                                    "79": "kv_leistung",
+                                                                                                    "83": "kfz_schaden",
+                                                                                                    "88": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "92": "provisionsnote",
+                                                                                                    "96": "kv_vitalleistung",
+                                                                                                    "99": "lv_drittrechte",
+                                                                                                    "105": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "120": "lv_drittrechte",
+                                                                                                    "126": "oeamtc_kv_antrag",
+                                                                                                    "136": "kv_vitalleistung",
+                                                                                                    "147": "lv_drittrechte",
+                                                                                                    "154": "lv_drittrechte",
+                                                                                                    "155": "fed_vertrag",
+                                                                                                    "168": "fed_vertrag",
+                                                                                                    "184": "lv_drittrechte",
+                                                                                                    "185": "rv_abbucher",
+                                                                                                    "192": "kv_arztbericht",
+                                                                                                    "210": "kfz_bonus_malus",
+                                                                                                    "219": "kv_vitalleistung",
+                                                                                                    "226": "uits_rechnung",
+                                                                                                    "228": "kfz_schaden",
+                                                                                                    "246": "lv_drittrechte",
+                                                                                                    "249": "uits_rechnung",
+                                                                                                    "254": "provisionsnote",
+                                                                                                    "294": "urem_rechnung",
+                                                                                                    "296": "kv_leistung",
+                                                                                                    "306": "lv_drittrechte",
+                                                                                                    "307": "lv_drittrechte",
+                                                                                                    "315": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "321": "rv_abbucher",
+                                                                                                    "331": "fed_vertrag",
+                                                                                                    "350": "urem_rechnung",
+                                                                                                    "351": "lv_drittrechte",
+                                                                                                    "370": "fed_vertrag",
+                                                                                                    "374": "kfz_schaden",
+                                                                                                    "381": "ah_regulierung",
+                                                                                                    "404": "kfz_bonus_malus",
+                                                                                                    "406": "kv_akut_versorgt_leistung",
+                                                                                                    "428": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "429": "kfz_bonus_malus",
+                                                                                                    "431": "lv_drittrechte",
+                                                                                                    "434": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "437": "provisionsnote",
+                                                                                                    "444": "uits_rechnung",
+                                                                                                    "459": "kv_vitalleistung",
+                                                                                                    "464": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "476": "uv_schadenmeldung",
+                                                                                                    "500": "kfz_bonus_malus",
+                                                                                                    "506": "provisionsnote",
+                                                                                                    "508": "urem_rechnung",
+                                                                                                    "519": "oeamtc_kv_antrag",
+                                                                                                    "524": "provisionsnote",
+                                                                                                    "537": "fed_vertrag",
+                                                                                                    "544": "lv_drittrechte",
+                                                                                                    "548": "uits_rechnung",
+                                                                                                    "553": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "560": "lv_drittrechte",
+                                                                                                    "564": "rv_abbucher",
+                                                                                                    "570": "fed_vertrag",
+                                                                                                    "571": "lv_drittrechte",
+                                                                                                    "573": "urem_rechnung",
+                                                                                                    "577": "lv_drittrechte",
+                                                                                                    "579": "kfz_bonus_malus",
+                                                                                                    "584": "uits_rechnung",
+                                                                                                    "586": "kv_vitalleistung",
+                                                                                                    "588": "uits_rechnung",
+                                                                                                    "590": "urem_rechnung",
+                                                                                                    "595": "lv_drittrechte",
+                                                                                                    "596": "rechnung",
+                                                                                                    "599": "rv_abbucher",
+                                                                                                    "623": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "633": "kv_kuendigung",
+                                                                                                    "642": "provisionsnote",
+                                                                                                    "645": "kv_kuendigung",
+                                                                                                    "654": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "666": "rv_abbucher",
+                                                                                                    "684": "kv_leistung",
+                                                                                                    "696": "kv_akut_versorgt_leistung",
+                                                                                                    "698": "kfz_schaden",
+                                                                                                    "715": "provisionsnote",
+                                                                                                    "729": "fed_vertrag",
+                                                                                                    "733": "kfz_bonus_malus",
+                                                                                                    "756": "kfz_bonus_malus",
+                                                                                                    "757": "rv_abbucher",
+                                                                                                    "768": "kv_kuendigung",
+                                                                                                    "783": "flv_faelligkeit",
+                                                                                                    "790": "rv_abbucher",
+                                                                                                    "794": "rv_abbucher"
+}{
+ "runtime": 562.1523214932531
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.6666666666666666,
+                                                  "recall": 0.6666666666666666,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 8
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 12
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.7142857142857143,
+                                                  "f1-score": 0.8333333333333333,
+                                                  "support": 14
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.4,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.9285714285714286,
+                                                  "recall": 0.8666666666666667,
+                                                  "f1-score": 0.896551724137931,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.875,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.875,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.8125,
+                                                  "recall": 0.9285714285714286,
+                                                  "f1-score": 0.8666666666666666,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 4
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.5,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.4444444444444444,
+                                                  "recall": 0.8,
+                                                  "f1-score": 0.5714285714285714,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.9375,
+                                                  "f1-score": 0.967741935483871,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.9333333333333333,
+                                                  "support": 16
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.7142857142857143,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.8333333333333333,
+                                                  "support": 5
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.8823529411764706,
+                                                  "recall": 0.9375,
+                                                  "f1-score": 0.9090909090909091,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.905,
+                         "macro avg": {
+                                                  "precision": 0.8329009634156693,
+                                                  "recall": 0.8541666666666667,
+                                                  "f1-score": 0.8337677301462819,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.921074346405229,
+                                                  "recall": 0.905,
+                                                  "f1-score": 0.9078147468030671,
+                                                  "support": 200
+                         }
+}{
+        "100": 0.7225266958999479,
+        "200": 0.858316771945065,
+        "300": 0.9211603203615749,
+        "400": 0.8733364574824516,
+        "500": 0.9148968157838658,
+        "600": 0.9321410914659323,
+        "700": 0.9490958883044799,
+        "800": 0.9492322933497807
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "12": "kv_vitalleistung",
+                                                                                                    "20": "uits_rechnung",
+                                                                                                    "31": "rv_abbucher",
+                                                                                                    "38": "kfz_schaden",
+                                                                                                    "44": "kv_leistung",
+                                                                                                    "59": "flv_faelligkeit",
+                                                                                                    "64": "provisionsnote",
+                                                                                                    "65": "provisionsnote",
+                                                                                                    "73": "lv_drittrechte",
+                                                                                                    "87": "urem_rechnung",
+                                                                                                    "88": "kv_kuendigung",
+                                                                                                    "91": "kv_leistung",
+                                                                                                    "99": "kfz_bonus_malus",
+                                                                                                    "110": "uits_rechnung",
+                                                                                                    "116": "urem_rechnung",
+                                                                                                    "129": "lv_drittrechte",
+                                                                                                    "138": "rv_abbucher",
+                                                                                                    "140": "rv_abbucher",
+                                                                                                    "145": "urem_rechnung",
+                                                                                                    "151": "flv_faelligkeit",
+                                                                                                    "153": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "162": "provisionsnote",
+                                                                                                    "196": "kv_leistung",
+                                                                                                    "197": "uv_schadenmeldung",
+                                                                                                    "198": "uits_rechnung",
+                                                                                                    "202": "provisionsnote",
+                                                                                                    "212": "rv_abbucher",
+                                                                                                    "214": "kv_leistung",
+                                                                                                    "225": "uits_rechnung",
+                                                                                                    "232": "urem_rechnung",
+                                                                                                    "239": "kv_leistung",
+                                                                                                    "240": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "249": "provisionsnote",
+                                                                                                    "253": "kv_kuendigung",
+                                                                                                    "264": "flv_faelligkeit",
+                                                                                                    "273": "oeamtc_kv_antrag",
+                                                                                                    "291": "provisionsnote",
+                                                                                                    "292": "provisionsnote",
+                                                                                                    "302": "oeamtc_kv_antrag",
+                                                                                                    "316": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "321": "uits_rechnung",
+                                                                                                    "346": "kv_akut_versorgt_leistung",
+                                                                                                    "352": "kv_akut_versorgt_leistung",
+                                                                                                    "364": "oeamtc_kv_antrag",
+                                                                                                    "365": "urem_rechnung",
+                                                                                                    "379": "fed_vertrag",
+                                                                                                    "384": "kfz_bonus_malus",
+                                                                                                    "386": "kv_leistung",
+                                                                                                    "388": "rv_sach_antrag",
+                                                                                                    "395": "rv_sach_antrag",
+                                                                                                    "399": "uits_rechnung",
+                                                                                                    "410": "rv_sach_antrag",
+                                                                                                    "412": "kv_akut_versorgt_leistung",
+                                                                                                    "417": "lv_drittrechte",
+                                                                                                    "436": "rv_abbucher",
+                                                                                                    "455": "kv_kuendigung",
+                                                                                                    "464": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "467": "oeamtc_kv_antrag",
+                                                                                                    "470": "kv_vitalleistung",
+                                                                                                    "485": "kv_akut_versorgt_leistung",
+                                                                                                    "496": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "499": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "500": "kv_vitalleistung",
+                                                                                                    "506": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "509": "rechnung",
+                                                                                                    "515": "kv_leistung",
+                                                                                                    "518": "oeamtc_kv_antrag",
+                                                                                                    "519": "kfz_schaden",
+                                                                                                    "522": "provisionsnote",
+                                                                                                    "529": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "532": "provisionsnote",
+                                                                                                    "541": "uits_rechnung",
+                                                                                                    "544": "fed_vertrag",
+                                                                                                    "552": "kv_leistung",
+                                                                                                    "558": "provisionsnote",
+                                                                                                    "570": "flv_faelligkeit",
+                                                                                                    "586": "kfz_schaden",
+                                                                                                    "592": "kv_leistung",
+                                                                                                    "595": "rv_abbucher",
+                                                                                                    "598": "flv_faelligkeit",
+                                                                                                    "615": "urem_rechnung",
+                                                                                                    "621": "kv_leistung",
+                                                                                                    "635": "kv_kuendigung",
+                                                                                                    "638": "uits_rechnung",
+                                                                                                    "657": "kv_akut_versorgt_leistung",
+                                                                                                    "659": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "665": "fed_ruecktritt_kuendigung",
+                                                                                                    "672": "rv_abbucher",
+                                                                                                    "676": "uv_schadenmeldung",
+                                                                                                    "678": "ah_regulierung",
+                                                                                                    "706": "flv_faelligkeit",
+                                                                                                    "707": "uits_rechnung",
+                                                                                                    "717": "kv_arztbericht",
+                                                                                                    "718": "urem_rechnung",
+                                                                                                    "721": "provisionsnote",
+                                                                                                    "730": "fed_vertrag",
+                                                                                                    "739": "kv_vitalleistung",
+                                                                                                    "743": "flv_faelligkeit",
+                                                                                                    "762": "kv_vitalleistung",
+                                                                                                    "780": "urem_rechnung"
+}{
+ "runtime": 563.5434146653861
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.7777777777777778,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.8750000000000001,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.6666666666666666,
+                                                  "recall": 0.6666666666666666,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 8
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.9230769230769231,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.888888888888889,
+                                                  "support": 14
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.8125,
+                                                  "recall": 0.8666666666666667,
+                                                  "f1-score": 0.8387096774193549,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.9032258064516129,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.6470588235294118,
+                                                  "recall": 0.7857142857142857,
+                                                  "f1-score": 0.7096774193548386,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.6666666666666666,
+                                                  "f1-score": 0.5714285714285715,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.4,
+                                                  "recall": 0.4,
+                                                  "f1-score": 0.4000000000000001,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.9032258064516129,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.8571428571428571,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.895,
+                         "macro avg": {
+                                                  "precision": 0.7932222597663774,
+                                                  "recall": 0.79512987012987,
+                                                  "f1-score": 0.7884802921093242,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.8856168435322848,
+                                                  "recall": 0.895,
+                                                  "f1-score": 0.8878743993461735,
+                                                  "support": 200
+                         }
+}{
+        "100": 0.7578473309969819,
+        "200": 0.8658091521965986,
+        "300": 0.911519420558313,
+        "400": 0.9230102230192013,
+        "500": 0.9372283544141655,
+        "600": 0.9346952246102451,
+        "700": 0.928642375287796,
+        "800": 0.9432728894988878
+}{
+  "train_length": 800,
+  "test_length": 200
+}{
+                                                                                                    "3": "kfz_schaden",
+                                                                                                    "5": "lv_drittrechte",
+                                                                                                    "6": "oeamtc_kv_antrag",
+                                                                                                    "8": "provisionsnote",
+                                                                                                    "17": "provisionsnote",
+                                                                                                    "24": "kv_arztbericht",
+                                                                                                    "35": "uits_rechnung",
+                                                                                                    "41": "uits_rechnung",
+                                                                                                    "42": "oeamtc_kv_antrag",
+                                                                                                    "44": "kv_leistung",
+                                                                                                    "52": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "55": "uits_rechnung",
+                                                                                                    "56": "urem_rechnung",
+                                                                                                    "64": "provisionsnote",
+                                                                                                    "70": "fed_ruecktritt_kuendigung",
+                                                                                                    "82": "urem_rechnung",
+                                                                                                    "85": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "86": "urem_rechnung",
+                                                                                                    "89": "provisionsnote",
+                                                                                                    "95": "lv_drittrechte",
+                                                                                                    "104": "kfz_schaden",
+                                                                                                    "113": "kv_leistung",
+                                                                                                    "114": "kv_leistung",
+                                                                                                    "124": "rechnung",
+                                                                                                    "135": "kfz_schaden",
+                                                                                                    "136": "lv_drittrechte",
+                                                                                                    "141": "oeamtc_kv_antrag",
+                                                                                                    "142": "fed_vertrag",
+                                                                                                    "148": "urem_rechnung",
+                                                                                                    "152": "kfz_bonus_malus",
+                                                                                                    "160": "rv_abbucher",
+                                                                                                    "172": "provisionsnote",
+                                                                                                    "173": "kv_vitalleistung",
+                                                                                                    "176": "rv_abbucher",
+                                                                                                    "190": "kv_akut_versorgt_leistung",
+                                                                                                    "196": "kv_leistung",
+                                                                                                    "202": "uv_schadenmeldung",
+                                                                                                    "204": "oeamtc_kv_antrag",
+                                                                                                    "207": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "209": "kv_arztbericht",
+                                                                                                    "214": "uits_rechnung",
+                                                                                                    "229": "uits_rechnung",
+                                                                                                    "242": "uv_ruecktritt_kuendigung",
+                                                                                                    "243": "lv_drittrechte",
+                                                                                                    "273": "kfz_schaden",
+                                                                                                    "274": "lv_drittrechte",
+                                                                                                    "276": "kfz_schaden",
+                                                                                                    "287": "uits_rechnung",
+                                                                                                    "298": "kv_leistung",
+                                                                                                    "338": "fed_vertrag",
+                                                                                                    "342": "kv_akut_versorgt_leistung",
+                                                                                                    "346": "kv_vitalleistung",
+                                                                                                    "349": "urem_rechnung",
+                                                                                                    "382": "kv_akut_versorgt_leistung",
+                                                                                                    "387": "rv_sach_antrag",
+                                                                                                    "388": "kv_leistung",
+                                                                                                    "392": "kv_leistung",
+                                                                                                    "406": "kv_akut_versorgt_leistung",
+                                                                                                    "407": "kfz_schaden",
+                                                                                                    "421": "kfz_schaden",
+                                                                                                    "430": "kfz_schaden",
+                                                                                                    "431": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "432": "uits_rechnung",
+                                                                                                    "434": "kv_leistung",
+                                                                                                    "462": "rv_sach_antrag",
+                                                                                                    "474": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "503": "kfz_schaden",
+                                                                                                    "508": "lv_drittrechte",
+                                                                                                    "512": "urem_rechnung",
+                                                                                                    "514": "kfz_schaden",
+                                                                                                    "518": "uits_rechnung",
+                                                                                                    "550": "kfz_bonus_malus",
+                                                                                                    "552": "kv_leistung",
+                                                                                                    "567": "uv_ruecktritt_kuendigung",
+                                                                                                    "568": "kv_vitalleistung",
+                                                                                                    "586": "provisionsnote",
+                                                                                                    "589": "uits_rechnung",
+                                                                                                    "592": "lv_drittrechte",
+                                                                                                    "593": "flv_faelligkeit",
+                                                                                                    "604": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "611": "kv_vitalleistung",
+                                                                                                    "619": "kv_leistung",
+                                                                                                    "620": "lv_drittrechte",
+                                                                                                    "623": "ld_servicecenter_eingehende_korrespondenz",
+                                                                                                    "627": "kfz_bonus_malus",
+                                                                                                    "631": "rv_abbucher",
+                                                                                                    "654": "kfz_bonus_malus",
+                                                                                                    "690": "kv_leistung",
+                                                                                                    "692": "urem_rechnung",
+                                                                                                    "699": "kv_akut_versorgt_leistung",
+                                                                                                    "704": "kfz_bonus_malus",
+                                                                                                    "716": "urem_rechnung",
+                                                                                                    "720": "kv_vitalleistung",
+                                                                                                    "725": "provisionsnote",
+                                                                                                    "733": "kfz_bonus_malus",
+                                                                                                    "742": "uits_rechnung",
+                                                                                                    "743": "uits_rechnung",
+                                                                                                    "745": "kfz_bonus_malus",
+                                                                                                    "796": "rv_abbucher",
+                                                                                                    "799": "fed_ruecktritt_kuendigung"
+}{
+ "runtime": 562.1003094948828
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.9375,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.967741935483871,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.5,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.4,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 0.5,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 0.8333333333333334,
+                                                  "recall": 0.9090909090909091,
+                                                  "f1-score": 0.8695652173913043,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.9333333333333333,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.9,
+                                                  "f1-score": 0.9473684210526316,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.7777777777777778,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.8484848484848485,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8125,
+                                                  "f1-score": 0.896551724137931,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.6923076923076923,
+                                                  "recall": 0.6,
+                                                  "f1-score": 0.6428571428571429,
+                                                  "support": 15
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 2
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.4,
+                                                  "f1-score": 0.4444444444444445,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.9333333333333333,
+                                                  "support": 15
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.9411764705882353,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.9696969696969697,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.9,
+                         "macro avg": {
+                                                  "precision": 0.8658528154851685,
+                                                  "recall": 0.8914575954348681,
+                                                  "f1-score": 0.8686267103011848,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.9041963612368025,
+                                                  "recall": 0.9,
+                                                  "f1-score": 0.8983445014466883,
+                                                  "support": 200
+                         }
+}{
+        "100": 0.7435832446702781,
+        "200": 0.857782870592589,
+        "300": 0.8888312537929736,
+        "400": 0.9031278926460481,
+        "500": 0.9297818096407503,
+        "600": 0.9206093707864982,
+        "700": 0.953981946189697,
+        "800": 0.9458639190227441
+}{
+ "overall_runtime": 561.7178231410683
+}

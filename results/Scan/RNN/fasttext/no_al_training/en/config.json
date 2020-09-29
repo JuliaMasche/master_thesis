@@ -1,0 +1,761 @@
+{
+         "word_embedding": "fasttext",
+         "document_embedding": "RNN",
+         "neural network": "rnn",
+         "dataset": "../data/Scan/tsv/",
+         "learning_rate": 0.1,
+         "max epoch": 100,
+         "mini batch size": 16,
+         "seed": 5,
+         "performance_measure": "g-mean"
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.8571428571428571,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.8571428571428571,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.6111111111111112,
+                                                  "recall": 0.7333333333333333,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 0.8571428571428571,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.8571428571428571,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 0.9090909090909091,
+                                                  "recall": 0.9090909090909091,
+                                                  "f1-score": 0.9090909090909091,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.4230769230769231,
+                                                  "recall": 0.7333333333333333,
+                                                  "f1-score": 0.5365853658536585,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.7,
+                                                  "recall": 0.6363636363636364,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 11
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.38461538461538464,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.3571428571428571,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.38461538461538464,
+                                                  "recall": 0.3125,
+                                                  "f1-score": 0.3448275862068966,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.36363636363636365,
+                                                  "recall": 0.2857142857142857,
+                                                  "f1-score": 0.32,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 0.9375,
+                                                  "recall": 0.9375,
+                                                  "f1-score": 0.9375,
+                                                  "support": 16
+                         },
+                         "rechnung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.4,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.2777777777777778,
+                                                  "recall": 0.3125,
+                                                  "f1-score": 0.29411764705882354,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.9333333333333333,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.5,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.8888888888888888,
+                                                  "recall": 0.9411764705882353,
+                                                  "f1-score": 0.9142857142857143,
+                                                  "support": 17
+                         },
+                         "accuracy": 0.595,
+                         "macro avg": {
+                                                  "precision": 0.43308780865599045,
+                                                  "recall": 0.4370817128504294,
+                                                  "f1-score": 0.4315682936632381,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.5764118104118104,
+                                                  "recall": 0.595,
+                                                  "f1-score": 0.5809261877669487,
+                                                  "support": 200
+                         }
+}{
+ "runtime": 848.018345516175
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.6666666666666666,
+                                                  "recall": 0.5714285714285714,
+                                                  "f1-score": 0.6153846153846153,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.5833333333333334,
+                                                  "recall": 0.4666666666666667,
+                                                  "f1-score": 0.5185185185185186,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.7142857142857143,
+                                                  "f1-score": 0.8333333333333333,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 12
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.6363636363636364,
+                                                  "recall": 0.4666666666666667,
+                                                  "f1-score": 0.5384615384615385,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.5714285714285714,
+                                                  "recall": 0.36363636363636365,
+                                                  "f1-score": 0.4444444444444444,
+                                                  "support": 11
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.3,
+                                                  "recall": 0.375,
+                                                  "f1-score": 0.33333333333333326,
+                                                  "support": 16
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.16666666666666666,
+                                                  "recall": 0.13333333333333333,
+                                                  "f1-score": 0.14814814814814814,
+                                                  "support": 15
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.2,
+                                                  "recall": 0.2857142857142857,
+                                                  "f1-score": 0.23529411764705882,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 0.875,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.9032258064516129,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 0.4,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.4444444444444445,
+                                                  "support": 4
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.09090909090909091,
+                                                  "recall": 0.125,
+                                                  "f1-score": 0.10526315789473685,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 0.8823529411764706,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.9375,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.6666666666666666,
+                                                  "recall": 0.8,
+                                                  "f1-score": 0.7272727272727272,
+                                                  "support": 5
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.7777777777777778,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.823529411764706,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.515,
+                         "macro avg": {
+                                                  "precision": 0.4462347886813127,
+                                                  "recall": 0.4140938606847698,
+                                                  "f1-score": 0.4215827392620857,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.5277022642390289,
+                                                  "recall": 0.515,
+                                                  "f1-score": 0.514766657730149,
+                                                  "support": 200
+                         }
+}{
+ "runtime": 862.2597167566419
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.75,
+                                                  "recall": 0.42857142857142855,
+                                                  "f1-score": 0.5454545454545454,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.5333333333333333,
+                                                  "recall": 0.5333333333333333,
+                                                  "f1-score": 0.5333333333333333,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.3333333333333333,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.3333333333333333,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 0.8888888888888888,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.9411764705882353,
+                                                  "support": 8
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 12
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.25925925925925924,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.3414634146341463,
+                                                  "support": 14
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.5384615384615384,
+                                                  "recall": 0.7,
+                                                  "f1-score": 0.608695652173913,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.5333333333333333,
+                                                  "f1-score": 0.5161290322580646,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.3076923076923077,
+                                                  "recall": 0.25,
+                                                  "f1-score": 0.27586206896551724,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.3,
+                                                  "recall": 0.21428571428571427,
+                                                  "f1-score": 0.25,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 0.9285714285714286,
+                                                  "recall": 0.8666666666666667,
+                                                  "f1-score": 0.896551724137931,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 0.6,
+                                                  "recall": 0.75,
+                                                  "f1-score": 0.6666666666666665,
+                                                  "support": 4
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.25,
+                                                  "recall": 0.1875,
+                                                  "f1-score": 0.21428571428571427,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 0.9333333333333333,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.9032258064516129,
+                                                  "support": 16
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.8333333333333334,
+                                                  "recall": 1.0,
+                                                  "f1-score": 0.9090909090909091,
+                                                  "support": 5
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.6842105263157895,
+                                                  "recall": 0.8125,
+                                                  "f1-score": 0.742857142857143,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.56,
+                         "macro avg": {
+                                                  "precision": 0.43820078556920666,
+                                                  "recall": 0.4538419913419913,
+                                                  "f1-score": 0.43991480973777564,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.5468718644902856,
+                                                  "recall": 0.56,
+                                                  "f1-score": 0.5464853109426291,
+                                                  "support": 200
+                         }
+}{
+ "runtime": 901.3165459278971
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.42857142857142855,
+                                                  "f1-score": 0.6,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.5714285714285714,
+                                                  "recall": 0.5333333333333333,
+                                                  "f1-score": 0.5517241379310344,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 0.875,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.875,
+                                                  "support": 8
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.9090909090909091,
+                                                  "f1-score": 0.9523809523809523,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.38461538461538464,
+                                                  "recall": 0.35714285714285715,
+                                                  "f1-score": 0.3703703703703704,
+                                                  "support": 14
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.7777777777777778,
+                                                  "recall": 0.7,
+                                                  "f1-score": 0.7368421052631577,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.46153846153846156,
+                                                  "recall": 0.4,
+                                                  "f1-score": 0.42857142857142855,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.2,
+                                                  "recall": 0.25,
+                                                  "f1-score": 0.22222222222222224,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.34782608695652173,
+                                                  "recall": 0.5714285714285714,
+                                                  "f1-score": 0.4324324324324324,
+                                                  "support": 14
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 15
+                         },
+                         "rechnung": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.5,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.14285714285714285,
+                                                  "recall": 0.2,
+                                                  "f1-score": 0.16666666666666666,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.3181818181818182,
+                                                  "recall": 0.4375,
+                                                  "f1-score": 0.3684210526315789,
+                                                  "support": 16
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 1.0,
+                                                  "f1-score": 1.0,
+                                                  "support": 16
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.4,
+                                                  "recall": 0.3333333333333333,
+                                                  "f1-score": 0.3636363636363636,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.875,
+                                                  "recall": 0.875,
+                                                  "f1-score": 0.875,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.57,
+                         "macro avg": {
+                                                  "precision": 0.4706466019707127,
+                                                  "recall": 0.41835153482880755,
+                                                  "f1-score": 0.42923944236846395,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.5896582933974238,
+                                                  "recall": 0.57,
+                                                  "f1-score": 0.5697686408920528,
+                                                  "support": 200
+                         }
+}{
+ "runtime": 936.3744675330818
+}{
+                         "kv_vitalleistung": {
+                                                  "precision": 0.625,
+                                                  "recall": 0.7142857142857143,
+                                                  "f1-score": 0.6666666666666666,
+                                                  "support": 7
+                         },
+                         "urem_rechnung": {
+                                                  "precision": 0.4444444444444444,
+                                                  "recall": 0.5333333333333333,
+                                                  "f1-score": 0.4848484848484848,
+                                                  "support": 15
+                         },
+                         "fed_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 1
+                         },
+                         "uv_ruecktritt_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "oeamtc_kv_antrag": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.8571428571428571,
+                                                  "f1-score": 0.923076923076923,
+                                                  "support": 7
+                         },
+                         "rv_sach_antrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "kv_akut_versorgt_leistung": {
+                                                  "precision": 0.7692307692307693,
+                                                  "recall": 0.9090909090909091,
+                                                  "f1-score": 0.8333333333333333,
+                                                  "support": 11
+                         },
+                         "lv_drittrechte": {
+                                                  "precision": 0.5384615384615384,
+                                                  "recall": 0.4666666666666667,
+                                                  "f1-score": 0.5,
+                                                  "support": 15
+                         },
+                         "kv_kuendigung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 3
+                         },
+                         "flv_faelligkeit": {
+                                                  "precision": 0.45454545454545453,
+                                                  "recall": 0.5,
+                                                  "f1-score": 0.47619047619047616,
+                                                  "support": 10
+                         },
+                         "ld_servicecenter_eingehende_korrespondenz": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.5333333333333333,
+                                                  "f1-score": 0.5161290322580646,
+                                                  "support": 15
+                         },
+                         "kv_leistung": {
+                                                  "precision": 0.13333333333333333,
+                                                  "recall": 0.125,
+                                                  "f1-score": 0.12903225806451615,
+                                                  "support": 16
+                         },
+                         "ah_regulierung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "rv_abbucher": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.4,
+                                                  "f1-score": 0.4444444444444445,
+                                                  "support": 15
+                         },
+                         "uits_rechnung": {
+                                                  "precision": 0.9375,
+                                                  "recall": 0.9375,
+                                                  "f1-score": 0.9375,
+                                                  "support": 16
+                         },
+                         "rechnung": {
+                                                  "precision": 0.5,
+                                                  "recall": 0.6666666666666666,
+                                                  "f1-score": 0.5714285714285715,
+                                                  "support": 3
+                         },
+                         "uv_schadenmeldung": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 2
+                         },
+                         "fed_vertrag": {
+                                                  "precision": 0.0,
+                                                  "recall": 0.0,
+                                                  "f1-score": 0.0,
+                                                  "support": 5
+                         },
+                         "kfz_schaden": {
+                                                  "precision": 0.15384615384615385,
+                                                  "recall": 0.13333333333333333,
+                                                  "f1-score": 0.14285714285714288,
+                                                  "support": 15
+                         },
+                         "provisionsnote": {
+                                                  "precision": 1.0,
+                                                  "recall": 0.9333333333333333,
+                                                  "f1-score": 0.9655172413793104,
+                                                  "support": 15
+                         },
+                         "kv_arztbericht": {
+                                                  "precision": 0.8333333333333334,
+                                                  "recall": 0.8333333333333334,
+                                                  "f1-score": 0.8333333333333334,
+                                                  "support": 6
+                         },
+                         "kfz_bonus_malus": {
+                                                  "precision": 0.7894736842105263,
+                                                  "recall": 0.9375,
+                                                  "f1-score": 0.8571428571428572,
+                                                  "support": 16
+                         },
+                         "accuracy": 0.55,
+                         "macro avg": {
+                                                  "precision": 0.41723494142752515,
+                                                  "recall": 0.43093270365997643,
+                                                  "f1-score": 0.4218863984101876,
+                                                  "support": 200
+                         },
+                         "weighted avg": {
+                                                  "precision": 0.538490936694884,
+                                                  "recall": 0.55,
+                                                  "f1-score": 0.5417840465059597,
+                                                  "support": 200
+                         }
+}{
+ "runtime": 805.4806538876146
+}{
+     "1": 0.7602493916485807,
+     "2": 0.7052012278649582,
+     "3": 0.7369069514930376,
+     "4": 0.7433533775476725,
+     "5": 0.730739478662147
+}{
+ "overall_perf": 0.7352900854432792
+}{
+ "overall_runtime": 870.689945924282
+}
