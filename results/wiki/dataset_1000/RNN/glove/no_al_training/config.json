@@ -1,9 +1,9 @@
 {
-         "word_embedding": "bert",
+         "word_embedding": "glove",
          "document_embedding": "RNN",
          "neural network": "rnn",
          "dataset": "../data/wiki/tsv/dataset_1000",
-         "learning_rate": 0.001,
+         "learning_rate": 0.1,
          "max epoch": 100,
          "mini batch size": 16,
          "seed": 5,
@@ -22,15 +22,15 @@
                                   "support": 5
                  },
                  "western": {
-                                  "precision": 1.0,
-                                  "recall": 0.6666666666666666,
-                                  "f1-score": 0.8,
+                                  "precision": 0.4444444444444444,
+                                  "recall": 0.4444444444444444,
+                                  "f1-score": 0.4444444444444444,
                                   "support": 9
                  },
                  "unknown": {
-                                  "precision": 0.5079365079365079,
-                                  "recall": 0.6037735849056604,
-                                  "f1-score": 0.5517241379310345,
+                                  "precision": 0.39759036144578314,
+                                  "recall": 0.6226415094339622,
+                                  "f1-score": 0.4852941176470588,
                                   "support": 53
                  },
                  "film noir": {
@@ -40,9 +40,9 @@
                                   "support": 2
                  },
                  "crime": {
-                                  "precision": 0.2727272727272727,
-                                  "recall": 0.375,
-                                  "f1-score": 0.3157894736842105,
+                                  "precision": 0.2222222222222222,
+                                  "recall": 0.25,
+                                  "f1-score": 0.23529411764705882,
                                   "support": 8
                  },
                  "crime drama": {
@@ -58,9 +58,9 @@
                                   "support": 4
                  },
                  "drama": {
-                                  "precision": 0.45714285714285713,
-                                  "recall": 0.6274509803921569,
-                                  "f1-score": 0.5289256198347108,
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.09803921568627451,
+                                  "f1-score": 0.1515151515151515,
                                   "support": 51
                  },
                  "thriller": {
@@ -70,9 +70,9 @@
                                   "support": 7
                  },
                  "action": {
-                                  "precision": 0.2,
-                                  "recall": 0.14285714285714285,
-                                  "f1-score": 0.16666666666666666,
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
                                   "support": 7
                  },
                  "mystery": {
@@ -82,9 +82,9 @@
                                   "support": 3
                  },
                  "comedy": {
-                                  "precision": 0.4878048780487805,
-                                  "recall": 0.5263157894736842,
-                                  "f1-score": 0.5063291139240507,
+                                  "precision": 0.359375,
+                                  "recall": 0.6052631578947368,
+                                  "f1-score": 0.45098039215686275,
                                   "support": 38
                  },
                  "adventure": {
@@ -93,121 +93,21 @@
                                   "f1-score": 0.0,
                                   "support": 5
                  },
-                 "accuracy": 0.47,
+                 "accuracy": 0.335,
                  "macro avg": {
-                                  "precision": 0.20897225113252987,
-                                  "recall": 0.2101474403068079,
-                                  "f1-score": 0.20495964371719094,
+                                  "precision": 0.12549752581755594,
+                                  "recall": 0.14431345196138698,
+                                  "f1-score": 0.1262520159578983,
                                   "support": 200
                  },
                  "weighted avg": {
-                                  "precision": 0.40676662091296234,
-                                  "recall": 0.47,
-                                  "f1-score": 0.43175037353584683,
+                                  "precision": 0.2875315846720214,
+                                  "recall": 0.335,
+                                  "f1-score": 0.2823373440285205,
                                   "support": 200
                  }
 }{
- "runtime": 2264.8527396680147
-}{
-                 "romance": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 6
-                 },
-                 "horror": {
-                                  "precision": 1.0,
-                                  "recall": 0.2,
-                                  "f1-score": 0.33333333333333337,
-                                  "support": 5
-                 },
-                 "western": {
-                                  "precision": 0.6363636363636364,
-                                  "recall": 0.875,
-                                  "f1-score": 0.7368421052631579,
-                                  "support": 8
-                 },
-                 "unknown": {
-                                  "precision": 0.5636363636363636,
-                                  "recall": 0.5849056603773585,
-                                  "f1-score": 0.5740740740740741,
-                                  "support": 53
-                 },
-                 "film noir": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 2
-                 },
-                 "crime": {
-                                  "precision": 0.1875,
-                                  "recall": 0.375,
-                                  "f1-score": 0.25,
-                                  "support": 8
-                 },
-                 "crime drama": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 2
-                 },
-                 "musical": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 4
-                 },
-                 "drama": {
-                                  "precision": 0.43333333333333335,
-                                  "recall": 0.5098039215686274,
-                                  "f1-score": 0.46846846846846846,
-                                  "support": 51
-                 },
-                 "thriller": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 7
-                 },
-                 "action": {
-                                  "precision": 0.2,
-                                  "recall": 0.2857142857142857,
-                                  "f1-score": 0.23529411764705882,
-                                  "support": 7
-                 },
-                 "mystery": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 4
-                 },
-                 "comedy": {
-                                  "precision": 0.6153846153846154,
-                                  "recall": 0.631578947368421,
-                                  "f1-score": 0.6233766233766234,
-                                  "support": 38
-                 },
-                 "adventure": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 5
-                 },
-                 "accuracy": 0.47,
-                 "macro avg": {
-                                  "precision": 0.2597298534798535,
-                                  "recall": 0.24728591535919234,
-                                  "f1-score": 0.23009919444019403,
-                                  "support": 200
-                 },
-                 "weighted avg": {
-                                  "precision": 0.4417412587412588,
-                                  "recall": 0.47,
-                                  "f1-score": 0.4460729591921542,
-                                  "support": 200
-                 }
-}{
- "runtime": 2283.903109353996
+ "runtime": 45.04511708766222
 }{
                  "romance": {
                                   "precision": 0.0,
@@ -220,124 +120,24 @@
                                   "recall": 0.0,
                                   "f1-score": 0.0,
                                   "support": 5
-                 },
-                 "western": {
-                                  "precision": 0.6,
-                                  "recall": 1.0,
-                                  "f1-score": 0.7499999999999999,
-                                  "support": 9
-                 },
-                 "unknown": {
-                                  "precision": 0.673469387755102,
-                                  "recall": 0.6226415094339622,
-                                  "f1-score": 0.6470588235294118,
-                                  "support": 53
-                 },
-                 "film noir": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 2
-                 },
-                 "crime": {
-                                  "precision": 0.06666666666666667,
-                                  "recall": 0.125,
-                                  "f1-score": 0.08695652173913045,
-                                  "support": 8
-                 },
-                 "crime drama": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 2
-                 },
-                 "musical": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 4
-                 },
-                 "drama": {
-                                  "precision": 0.35294117647058826,
-                                  "recall": 0.36,
-                                  "f1-score": 0.3564356435643565,
-                                  "support": 50
-                 },
-                 "thriller": {
-                                  "precision": 0.4,
-                                  "recall": 0.2857142857142857,
-                                  "f1-score": 0.3333333333333333,
-                                  "support": 7
-                 },
-                 "action": {
-                                  "precision": 0.2857142857142857,
-                                  "recall": 0.2857142857142857,
-                                  "f1-score": 0.2857142857142857,
-                                  "support": 7
-                 },
-                 "mystery": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 4
-                 },
-                 "comedy": {
-                                  "precision": 0.42857142857142855,
-                                  "recall": 0.631578947368421,
-                                  "f1-score": 0.5106382978723404,
-                                  "support": 38
-                 },
-                 "adventure": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 5
-                 },
-                 "accuracy": 0.445,
-                 "macro avg": {
-                                  "precision": 0.20052592465557648,
-                                  "recall": 0.2364749305879253,
-                                  "f1-score": 0.21215263612520413,
-                                  "support": 200
-                 },
-                 "weighted avg": {
-                                  "precision": 0.4017999199679872,
-                                  "recall": 0.445,
-                                  "f1-score": 0.41649570325835983,
-                                  "support": 200
-                 }
-}{
- "runtime": 2274.849154946016
-}{
-                 "romance": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 6
-                 },
-                 "horror": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
-                                  "support": 4
                  },
                  "western": {
                                   "precision": 0.6666666666666666,
-                                  "recall": 0.6666666666666666,
-                                  "f1-score": 0.6666666666666666,
-                                  "support": 9
+                                  "recall": 0.5,
+                                  "f1-score": 0.5714285714285715,
+                                  "support": 8
                  },
                  "unknown": {
-                                  "precision": 0.6056338028169014,
-                                  "recall": 0.8113207547169812,
-                                  "f1-score": 0.6935483870967741,
+                                  "precision": 0.421875,
+                                  "recall": 0.5094339622641509,
+                                  "f1-score": 0.4615384615384615,
                                   "support": 53
                  },
                  "film noir": {
                                   "precision": 0.0,
                                   "recall": 0.0,
                                   "f1-score": 0.0,
-                                  "support": 3
+                                  "support": 2
                  },
                  "crime": {
                                   "precision": 0.2,
@@ -358,9 +158,9 @@
                                   "support": 4
                  },
                  "drama": {
-                                  "precision": 0.45454545454545453,
-                                  "recall": 0.5882352941176471,
-                                  "f1-score": 0.5128205128205129,
+                                  "precision": 0.28205128205128205,
+                                  "recall": 0.43137254901960786,
+                                  "f1-score": 0.3410852713178295,
                                   "support": 51
                  },
                  "thriller": {
@@ -370,9 +170,9 @@
                                   "support": 7
                  },
                  "action": {
-                                  "precision": 0.0,
-                                  "recall": 0.0,
-                                  "f1-score": 0.0,
+                                  "precision": 0.5,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.22222222222222224,
                                   "support": 7
                  },
                  "mystery": {
@@ -382,67 +182,67 @@
                                   "support": 4
                  },
                  "comedy": {
-                                  "precision": 0.44680851063829785,
-                                  "recall": 0.5526315789473685,
-                                  "f1-score": 0.49411764705882355,
+                                  "precision": 0.5263157894736842,
+                                  "recall": 0.2631578947368421,
+                                  "f1-score": 0.35087719298245607,
                                   "support": 38
                  },
                  "adventure": {
                                   "precision": 0.0,
                                   "recall": 0.0,
                                   "f1-score": 0.0,
-                                  "support": 4
+                                  "support": 5
                  },
-                 "accuracy": 0.505,
+                 "accuracy": 0.325,
                  "macro avg": {
-                                  "precision": 0.16954674533338004,
-                                  "recall": 0.1959895924606188,
-                                  "f1-score": 0.1800713833920665,
+                                  "precision": 0.18549348129940232,
+                                  "recall": 0.14084439634841026,
+                                  "f1-score": 0.15007127666683534,
                                   "support": 200
                  },
                  "weighted avg": {
-                                  "precision": 0.3992956656768464,
-                                  "recall": 0.505,
-                                  "f1-score": 0.44459575244489863,
+                                  "precision": 0.3358866185897436,
+                                  "recall": 0.325,
+                                  "f1-score": 0.31273986994917224,
                                   "support": 200
                  }
 }{
- "runtime": 2260.0974553829874
+ "runtime": 46.65543895587325
 }{
                  "romance": {
-                                  "precision": 1.0,
-                                  "recall": 0.16666666666666666,
-                                  "f1-score": 0.2857142857142857,
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
                                   "support": 6
                  },
                  "horror": {
                                   "precision": 0.0,
                                   "recall": 0.0,
                                   "f1-score": 0.0,
-                                  "support": 4
+                                  "support": 5
                  },
                  "western": {
                                   "precision": 0.5,
-                                  "recall": 0.6666666666666666,
-                                  "f1-score": 0.5714285714285715,
+                                  "recall": 0.2222222222222222,
+                                  "f1-score": 0.30769230769230765,
                                   "support": 9
                  },
                  "unknown": {
-                                  "precision": 0.6111111111111112,
-                                  "recall": 0.6226415094339622,
-                                  "f1-score": 0.616822429906542,
+                                  "precision": 0.36,
+                                  "recall": 0.6792452830188679,
+                                  "f1-score": 0.4705882352941176,
                                   "support": 53
                  },
                  "film noir": {
                                   "precision": 0.0,
                                   "recall": 0.0,
                                   "f1-score": 0.0,
-                                  "support": 3
+                                  "support": 2
                  },
                  "crime": {
-                                  "precision": 0.42857142857142855,
-                                  "recall": 0.375,
-                                  "f1-score": 0.39999999999999997,
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.125,
+                                  "f1-score": 0.18181818181818182,
                                   "support": 8
                  },
                  "crime drama": {
@@ -455,13 +255,13 @@
                                   "precision": 0.0,
                                   "recall": 0.0,
                                   "f1-score": 0.0,
-                                  "support": 5
+                                  "support": 4
                  },
                  "drama": {
-                                  "precision": 0.4457831325301205,
-                                  "recall": 0.7254901960784313,
-                                  "f1-score": 0.5522388059701493,
-                                  "support": 51
+                                  "precision": 0.32432432432432434,
+                                  "recall": 0.24,
+                                  "f1-score": 0.27586206896551724,
+                                  "support": 50
                  },
                  "thriller": {
                                   "precision": 0.0,
@@ -470,21 +270,121 @@
                                   "support": 7
                  },
                  "action": {
-                                  "precision": 0.4,
-                                  "recall": 0.2857142857142857,
-                                  "f1-score": 0.3333333333333333,
+                                  "precision": 0.5,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.22222222222222224,
                                   "support": 7
                  },
                  "mystery": {
-                                  "precision": 1.0,
-                                  "recall": 0.3333333333333333,
-                                  "f1-score": 0.5,
-                                  "support": 3
+                                  "precision": 0.25,
+                                  "recall": 0.25,
+                                  "f1-score": 0.25,
+                                  "support": 4
                  },
                  "comedy": {
-                                  "precision": 0.5555555555555556,
-                                  "recall": 0.39473684210526316,
-                                  "f1-score": 0.46153846153846156,
+                                  "precision": 0.5454545454545454,
+                                  "recall": 0.47368421052631576,
+                                  "f1-score": 0.5070422535211268,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "accuracy": 0.355,
+                 "macro avg": {
+                                  "precision": 0.20093658593658595,
+                                  "recall": 0.1523577756160392,
+                                  "f1-score": 0.1582303763938195,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.33845077805077806,
+                                  "recall": 0.355,
+                                  "f1-score": 0.32390608665999343,
+                                  "support": 200
+                 }
+}{
+ "runtime": 47.259806625545025
+}{
+                 "romance": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "western": {
+                                  "precision": 0.5,
+                                  "recall": 0.1111111111111111,
+                                  "f1-score": 0.1818181818181818,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.47761194029850745,
+                                  "recall": 0.6037735849056604,
+                                  "f1-score": 0.5333333333333333,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 3
+                 },
+                 "crime": {
+                                  "precision": 0.14285714285714285,
+                                  "recall": 0.125,
+                                  "f1-score": 0.13333333333333333,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "drama": {
+                                  "precision": 0.37142857142857144,
+                                  "recall": 0.2549019607843137,
+                                  "f1-score": 0.3023255813953488,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.3333333333333333,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.2,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.13333333333333333,
+                                  "recall": 0.5714285714285714,
+                                  "f1-score": 0.21621621621621623,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "comedy": {
+                                  "precision": 0.4222222222222222,
+                                  "recall": 0.5,
+                                  "f1-score": 0.4578313253012048,
                                   "support": 38
                  },
                  "adventure": {
@@ -493,29 +393,129 @@
                                   "f1-score": 0.0,
                                   "support": 4
                  },
-                 "accuracy": 0.49,
+                 "accuracy": 0.355,
                  "macro avg": {
-                                  "precision": 0.3529300876977297,
-                                  "recall": 0.25501782142847207,
-                                  "f1-score": 0.26579113484938166,
+                                  "precision": 0.17005618167665076,
+                                  "recall": 0.16493374079191422,
+                                  "f1-score": 0.144632712242687,
                                   "support": 200
                  },
                  "weighted avg": {
-                                  "precision": 0.4798175559380379,
-                                  "recall": 0.49,
-                                  "f1-score": 0.4614235280923104,
+                                  "precision": 0.3460512911632314,
+                                  "recall": 0.355,
+                                  "f1-score": 0.33349702747909526,
                                   "support": 200
                  }
 }{
- "runtime": 2276.801027382986
+ "runtime": 46.59171524271369
 }{
-     "1": 0.6326348530112017,
-     "2": 0.6411280124151209,
-     "3": 0.6231479452938206,
-     "4": 0.6573247575175064,
-     "5": 0.6509992867032737
+                 "romance": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 6
+                 },
+                 "horror": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "western": {
+                                  "precision": 0.5714285714285714,
+                                  "recall": 0.4444444444444444,
+                                  "f1-score": 0.5,
+                                  "support": 9
+                 },
+                 "unknown": {
+                                  "precision": 0.48484848484848486,
+                                  "recall": 0.6037735849056604,
+                                  "f1-score": 0.5378151260504203,
+                                  "support": 53
+                 },
+                 "film noir": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 3
+                 },
+                 "crime": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 8
+                 },
+                 "crime drama": {
+                                  "precision": 1.0,
+                                  "recall": 0.5,
+                                  "f1-score": 0.6666666666666666,
+                                  "support": 2
+                 },
+                 "musical": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 5
+                 },
+                 "drama": {
+                                  "precision": 0.3815789473684211,
+                                  "recall": 0.5686274509803921,
+                                  "f1-score": 0.45669291338582685,
+                                  "support": 51
+                 },
+                 "thriller": {
+                                  "precision": 0.14285714285714285,
+                                  "recall": 0.14285714285714285,
+                                  "f1-score": 0.14285714285714285,
+                                  "support": 7
+                 },
+                 "action": {
+                                  "precision": 0.5,
+                                  "recall": 0.2857142857142857,
+                                  "f1-score": 0.36363636363636365,
+                                  "support": 7
+                 },
+                 "mystery": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 3
+                 },
+                 "comedy": {
+                                  "precision": 0.6363636363636364,
+                                  "recall": 0.3684210526315789,
+                                  "f1-score": 0.4666666666666667,
+                                  "support": 38
+                 },
+                 "adventure": {
+                                  "precision": 0.0,
+                                  "recall": 0.0,
+                                  "f1-score": 0.0,
+                                  "support": 4
+                 },
+                 "accuracy": 0.415,
+                 "macro avg": {
+                                  "precision": 0.2655054844904469,
+                                  "recall": 0.20813128296667885,
+                                  "f1-score": 0.22388106280450623,
+                                  "support": 200
+                 },
+                 "weighted avg": {
+                                  "precision": 0.40491085668717247,
+                                  "recall": 0.415,
+                                  "f1-score": 0.3945383073773533,
+                                  "support": 200
+                 }
 }{
- "overall_perf": 0.6410469709881846
+ "runtime": 47.088310211896896
 }{
- "overall_runtime": 2272.1006973468
+     "1": 0.5302407245398099,
+     "2": 0.5169221782747474,
+     "3": 0.5401314044030221,
+     "4": 0.55289226627593,
+     "5": 0.5919725707184608
+}{
+ "overall_perf": 0.546431828842394
+}{
+ "overall_runtime": 46.528077624738216
 }
