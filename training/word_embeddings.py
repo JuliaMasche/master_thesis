@@ -17,16 +17,7 @@ def select_word_embedding(we_name:str):
         word_embeddings = TransformerWordEmbeddings('bert-base-uncased', layers='-1', fine_tune = True)
         
     elif we_name == "fasttext":
-        word_embeddings = WordEmbeddings('de')
-    
-    elif we_name == "elmo_small":
-        word_embeddings = ELMoEmbeddings('small')
-
-    elif we_name == "elmo_medium":
-        word_embeddings = ELMoEmbeddings('medium')
-
-    elif we_name == "elmo_original":
-        word_embeddings = ELMoEmbeddings('orignal')
+        word_embeddings = WordEmbeddings('en')
     
     return word_embeddings
 

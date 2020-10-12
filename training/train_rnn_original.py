@@ -29,7 +29,7 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 
-we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
+we_embeddings = ['glove', 'flair', 'fasttext', 'bert']
 doc_embeddings = ["Pool", "RNN", "Transformer_eng", "Transformer_ger"]
 sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "wiki_3000", "wiki_original", "wiki_1000_wo_unknown", "webkb_1000", "webkb_2000", "news_original", "news_1000", "news_2000", "news_3000","news_balanced", "scan"]
 
@@ -176,8 +176,7 @@ def main():
 
     train_file = os.path.join(dataset_path_original, 'train.tsv')
     train_text, train_labels = create_text_label_list(train_file)
-    #le = preprocessing.LabelEncoder()
-    #le.fit(classes)
+    
 
     performance = []
     runtimes = []
@@ -190,8 +189,6 @@ def main():
         test_idx_list.append(test_index)
         X_train, X_test = train_text[train_index], train_text[test_index]
         y_train, y_test = train_labels[train_index], train_labels[test_index]
-        #y_train = le.transform(y_original_train)
-        #y_test = le.transform(y_original_test)
         datapoints = create_sentence_dataset(X_train, y_train)
 
         word_embeddings = select_word_embedding(word_embedding)
@@ -217,8 +214,8 @@ def main():
     for i in range(len(test_idx_list)):
         name = "kfold" + str(i+1)
         test_dict[name] = list(test_idx_list[i])
-    #df_test_idx = pd.DataFrame(test_dict)
-    #df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
+    df_test_idx = pd.DataFrame(test_dict)
+    df_test_idx.to_csv(os.path.join(path_results, "df_test_idx.tsv"), sep = '\t')
 
 
 main()

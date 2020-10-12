@@ -32,7 +32,7 @@ nltk.download('punkt')
 from torch.optim.adam import Adam
 
 query_strategy = ["QueryInstanceUncertainty", "QueryInstanceRandom", "QueryInstanceGraphDensity", "QueryInstanceQBC", "QueryExpectedErrorReduction", "QueryInstanceLAL_indep", "QueryInstanceLAL_iter"]
-we_embeddings = ['glove', 'flair', 'fasttext', 'bert', 'word2vec', 'elmo_small', 'elmo_medium', 'elmo_original']
+we_embeddings = ['glove', 'flair', 'fasttext', 'bert']
 doc_embeddings = ["Pool", "RNN", "Transformer_eng", "Transformer_ger"]
 sets = ["SST-2_original", "SST-2_90", "SST-2_80", "SST-2_70", "SST-2_60", "SST-2_50", "wiki_1000", "wiki_3000", "wiki_1000_wo_unknown", "webkb_1000", "webkb_2000", "movie_70", "movie_80", "news_1000", "news_2000", "news_3000", "news_balanced", "scan"]
 column_name_map = {0: 'text', 1: 'label'}
@@ -158,7 +158,6 @@ def create_text_label_list(path:str):
     return np.asarray(X), np.asarray(labels)
 
 
-
 def create_sentence_dataset(train_text, train_labels):
     datapoints = []
     for i in range(len(train_text)):
@@ -219,16 +218,18 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     train = SentenceDataset(train_sentences)
     corpus = Corpus(train=train)
     label_dict = corpus.make_label_dictionary()
+
     #train
     if args.document_embedding == "Pool" or args.document_embedding == "RNN":
         train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
     elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
         train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
+        
     #load classifier and create pred test set
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
 
-    #if DocumentRNNEmbeddings, then update feature matrix of AL with trained embeddings
+    #if DocumentRNNEmbeddings or TransformerEmbeddings, then update feature matrix of AL with trained embeddings
     if args.document_embedding == "RNN" or args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
         document_embeddings_trained = classifier.document_embeddings
         feat_mat = create_feat_mat(train_text, document_embeddings_trained)
@@ -245,7 +246,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
     while len(unlab_ind) != 0:
         num_queries += 1
 
-        #if QBC strategy, train second committte member and create two prediction matrices; for Random none; else one predicition matrix
+        #if QBC strategy, train second committee member and create two prediction matrices; for Random none; else one predicition matrix
         if query_str == "QueryInstanceQBC":
             pred_mat = []
             pred_mat.append(create_pred_mat_class(unlab_ind, classifier, train_text))
