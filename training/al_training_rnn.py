@@ -224,7 +224,7 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
         train_trainer(document_embeddings, label_dict, corpus, args.learning_rate, 'resources/training')
     elif args.document_embedding == "Transformer_eng" or args.document_embedding == "Transformer_ger":
         train_trainer(document_embeddings, label_dict, corpus, 3e-5, 'resources/training')
-        
+
     #load classifier and create pred test set
     classifier = TextClassifier.load(os.path.join(path_results, 'resources/training/final-model.pt'))
     test_pred = predict_testset(test_text, classifier)
@@ -266,8 +266,8 @@ def al_main_loop(alibox, al_strategy, document_embeddings, train_text, train_lab
             pred_mat = create_pred_mat(unlab_ind, classifier, train_text)
 
         #empty cache
-        torch.cuda.empty_cache()
-        shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
+        #torch.cuda.empty_cache()
+        #shutil.rmtree(os.path.join(path_results, 'resources/training'), ignore_errors=True)
 
         #initialize word/document embeddings new after every query
         word_embeddings = select_word_embedding(word_embedding)
